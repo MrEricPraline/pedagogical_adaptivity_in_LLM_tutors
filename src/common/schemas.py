@@ -17,12 +17,18 @@ BLOOM_LEVELS: List[str] = [
 ]
 
 BLOOM_BAND_MAP: Dict[str, str] = {
-    "Remember": "Lower-order",
-    "Understand": "Lower-order",
-    "Apply": "Middle-order",
-    "Analyze": "Middle-order",
-    "Evaluate": "Higher-order",
-    "Create": "Higher-order",
+    "Remember": "RU",
+    "Understand": "RU",
+    "Apply": "AA",
+    "Analyze": "AA",
+    "Evaluate": "EC",
+    "Create": "EC",
+}
+
+BLOOM_BAND_LABELS: Dict[str, str] = {
+    "RU": "Remember / Understand",
+    "AA": "Apply / Analyze",
+    "EC": "Evaluate / Create",
 }
 
 # ---------------------------------------------------------------------------
@@ -30,16 +36,16 @@ BLOOM_BAND_MAP: Dict[str, str] = {
 # ---------------------------------------------------------------------------
 
 SUBJECT_FAMILY_MAP: Dict[str, str] = {
-    "Mathematics": "STEM",
-    "Physics": "STEM",
-    "Biology": "STEM",
-    "Chemistry": "STEM",
-    "Computer Science": "STEM",
-    "History": "Humanities",
-    "Literature": "Humanities",
-    "Philosophy": "Humanities",
-    "Economics": "Social Sciences",
-    "Psychology": "Social Sciences",
+    "Mathematics": "formal",
+    "Physics": "natural",
+    "Biology": "natural",
+    "Computer Science": "formal",
+    "History": "humanistic",
+    "Literature": "humanistic",
+    "Art History": "humanistic",
+    "Ethics": "humanistic",
+    "Psychology": "natural",
+    "Sociology": "applied",
 }
 
 SUBJECTS: List[str] = list(SUBJECT_FAMILY_MAP.keys())

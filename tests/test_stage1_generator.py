@@ -32,8 +32,8 @@ def test_prompt_ids_unique():
 def test_prompt_id_format():
     rows = generate_factorial()
     for r in rows:
-        assert r.prompt_id.startswith("P-")
-        assert len(r.prompt_id) == 6  # P-XXXX
+        assert r.prompt_id.startswith("P")
+        assert len(r.prompt_id) == 5  # P0001
 
 
 def test_all_columns_present():
@@ -45,10 +45,10 @@ def test_all_columns_present():
 def test_bloom_bands_assigned():
     rows = generate_factorial()
     for r in rows:
-        assert r.bloom_band in ("Lower-order", "Middle-order", "Higher-order")
+        assert r.bloom_band in ("RU", "AA", "EC")
 
 
 def test_subject_families_assigned():
     rows = generate_factorial()
     families = {r.subject_family for r in rows}
-    assert families == {"STEM", "Humanities", "Social Sciences"}
+    assert families == {"formal", "natural", "humanistic", "applied"}

@@ -30,7 +30,7 @@ def generate_factorial() -> List[FactorialRow]:
         counter += 1
         rows.append(
             FactorialRow(
-                prompt_id=f"P-{counter:04d}",
+                prompt_id=f"P{counter:04d}",
                 bloom=bloom,
                 bloom_band=BLOOM_BAND_MAP[bloom],
                 subject=subject,

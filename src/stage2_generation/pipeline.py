@@ -182,3 +182,100 @@ def run_stage2(cfg: PipelineConfig) -> None:
         "Stage 2: complete — %d processed, %d succeeded, %d failed",
         processed, succeeded, failed,
     )
+
+
+# ---------------------------------------------------------------------------
+# Repair: re-generate only failed / validation_failed cases
+# ---------------------------------------------------------------------------
+
+
+def repair_stage2(cfg: PipelineConfig) -> None:
+    """Re-generate cases with generation_status != 'ok' in the existing JSONL."""
+    output_dir = cfg.output_dir or cfg.stage2_dir
+    jsonl_path = output_dir / "case_narratives.jsonl"
+
+    if not jsonl_path.exists():
+        raise FileNotFoundError(f"No JSONL found at {jsonl_path}. Run Stage 2 first.")
+
+    all_results = read_jsonl(jsonl_path)
+    failed_ids = {
+        r["prompt_id"]
+        for r in all_results
+        if r.get("generation_status") != "ok"
+    }
+
+    if not failed_ids:
+        logger.info("Repair: no failed cases found — nothing to do.")
+        return
+
+    logger.info("Repair: %d failed cases to re-generate", len(failed_ids))
+
+    provider = XAIProvider(cfg)
+    repaired = 0
+    still_failed = 0
+
+    results_by_id = {r["prompt_id"]: r for r in all_results}
+
+    for pid in sorted(failed_ids):
+        row = results_by_id[pid]
+
+        messages = build_messages(
+            subject=row["subject"],
+            bloom=row["bloom"],
+            knowledge_state=row["knowledge_state"],
+            learning_stage=row["learning_stage"],
+            learning_context=row["learning_context"],
+        )
+
+        best_narrative = ""
+        best_checks: Dict[str, bool] = {}
+        best_status = "validation_failed"
+        error = ""
+
+        try:
+            for attempt in range(3):
+                narrative = provider.generate(messages)
+                checks = validate_narrative(
+                    narrative, cfg.word_count_min, cfg.word_count_max
+                )
+                if is_clean(checks):
+                    best_narrative = narrative
+                    best_checks = checks
+                    best_status = "ok"
+                    break
+                best_narrative = narrative
+                best_checks = checks
+        except Exception as exc:
+            best_status = "error"
+            error = str(exc)
+            logger.error("Repair error for %s: %s", pid, exc)
+
+        wc = count_words(best_narrative) if best_narrative else 0
+        row.update({
+            "narrative": best_narrative,
+            "word_count": wc,
+            "validation": best_checks,
+            "validation_clean": is_clean(best_checks) if best_checks else False,
+            "generator_model": cfg.model,
+            "generated_at": datetime.now(timezone.utc).isoformat(),
+            "generation_status": best_status,
+            "error_message": error,
+        })
+
+        if best_status == "ok":
+            repaired += 1
+        else:
+            still_failed += 1
+
+        logger.debug("Repair %s: %s (wc=%d)", pid, best_status, wc)
+
+    # Rewrite the full JSONL and JSON with repaired results
+    from src.common.io_utils import write_jsonl
+    ordered = [results_by_id[r["prompt_id"]] for r in all_results]
+    write_jsonl(ordered, jsonl_path)
+    write_json(ordered, output_dir / "case_narratives.json")
+
+    logger.info(
+        "Repair: complete — %d repaired, %d still failed out of %d",
+        repaired, still_failed, len(failed_ids),
+    )

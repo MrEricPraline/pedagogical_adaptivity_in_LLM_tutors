@@ -44,6 +44,9 @@ def build_parser() -> argparse.ArgumentParser:
     pa = sub.add_parser("run-all", help="Run Stage 1 then Stage 2")
     _add_common_args(pa)
 
+    pr = sub.add_parser("repair", help="Re-generate failed cases from Stage 2")
+    _add_common_args(pr)
+
     return parser
 
 
@@ -74,6 +77,11 @@ def main(argv: list[str] | None = None) -> None:
         from src.stage2_generation.pipeline import run_stage2
 
         run_stage2(cfg)
+
+    if args.command == "repair":
+        from src.stage2_generation.pipeline import repair_stage2
+
+        repair_stage2(cfg)
 
 
 if __name__ == "__main__":
