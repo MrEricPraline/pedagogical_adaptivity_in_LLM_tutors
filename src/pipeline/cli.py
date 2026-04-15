@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import argparse
-import sys
 from pathlib import Path
 
 from dotenv import load_dotenv
@@ -47,10 +46,20 @@ def build_parser() -> argparse.ArgumentParser:
     pr = sub.add_parser("repair", help="Re-generate failed cases from Stage 2")
     _add_common_args(pr)
 
+    pd = sub.add_parser("dedup", help="Deduplicate narratives and prepare regeneration list")
+    _add_common_args(pd)
+
+    pg = sub.add_parser("regenerate", help="Regenerate cases flagged by dedup with diversity")
+    _add_common_args(pg)
+
+    pv = sub.add_parser("audit", help="Validate a JSONL dataset")
+    pv.add_argument("file", nargs="?", default=None, help="Path to JSONL (default: cases_final.jsonl)")
+    _add_common_args(pv)
+
     return parser
 
 
-def main(argv: list[str] | None = None) -> None:
+def main(argv: list | None = None) -> None:
     load_dotenv()
 
     parser = build_parser()
@@ -59,7 +68,7 @@ def main(argv: list[str] | None = None) -> None:
     cli_overrides = {
         k: v
         for k, v in vars(args).items()
-        if k != "command" and v is not None and v is not False
+        if k not in ("command", "file") and v is not None and v is not False
     }
 
     from src.pipeline.config import PipelineConfig
@@ -82,6 +91,22 @@ def main(argv: list[str] | None = None) -> None:
         from src.stage2_generation.pipeline import repair_stage2
 
         repair_stage2(cfg)
+
+    if args.command == "dedup":
+        from src.stage2_generation.dedup import run_dedup
+
+        run_dedup(cfg.output_dir or cfg.stage2_dir)
+
+    if args.command == "regenerate":
+        from src.stage2_generation.regenerate import run_regenerate
+
+        run_regenerate(cfg)
+
+    if args.command == "audit":
+        from src.stage2_generation.audit import run_audit
+
+        audit_file = args.file or str(cfg.stage2_dir / "cases_final.jsonl")
+        run_audit(Path(audit_file))
 
 
 if __name__ == "__main__":
