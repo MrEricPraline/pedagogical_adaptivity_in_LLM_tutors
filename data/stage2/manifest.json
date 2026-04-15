@@ -1,0 +1,19 @@
+{
+  "stage": "stage2_generation",
+  "timestamp": "2026-04-14T22:51:09.018396+00:00",
+  "row_count": 1980,
+  "params": {
+    "model": "grok-3-fast",
+    "provider": "xai",
+    "base_url": "https://api.x.ai/v1",
+    "temperature": 0.8,
+    "max_tokens": 300,
+    "input_path": "/Users/rafa/Development/pedagogical_adaptivity_in_LLM_tutors/data/stage1/factorial_sample.csv",
+    "start": 0,
+    "end": 2000,
+    "resume": true
+  },
+  "succeeded": 1949,
+  "failed": 31,
+  "total_in_checkpoint": 2000
+}

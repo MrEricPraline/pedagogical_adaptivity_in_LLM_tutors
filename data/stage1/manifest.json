@@ -1,0 +1,16 @@
+{
+  "stage": "stage1_factorial",
+  "timestamp": "2026-04-14T21:00:41.837393+00:00",
+  "row_count": 2000,
+  "params": {
+    "method": "imported_csv",
+    "source": "/Users/rafa/Development/pedagogical_adaptivity_in_LLM_tutors/data/stage1/factorial_sample.csv",
+    "variables": [
+      "bloom",
+      "knowledge_state",
+      "learning_stage",
+      "learning_context",
+      "subject"
+    ]
+  }
+}

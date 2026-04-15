@@ -1,0 +1,2001 @@
+prompt_id,bloom,bloom_band,subject,subject_family,knowledge_state,learning_stage,learning_context
+P0001,Understand,RU,Literature,humanistic,informed,skill_building,collaborative
+P0002,Analyze,AA,Art History,humanistic,misinformed,comprehensive_mastery,collaborative
+P0003,Remember,RU,Literature,humanistic,informed,conceptual_orientation,autonomous
+P0004,Analyze,AA,Literature,humanistic,misinformed,competency_development,autonomous
+P0005,Analyze,AA,Ethics,humanistic,misinformed,conceptual_orientation,guided
+P0006,Analyze,AA,Ethics,humanistic,misinformed,competency_development,autonomous
+P0007,Analyze,AA,Psychology,natural,misinformed,comprehensive_mastery,collaborative
+P0008,Remember,RU,Psychology,natural,novice,conceptual_orientation,guided
+P0009,Analyze,AA,History,humanistic,misinformed,conceptual_orientation,collaborative
+P0010,Analyze,AA,Ethics,humanistic,novice,skill_building,guided
+P0011,Analyze,AA,Computer Science,formal,misinformed,competency_development,collaborative
+P0012,Evaluate,EC,Ethics,humanistic,novice,skill_building,autonomous
+P0013,Remember,RU,Psychology,natural,novice,skill_building,collaborative
+P0014,Evaluate,EC,Ethics,humanistic,misinformed,competency_development,guided
+P0015,Apply,AA,Physics,formal,novice,competency_development,collaborative
+P0016,Remember,RU,Computer Science,formal,informed,conceptual_orientation,autonomous
+P0017,Analyze,AA,History,humanistic,novice,competency_development,autonomous
+P0018,Evaluate,EC,Art History,humanistic,misinformed,skill_building,guided
+P0019,Understand,RU,History,humanistic,misinformed,comprehensive_mastery,guided
+P0020,Understand,RU,Ethics,humanistic,misinformed,competency_development,collaborative
+P0021,Understand,RU,Biology,natural,informed,conceptual_orientation,guided
+P0022,Remember,RU,Ethics,humanistic,misinformed,skill_building,autonomous
+P0023,Analyze,AA,Computer Science,formal,misinformed,skill_building,guided
+P0024,Evaluate,EC,Physics,formal,novice,conceptual_orientation,guided
+P0025,Create,EC,Mathematics,formal,misinformed,conceptual_orientation,collaborative
+P0026,Analyze,AA,Psychology,natural,novice,skill_building,collaborative
+P0027,Create,EC,Computer Science,formal,informed,competency_development,collaborative
+P0028,Create,EC,Art History,humanistic,novice,skill_building,autonomous
+P0029,Analyze,AA,Sociology,applied,misinformed,skill_building,autonomous
+P0030,Apply,AA,Biology,natural,informed,comprehensive_mastery,autonomous
+P0031,Analyze,AA,Psychology,natural,informed,skill_building,collaborative
+P0032,Remember,RU,History,humanistic,informed,skill_building,collaborative
+P0033,Understand,RU,Computer Science,formal,misinformed,skill_building,guided
+P0034,Evaluate,EC,Biology,natural,misinformed,competency_development,collaborative
+P0035,Evaluate,EC,Mathematics,formal,novice,competency_development,guided
+P0036,Analyze,AA,Ethics,humanistic,informed,skill_building,collaborative
+P0037,Understand,RU,History,humanistic,misinformed,conceptual_orientation,collaborative
+P0038,Create,EC,Biology,natural,novice,comprehensive_mastery,autonomous
+P0039,Understand,RU,Psychology,natural,novice,competency_development,autonomous
+P0040,Create,EC,History,humanistic,misinformed,competency_development,collaborative
+P0041,Understand,RU,Art History,humanistic,informed,competency_development,collaborative
+P0042,Apply,AA,Computer Science,formal,informed,skill_building,collaborative
+P0043,Understand,RU,Mathematics,formal,misinformed,comprehensive_mastery,collaborative
+P0044,Evaluate,EC,Biology,natural,novice,competency_development,guided
+P0045,Create,EC,Physics,formal,misinformed,conceptual_orientation,guided
+P0046,Create,EC,Art History,humanistic,misinformed,skill_building,guided
+P0047,Evaluate,EC,Biology,natural,novice,skill_building,autonomous
+P0048,Remember,RU,Sociology,applied,novice,skill_building,guided
+P0049,Create,EC,History,humanistic,novice,conceptual_orientation,autonomous
+P0050,Evaluate,EC,Art History,humanistic,novice,comprehensive_mastery,autonomous
+P0051,Analyze,AA,Mathematics,formal,informed,comprehensive_mastery,guided
+P0052,Apply,AA,Sociology,applied,misinformed,conceptual_orientation,collaborative
+P0053,Apply,AA,Psychology,natural,informed,skill_building,autonomous
+P0054,Apply,AA,Literature,humanistic,novice,comprehensive_mastery,autonomous
+P0055,Analyze,AA,Art History,humanistic,novice,competency_development,guided
+P0056,Apply,AA,Sociology,applied,misinformed,comprehensive_mastery,collaborative
+P0057,Analyze,AA,Biology,natural,misinformed,comprehensive_mastery,guided
+P0058,Remember,RU,Art History,humanistic,novice,competency_development,autonomous
+P0059,Remember,RU,Biology,natural,novice,comprehensive_mastery,guided
+P0060,Evaluate,EC,Literature,humanistic,informed,comprehensive_mastery,collaborative
+P0061,Apply,AA,Psychology,natural,misinformed,competency_development,guided
+P0062,Analyze,AA,Literature,humanistic,informed,competency_development,collaborative
+P0063,Create,EC,Mathematics,formal,misinformed,comprehensive_mastery,autonomous
+P0064,Evaluate,EC,Art History,humanistic,informed,competency_development,collaborative
+P0065,Understand,RU,Mathematics,formal,informed,skill_building,autonomous
+P0066,Remember,RU,Ethics,humanistic,novice,skill_building,collaborative
+P0067,Apply,AA,Mathematics,formal,misinformed,conceptual_orientation,autonomous
+P0068,Understand,RU,Mathematics,formal,misinformed,competency_development,autonomous
+P0069,Remember,RU,Psychology,natural,misinformed,competency_development,autonomous
+P0070,Create,EC,Ethics,humanistic,novice,skill_building,autonomous
+P0071,Apply,AA,Physics,formal,informed,comprehensive_mastery,autonomous
+P0072,Apply,AA,Computer Science,formal,informed,conceptual_orientation,collaborative
+P0073,Analyze,AA,Literature,humanistic,misinformed,skill_building,collaborative
+P0074,Apply,AA,Psychology,natural,novice,skill_building,guided
+P0075,Create,EC,History,humanistic,novice,competency_development,autonomous
+P0076,Understand,RU,Art History,humanistic,novice,competency_development,guided
+P0077,Understand,RU,History,humanistic,informed,competency_development,guided
+P0078,Create,EC,Psychology,natural,misinformed,conceptual_orientation,collaborative
+P0079,Evaluate,EC,Physics,formal,informed,competency_development,autonomous
+P0080,Understand,RU,Psychology,natural,informed,comprehensive_mastery,guided
+P0081,Apply,AA,Psychology,natural,informed,competency_development,guided
+P0082,Analyze,AA,Psychology,natural,novice,competency_development,guided
+P0083,Apply,AA,Sociology,applied,misinformed,skill_building,collaborative
+P0084,Evaluate,EC,Psychology,natural,misinformed,competency_development,collaborative
+P0085,Create,EC,Computer Science,formal,misinformed,skill_building,guided
+P0086,Analyze,AA,Physics,formal,informed,skill_building,guided
+P0087,Analyze,AA,Art History,humanistic,informed,competency_development,guided
+P0088,Analyze,AA,History,humanistic,novice,conceptual_orientation,collaborative
+P0089,Evaluate,EC,Computer Science,formal,misinformed,competency_development,guided
+P0090,Analyze,AA,Art History,humanistic,misinformed,skill_building,guided
+P0091,Apply,AA,Art History,humanistic,misinformed,conceptual_orientation,guided
+P0092,Understand,RU,Literature,humanistic,informed,competency_development,guided
+P0093,Understand,RU,Art History,humanistic,novice,competency_development,autonomous
+P0094,Create,EC,History,humanistic,misinformed,competency_development,guided
+P0095,Create,EC,Biology,natural,novice,skill_building,autonomous
+P0096,Apply,AA,Psychology,natural,informed,conceptual_orientation,autonomous
+P0097,Remember,RU,Mathematics,formal,informed,comprehensive_mastery,collaborative
+P0098,Evaluate,EC,Physics,formal,novice,conceptual_orientation,autonomous
+P0099,Evaluate,EC,Mathematics,formal,novice,conceptual_orientation,autonomous
+P0100,Analyze,AA,Art History,humanistic,informed,comprehensive_mastery,collaborative
+P0101,Remember,RU,Psychology,natural,informed,competency_development,autonomous
+P0102,Evaluate,EC,History,humanistic,novice,competency_development,guided
+P0103,Remember,RU,Psychology,natural,informed,skill_building,guided
+P0104,Understand,RU,Ethics,humanistic,novice,comprehensive_mastery,guided
+P0105,Create,EC,Art History,humanistic,informed,conceptual_orientation,guided
+P0106,Remember,RU,Psychology,natural,novice,conceptual_orientation,autonomous
+P0107,Understand,RU,Art History,humanistic,novice,skill_building,guided
+P0108,Remember,RU,Sociology,applied,novice,conceptual_orientation,collaborative
+P0109,Evaluate,EC,Biology,natural,informed,skill_building,autonomous
+P0110,Create,EC,Sociology,applied,misinformed,skill_building,collaborative
+P0111,Understand,RU,Psychology,natural,informed,conceptual_orientation,autonomous
+P0112,Remember,RU,Psychology,natural,informed,skill_building,collaborative
+P0113,Create,EC,Computer Science,formal,misinformed,conceptual_orientation,guided
+P0114,Remember,RU,Computer Science,formal,novice,conceptual_orientation,guided
+P0115,Analyze,AA,History,humanistic,novice,skill_building,guided
+P0116,Remember,RU,Art History,humanistic,misinformed,competency_development,autonomous
+P0117,Create,EC,History,humanistic,misinformed,comprehensive_mastery,guided
+P0118,Apply,AA,Ethics,humanistic,misinformed,conceptual_orientation,autonomous
+P0119,Understand,RU,Physics,formal,novice,conceptual_orientation,guided
+P0120,Evaluate,EC,Sociology,applied,novice,comprehensive_mastery,collaborative
+P0121,Analyze,AA,History,humanistic,informed,comprehensive_mastery,autonomous
+P0122,Understand,RU,Biology,natural,novice,competency_development,autonomous
+P0123,Remember,RU,Ethics,humanistic,novice,competency_development,guided
+P0124,Evaluate,EC,Biology,natural,novice,competency_development,autonomous
+P0125,Analyze,AA,Physics,formal,informed,conceptual_orientation,collaborative
+P0126,Understand,RU,Ethics,humanistic,informed,comprehensive_mastery,guided
+P0127,Analyze,AA,Art History,humanistic,informed,comprehensive_mastery,guided
+P0128,Evaluate,EC,Biology,natural,informed,conceptual_orientation,collaborative
+P0129,Evaluate,EC,Sociology,applied,informed,conceptual_orientation,guided
+P0130,Analyze,AA,Psychology,natural,misinformed,skill_building,collaborative
+P0131,Apply,AA,Sociology,applied,novice,competency_development,guided
+P0132,Remember,RU,Literature,humanistic,misinformed,comprehensive_mastery,guided
+P0133,Remember,RU,Literature,humanistic,misinformed,skill_building,guided
+P0134,Apply,AA,Ethics,humanistic,informed,conceptual_orientation,autonomous
+P0135,Create,EC,Sociology,applied,misinformed,conceptual_orientation,guided
+P0136,Create,EC,Sociology,applied,informed,competency_development,guided
+P0137,Understand,RU,Physics,formal,informed,comprehensive_mastery,guided
+P0138,Remember,RU,Biology,natural,novice,conceptual_orientation,guided
+P0139,Analyze,AA,Mathematics,formal,misinformed,skill_building,collaborative
+P0140,Apply,AA,Art History,humanistic,misinformed,comprehensive_mastery,guided
+P0141,Analyze,AA,Biology,natural,misinformed,competency_development,guided
+P0142,Remember,RU,Physics,formal,misinformed,skill_building,collaborative
+P0143,Understand,RU,Psychology,natural,novice,conceptual_orientation,autonomous
+P0144,Evaluate,EC,History,humanistic,novice,skill_building,autonomous
+P0145,Apply,AA,Mathematics,formal,novice,competency_development,guided
+P0146,Analyze,AA,Literature,humanistic,informed,conceptual_orientation,collaborative
+P0147,Create,EC,Physics,formal,misinformed,conceptual_orientation,autonomous
+P0148,Understand,RU,Physics,formal,misinformed,competency_development,guided
+P0149,Remember,RU,Art History,humanistic,novice,conceptual_orientation,collaborative
+P0150,Analyze,AA,Mathematics,formal,novice,conceptual_orientation,autonomous
+P0151,Remember,RU,Literature,humanistic,informed,competency_development,collaborative
+P0152,Remember,RU,Biology,natural,misinformed,skill_building,autonomous
+P0153,Analyze,AA,Psychology,natural,novice,skill_building,guided
+P0154,Apply,AA,Psychology,natural,novice,skill_building,autonomous
+P0155,Evaluate,EC,History,humanistic,novice,skill_building,collaborative
+P0156,Apply,AA,Biology,natural,misinformed,competency_development,autonomous
+P0157,Create,EC,Literature,humanistic,informed,competency_development,autonomous
+P0158,Analyze,AA,History,humanistic,novice,competency_development,collaborative
+P0159,Remember,RU,Computer Science,formal,informed,skill_building,guided
+P0160,Evaluate,EC,Art History,humanistic,novice,conceptual_orientation,autonomous
+P0161,Remember,RU,Mathematics,formal,novice,comprehensive_mastery,collaborative
+P0162,Create,EC,Physics,formal,informed,comprehensive_mastery,collaborative
+P0163,Remember,RU,Ethics,humanistic,misinformed,competency_development,autonomous
+P0164,Create,EC,Psychology,natural,misinformed,competency_development,collaborative
+P0165,Understand,RU,Literature,humanistic,misinformed,competency_development,guided
+P0166,Remember,RU,Mathematics,formal,misinformed,conceptual_orientation,autonomous
+P0167,Understand,RU,Biology,natural,novice,skill_building,collaborative
+P0168,Apply,AA,Ethics,humanistic,novice,skill_building,autonomous
+P0169,Evaluate,EC,Biology,natural,novice,comprehensive_mastery,guided
+P0170,Apply,AA,Literature,humanistic,informed,competency_development,autonomous
+P0171,Understand,RU,Psychology,natural,novice,competency_development,guided
+P0172,Remember,RU,Sociology,applied,novice,skill_building,collaborative
+P0173,Evaluate,EC,Sociology,applied,novice,skill_building,collaborative
+P0174,Create,EC,Physics,formal,informed,skill_building,collaborative
+P0175,Analyze,AA,Mathematics,formal,informed,competency_development,collaborative
+P0176,Apply,AA,Sociology,applied,novice,comprehensive_mastery,autonomous
+P0177,Apply,AA,Computer Science,formal,informed,skill_building,autonomous
+P0178,Create,EC,Physics,formal,misinformed,conceptual_orientation,collaborative
+P0179,Analyze,AA,Computer Science,formal,informed,conceptual_orientation,autonomous
+P0180,Apply,AA,Sociology,applied,misinformed,conceptual_orientation,guided
+P0181,Evaluate,EC,Psychology,natural,informed,comprehensive_mastery,guided
+P0182,Evaluate,EC,Psychology,natural,misinformed,conceptual_orientation,autonomous
+P0183,Apply,AA,Physics,formal,misinformed,comprehensive_mastery,collaborative
+P0184,Create,EC,Sociology,applied,novice,conceptual_orientation,autonomous
+P0185,Apply,AA,Computer Science,formal,misinformed,skill_building,collaborative
+P0186,Apply,AA,Art History,humanistic,informed,competency_development,autonomous
+P0187,Evaluate,EC,Psychology,natural,informed,comprehensive_mastery,autonomous
+P0188,Remember,RU,Biology,natural,informed,skill_building,guided
+P0189,Create,EC,Biology,natural,novice,competency_development,collaborative
+P0190,Apply,AA,Computer Science,formal,informed,conceptual_orientation,guided
+P0191,Apply,AA,Sociology,applied,misinformed,competency_development,autonomous
+P0192,Understand,RU,History,humanistic,misinformed,comprehensive_mastery,autonomous
+P0193,Understand,RU,Physics,formal,misinformed,competency_development,autonomous
+P0194,Analyze,AA,Physics,formal,misinformed,competency_development,collaborative
+P0195,Analyze,AA,Psychology,natural,informed,conceptual_orientation,collaborative
+P0196,Create,EC,Psychology,natural,novice,competency_development,guided
+P0197,Create,EC,Art History,humanistic,misinformed,comprehensive_mastery,autonomous
+P0198,Remember,RU,Computer Science,formal,misinformed,comprehensive_mastery,collaborative
+P0199,Remember,RU,Sociology,applied,informed,comprehensive_mastery,guided
+P0200,Remember,RU,Art History,humanistic,informed,competency_development,collaborative
+P0201,Apply,AA,Computer Science,formal,misinformed,comprehensive_mastery,collaborative
+P0202,Remember,RU,Computer Science,formal,informed,competency_development,collaborative
+P0203,Analyze,AA,Computer Science,formal,informed,competency_development,collaborative
+P0204,Apply,AA,Sociology,applied,informed,competency_development,collaborative
+P0205,Apply,AA,Biology,natural,informed,comprehensive_mastery,guided
+P0206,Analyze,AA,Psychology,natural,misinformed,comprehensive_mastery,guided
+P0207,Create,EC,Mathematics,formal,novice,conceptual_orientation,collaborative
+P0208,Analyze,AA,Mathematics,formal,novice,competency_development,collaborative
+P0209,Evaluate,EC,Ethics,humanistic,novice,comprehensive_mastery,guided
+P0210,Understand,RU,Sociology,applied,novice,competency_development,collaborative
+P0211,Evaluate,EC,Art History,humanistic,novice,conceptual_orientation,collaborative
+P0212,Apply,AA,Literature,humanistic,misinformed,competency_development,collaborative
+P0213,Apply,AA,Physics,formal,novice,competency_development,autonomous
+P0214,Remember,RU,Mathematics,formal,novice,skill_building,autonomous
+P0215,Create,EC,Literature,humanistic,novice,skill_building,collaborative
+P0216,Create,EC,Mathematics,formal,informed,comprehensive_mastery,guided
+P0217,Understand,RU,Sociology,applied,informed,competency_development,collaborative
+P0218,Understand,RU,Biology,natural,misinformed,comprehensive_mastery,guided
+P0219,Remember,RU,History,humanistic,misinformed,conceptual_orientation,guided
+P0220,Create,EC,Mathematics,formal,informed,competency_development,autonomous
+P0221,Analyze,AA,Computer Science,formal,novice,conceptual_orientation,autonomous
+P0222,Apply,AA,History,humanistic,misinformed,skill_building,collaborative
+P0223,Evaluate,EC,Biology,natural,misinformed,conceptual_orientation,guided
+P0224,Apply,AA,History,humanistic,novice,comprehensive_mastery,guided
+P0225,Analyze,AA,Literature,humanistic,novice,comprehensive_mastery,autonomous
+P0226,Understand,RU,Literature,humanistic,novice,skill_building,collaborative
+P0227,Apply,AA,Biology,natural,misinformed,skill_building,guided
+P0228,Understand,RU,Mathematics,formal,informed,competency_development,guided
+P0229,Remember,RU,Biology,natural,novice,skill_building,autonomous
+P0230,Understand,RU,Biology,natural,misinformed,conceptual_orientation,collaborative
+P0231,Analyze,AA,Art History,humanistic,novice,skill_building,autonomous
+P0232,Remember,RU,Ethics,humanistic,informed,competency_development,collaborative
+P0233,Evaluate,EC,Psychology,natural,novice,comprehensive_mastery,collaborative
+P0234,Remember,RU,Mathematics,formal,novice,conceptual_orientation,guided
+P0235,Create,EC,Mathematics,formal,misinformed,skill_building,guided
+P0236,Create,EC,Psychology,natural,misinformed,competency_development,guided
+P0237,Analyze,AA,History,humanistic,misinformed,conceptual_orientation,guided
+P0238,Remember,RU,Physics,formal,informed,skill_building,collaborative
+P0239,Apply,AA,Mathematics,formal,novice,skill_building,collaborative
+P0240,Apply,AA,History,humanistic,informed,comprehensive_mastery,collaborative
+P0241,Analyze,AA,Biology,natural,informed,conceptual_orientation,guided
+P0242,Create,EC,Mathematics,formal,novice,conceptual_orientation,guided
+P0243,Create,EC,Psychology,natural,novice,competency_development,autonomous
+P0244,Create,EC,Physics,formal,informed,skill_building,autonomous
+P0245,Remember,RU,Art History,humanistic,misinformed,skill_building,autonomous
+P0246,Analyze,AA,Biology,natural,informed,conceptual_orientation,collaborative
+P0247,Create,EC,Ethics,humanistic,misinformed,comprehensive_mastery,guided
+P0248,Understand,RU,Computer Science,formal,misinformed,competency_development,guided
+P0249,Analyze,AA,Psychology,natural,novice,conceptual_orientation,autonomous
+P0250,Understand,RU,History,humanistic,informed,conceptual_orientation,guided
+P0251,Understand,RU,Ethics,humanistic,informed,competency_development,collaborative
+P0252,Apply,AA,Mathematics,formal,informed,comprehensive_mastery,collaborative
+P0253,Understand,RU,Literature,humanistic,informed,comprehensive_mastery,autonomous
+P0254,Remember,RU,Biology,natural,misinformed,competency_development,autonomous
+P0255,Create,EC,Literature,humanistic,informed,comprehensive_mastery,collaborative
+P0256,Create,EC,Mathematics,formal,informed,conceptual_orientation,collaborative
+P0257,Create,EC,Art History,humanistic,misinformed,competency_development,guided
+P0258,Understand,RU,Art History,humanistic,misinformed,competency_development,guided
+P0259,Understand,RU,History,humanistic,informed,comprehensive_mastery,collaborative
+P0260,Remember,RU,History,humanistic,informed,conceptual_orientation,guided
+P0261,Remember,RU,Mathematics,formal,informed,competency_development,autonomous
+P0262,Create,EC,Mathematics,formal,informed,conceptual_orientation,autonomous
+P0263,Remember,RU,Mathematics,formal,informed,comprehensive_mastery,autonomous
+P0264,Apply,AA,Biology,natural,novice,competency_development,autonomous
+P0265,Understand,RU,Sociology,applied,novice,comprehensive_mastery,autonomous
+P0266,Apply,AA,Mathematics,formal,novice,skill_building,autonomous
+P0267,Remember,RU,Mathematics,formal,misinformed,conceptual_orientation,guided
+P0268,Evaluate,EC,History,humanistic,misinformed,skill_building,autonomous
+P0269,Understand,RU,Computer Science,formal,novice,skill_building,autonomous
+P0270,Create,EC,Art History,humanistic,novice,conceptual_orientation,collaborative
+P0271,Create,EC,Psychology,natural,novice,competency_development,collaborative
+P0272,Evaluate,EC,Computer Science,formal,novice,conceptual_orientation,guided
+P0273,Create,EC,Art History,humanistic,informed,skill_building,collaborative
+P0274,Remember,RU,Physics,formal,informed,comprehensive_mastery,collaborative
+P0275,Understand,RU,Ethics,humanistic,novice,skill_building,guided
+P0276,Remember,RU,Computer Science,formal,novice,competency_development,collaborative
+P0277,Analyze,AA,Physics,formal,misinformed,comprehensive_mastery,guided
+P0278,Evaluate,EC,Biology,natural,informed,comprehensive_mastery,autonomous
+P0279,Evaluate,EC,Physics,formal,novice,skill_building,autonomous
+P0280,Evaluate,EC,Psychology,natural,informed,conceptual_orientation,guided
+P0281,Apply,AA,Art History,humanistic,novice,competency_development,autonomous
+P0282,Understand,RU,Biology,natural,novice,comprehensive_mastery,guided
+P0283,Create,EC,History,humanistic,novice,conceptual_orientation,guided
+P0284,Remember,RU,Computer Science,formal,misinformed,skill_building,guided
+P0285,Remember,RU,Psychology,natural,novice,skill_building,guided
+P0286,Remember,RU,Mathematics,formal,informed,conceptual_orientation,guided
+P0287,Apply,AA,Mathematics,formal,informed,comprehensive_mastery,guided
+P0288,Remember,RU,Literature,humanistic,novice,comprehensive_mastery,guided
+P0289,Apply,AA,Computer Science,formal,informed,competency_development,autonomous
+P0290,Apply,AA,Psychology,natural,misinformed,conceptual_orientation,autonomous
+P0291,Analyze,AA,Physics,formal,informed,conceptual_orientation,autonomous
+P0292,Remember,RU,Sociology,applied,informed,competency_development,collaborative
+P0293,Create,EC,Psychology,natural,novice,comprehensive_mastery,collaborative
+P0294,Create,EC,Art History,humanistic,informed,conceptual_orientation,collaborative
+P0295,Create,EC,Biology,natural,informed,competency_development,collaborative
+P0296,Evaluate,EC,Computer Science,formal,novice,comprehensive_mastery,autonomous
+P0297,Understand,RU,Biology,natural,novice,skill_building,guided
+P0298,Understand,RU,Sociology,applied,misinformed,skill_building,autonomous
+P0299,Evaluate,EC,Mathematics,formal,misinformed,comprehensive_mastery,guided
+P0300,Remember,RU,Literature,humanistic,informed,skill_building,autonomous
+P0301,Evaluate,EC,Physics,formal,misinformed,conceptual_orientation,guided
+P0302,Remember,RU,Art History,humanistic,informed,skill_building,guided
+P0303,Apply,AA,Biology,natural,informed,competency_development,autonomous
+P0304,Analyze,AA,Literature,humanistic,novice,skill_building,collaborative
+P0305,Create,EC,Physics,formal,informed,conceptual_orientation,autonomous
+P0306,Apply,AA,Art History,humanistic,informed,conceptual_orientation,autonomous
+P0307,Analyze,AA,Biology,natural,novice,conceptual_orientation,autonomous
+P0308,Create,EC,History,humanistic,misinformed,comprehensive_mastery,collaborative
+P0309,Apply,AA,Sociology,applied,misinformed,comprehensive_mastery,guided
+P0310,Apply,AA,Computer Science,formal,novice,competency_development,guided
+P0311,Remember,RU,Psychology,natural,misinformed,competency_development,guided
+P0312,Understand,RU,Sociology,applied,informed,competency_development,autonomous
+P0313,Create,EC,Physics,formal,informed,comprehensive_mastery,guided
+P0314,Understand,RU,Mathematics,formal,misinformed,competency_development,guided
+P0315,Apply,AA,Psychology,natural,misinformed,comprehensive_mastery,collaborative
+P0316,Apply,AA,Ethics,humanistic,novice,skill_building,guided
+P0317,Analyze,AA,Psychology,natural,informed,conceptual_orientation,autonomous
+P0318,Apply,AA,Art History,humanistic,novice,skill_building,guided
+P0319,Understand,RU,Mathematics,formal,informed,comprehensive_mastery,guided
+P0320,Apply,AA,Biology,natural,novice,competency_development,guided
+P0321,Remember,RU,Physics,formal,misinformed,competency_development,guided
+P0322,Analyze,AA,Art History,humanistic,informed,competency_development,collaborative
+P0323,Understand,RU,Art History,humanistic,novice,skill_building,collaborative
+P0324,Remember,RU,Physics,formal,informed,skill_building,autonomous
+P0325,Understand,RU,History,humanistic,misinformed,competency_development,autonomous
+P0326,Create,EC,Psychology,natural,informed,conceptual_orientation,collaborative
+P0327,Understand,RU,Sociology,applied,misinformed,comprehensive_mastery,autonomous
+P0328,Analyze,AA,Ethics,humanistic,informed,competency_development,autonomous
+P0329,Evaluate,EC,Computer Science,formal,informed,conceptual_orientation,collaborative
+P0330,Remember,RU,Sociology,applied,novice,comprehensive_mastery,autonomous
+P0331,Evaluate,EC,Sociology,applied,misinformed,conceptual_orientation,guided
+P0332,Understand,RU,Physics,formal,novice,conceptual_orientation,collaborative
+P0333,Create,EC,Sociology,applied,novice,comprehensive_mastery,guided
+P0334,Evaluate,EC,Biology,natural,novice,conceptual_orientation,collaborative
+P0335,Understand,RU,Art History,humanistic,novice,skill_building,autonomous
+P0336,Evaluate,EC,Computer Science,formal,misinformed,conceptual_orientation,guided
+P0337,Remember,RU,Physics,formal,informed,conceptual_orientation,guided
+P0338,Analyze,AA,History,humanistic,novice,skill_building,collaborative
+P0339,Analyze,AA,Physics,formal,informed,competency_development,collaborative
+P0340,Analyze,AA,Computer Science,formal,misinformed,competency_development,autonomous
+P0341,Understand,RU,Biology,natural,informed,conceptual_orientation,collaborative
+P0342,Analyze,AA,Physics,formal,misinformed,conceptual_orientation,autonomous
+P0343,Remember,RU,Biology,natural,misinformed,comprehensive_mastery,guided
+P0344,Remember,RU,History,humanistic,misinformed,comprehensive_mastery,collaborative
+P0345,Apply,AA,Biology,natural,misinformed,conceptual_orientation,guided
+P0346,Create,EC,Computer Science,formal,informed,skill_building,collaborative
+P0347,Understand,RU,Art History,humanistic,informed,comprehensive_mastery,guided
+P0348,Create,EC,Mathematics,formal,novice,comprehensive_mastery,guided
+P0349,Create,EC,Mathematics,formal,novice,skill_building,guided
+P0350,Apply,AA,Computer Science,formal,misinformed,conceptual_orientation,guided
+P0351,Evaluate,EC,History,humanistic,informed,comprehensive_mastery,collaborative
+P0352,Evaluate,EC,Physics,formal,misinformed,skill_building,autonomous
+P0353,Understand,RU,Psychology,natural,informed,skill_building,guided
+P0354,Remember,RU,Mathematics,formal,misinformed,competency_development,autonomous
+P0355,Understand,RU,Ethics,humanistic,novice,conceptual_orientation,guided
+P0356,Understand,RU,Sociology,applied,informed,conceptual_orientation,collaborative
+P0357,Understand,RU,Ethics,humanistic,informed,comprehensive_mastery,collaborative
+P0358,Analyze,AA,Mathematics,formal,novice,skill_building,guided
+P0359,Analyze,AA,Literature,humanistic,informed,comprehensive_mastery,autonomous
+P0360,Analyze,AA,Computer Science,formal,misinformed,conceptual_orientation,guided
+P0361,Apply,AA,History,humanistic,novice,conceptual_orientation,guided
+P0362,Understand,RU,History,humanistic,novice,competency_development,guided
+P0363,Create,EC,Computer Science,formal,novice,competency_development,collaborative
+P0364,Understand,RU,Ethics,humanistic,informed,conceptual_orientation,guided
+P0365,Create,EC,Art History,humanistic,novice,competency_development,guided
+P0366,Evaluate,EC,Ethics,humanistic,misinformed,competency_development,autonomous
+P0367,Remember,RU,Literature,humanistic,informed,comprehensive_mastery,collaborative
+P0368,Apply,AA,Computer Science,formal,novice,skill_building,autonomous
+P0369,Create,EC,History,humanistic,novice,skill_building,guided
+P0370,Apply,AA,History,humanistic,novice,skill_building,guided
+P0371,Evaluate,EC,Physics,formal,misinformed,comprehensive_mastery,collaborative
+P0372,Analyze,AA,Literature,humanistic,misinformed,comprehensive_mastery,autonomous
+P0373,Create,EC,Physics,formal,novice,conceptual_orientation,autonomous
+P0374,Apply,AA,Literature,humanistic,informed,conceptual_orientation,guided
+P0375,Apply,AA,Mathematics,formal,misinformed,comprehensive_mastery,guided
+P0376,Analyze,AA,Physics,formal,misinformed,skill_building,collaborative
+P0377,Analyze,AA,Psychology,natural,novice,comprehensive_mastery,autonomous
+P0378,Analyze,AA,Psychology,natural,misinformed,competency_development,autonomous
+P0379,Analyze,AA,Ethics,humanistic,informed,comprehensive_mastery,guided
+P0380,Analyze,AA,History,humanistic,informed,competency_development,autonomous
+P0381,Analyze,AA,Ethics,humanistic,informed,conceptual_orientation,collaborative
+P0382,Understand,RU,Physics,formal,novice,skill_building,collaborative
+P0383,Evaluate,EC,Literature,humanistic,novice,conceptual_orientation,guided
+P0384,Evaluate,EC,History,humanistic,misinformed,competency_development,autonomous
+P0385,Analyze,AA,Sociology,applied,novice,comprehensive_mastery,autonomous
+P0386,Analyze,AA,Physics,formal,informed,conceptual_orientation,guided
+P0387,Understand,RU,Psychology,natural,misinformed,competency_development,autonomous
+P0388,Understand,RU,History,humanistic,novice,skill_building,collaborative
+P0389,Analyze,AA,Art History,humanistic,informed,skill_building,autonomous
+P0390,Remember,RU,Mathematics,formal,novice,competency_development,autonomous
+P0391,Analyze,AA,Ethics,humanistic,novice,competency_development,guided
+P0392,Remember,RU,Computer Science,formal,informed,competency_development,guided
+P0393,Analyze,AA,Literature,humanistic,misinformed,conceptual_orientation,collaborative
+P0394,Analyze,AA,Psychology,natural,novice,conceptual_orientation,collaborative
+P0395,Understand,RU,Sociology,applied,informed,skill_building,autonomous
+P0396,Remember,RU,Sociology,applied,misinformed,skill_building,collaborative
+P0397,Understand,RU,Mathematics,formal,novice,comprehensive_mastery,collaborative
+P0398,Create,EC,Art History,humanistic,novice,comprehensive_mastery,autonomous
+P0399,Create,EC,Psychology,natural,novice,comprehensive_mastery,autonomous
+P0400,Remember,RU,Ethics,humanistic,informed,skill_building,guided
+P0401,Apply,AA,Ethics,humanistic,misinformed,conceptual_orientation,guided
+P0402,Apply,AA,Computer Science,formal,novice,skill_building,guided
+P0403,Remember,RU,Physics,formal,novice,conceptual_orientation,autonomous
+P0404,Create,EC,Sociology,applied,informed,comprehensive_mastery,autonomous
+P0405,Understand,RU,Biology,natural,novice,competency_development,guided
+P0406,Analyze,AA,Mathematics,formal,informed,competency_development,guided
+P0407,Evaluate,EC,Art History,humanistic,informed,comprehensive_mastery,autonomous
+P0408,Create,EC,Sociology,applied,misinformed,comprehensive_mastery,autonomous
+P0409,Understand,RU,Literature,humanistic,misinformed,comprehensive_mastery,collaborative
+P0410,Apply,AA,Computer Science,formal,informed,comprehensive_mastery,guided
+P0411,Create,EC,Biology,natural,misinformed,skill_building,autonomous
+P0412,Understand,RU,Sociology,applied,novice,skill_building,collaborative
+P0413,Apply,AA,History,humanistic,informed,competency_development,autonomous
+P0414,Understand,RU,Art History,humanistic,novice,comprehensive_mastery,autonomous
+P0415,Evaluate,EC,Sociology,applied,misinformed,comprehensive_mastery,guided
+P0416,Create,EC,Psychology,natural,informed,comprehensive_mastery,collaborative
+P0417,Evaluate,EC,Psychology,natural,novice,skill_building,autonomous
+P0418,Evaluate,EC,Art History,humanistic,novice,competency_development,guided
+P0419,Create,EC,Biology,natural,misinformed,competency_development,collaborative
+P0420,Apply,AA,Literature,humanistic,misinformed,competency_development,guided
+P0421,Create,EC,History,humanistic,novice,comprehensive_mastery,guided
+P0422,Remember,RU,Art History,humanistic,informed,competency_development,autonomous
+P0423,Remember,RU,Computer Science,formal,misinformed,comprehensive_mastery,guided
+P0424,Evaluate,EC,Ethics,humanistic,misinformed,conceptual_orientation,collaborative
+P0425,Understand,RU,Sociology,applied,informed,comprehensive_mastery,collaborative
+P0426,Create,EC,Sociology,applied,informed,conceptual_orientation,autonomous
+P0427,Create,EC,Art History,humanistic,novice,comprehensive_mastery,guided
+P0428,Understand,RU,Sociology,applied,novice,comprehensive_mastery,collaborative
+P0429,Remember,RU,Mathematics,formal,novice,conceptual_orientation,collaborative
+P0430,Apply,AA,Ethics,humanistic,informed,competency_development,autonomous
+P0431,Evaluate,EC,History,humanistic,novice,comprehensive_mastery,autonomous
+P0432,Understand,RU,Sociology,applied,misinformed,conceptual_orientation,autonomous
+P0433,Understand,RU,Mathematics,formal,novice,conceptual_orientation,collaborative
+P0434,Analyze,AA,Ethics,humanistic,informed,comprehensive_mastery,collaborative
+P0435,Apply,AA,History,humanistic,misinformed,skill_building,guided
+P0436,Remember,RU,Sociology,applied,misinformed,comprehensive_mastery,autonomous
+P0437,Understand,RU,Literature,humanistic,informed,conceptual_orientation,guided
+P0438,Understand,RU,Art History,humanistic,informed,conceptual_orientation,collaborative
+P0439,Remember,RU,Physics,formal,informed,skill_building,guided
+P0440,Evaluate,EC,Mathematics,formal,novice,skill_building,guided
+P0441,Create,EC,Literature,humanistic,informed,conceptual_orientation,autonomous
+P0442,Apply,AA,Ethics,humanistic,novice,competency_development,guided
+P0443,Apply,AA,Literature,humanistic,misinformed,skill_building,autonomous
+P0444,Create,EC,Art History,humanistic,novice,competency_development,collaborative
+P0445,Analyze,AA,Psychology,natural,novice,comprehensive_mastery,collaborative
+P0446,Analyze,AA,Mathematics,formal,informed,comprehensive_mastery,collaborative
+P0447,Remember,RU,Computer Science,formal,informed,comprehensive_mastery,autonomous
+P0448,Analyze,AA,Mathematics,formal,informed,competency_development,autonomous
+P0449,Analyze,AA,History,humanistic,informed,competency_development,guided
+P0450,Remember,RU,Sociology,applied,informed,competency_development,guided
+P0451,Create,EC,Psychology,natural,informed,comprehensive_mastery,guided
+P0452,Remember,RU,Mathematics,formal,novice,skill_building,guided
+P0453,Understand,RU,Psychology,natural,informed,comprehensive_mastery,collaborative
+P0454,Understand,RU,History,humanistic,misinformed,competency_development,collaborative
+P0455,Evaluate,EC,History,humanistic,informed,skill_building,autonomous
+P0456,Create,EC,Computer Science,formal,informed,competency_development,guided
+P0457,Remember,RU,Computer Science,formal,informed,conceptual_orientation,collaborative
+P0458,Evaluate,EC,Mathematics,formal,novice,competency_development,autonomous
+P0459,Evaluate,EC,Computer Science,formal,novice,skill_building,guided
+P0460,Remember,RU,Mathematics,formal,novice,competency_development,guided
+P0461,Create,EC,Ethics,humanistic,novice,comprehensive_mastery,collaborative
+P0462,Understand,RU,Biology,natural,novice,comprehensive_mastery,collaborative
+P0463,Apply,AA,Sociology,applied,novice,conceptual_orientation,collaborative
+P0464,Remember,RU,History,humanistic,misinformed,competency_development,collaborative
+P0465,Create,EC,History,humanistic,novice,skill_building,collaborative
+P0466,Remember,RU,Mathematics,formal,misinformed,comprehensive_mastery,collaborative
+P0467,Remember,RU,Art History,humanistic,misinformed,conceptual_orientation,autonomous
+P0468,Understand,RU,Literature,humanistic,misinformed,skill_building,guided
+P0469,Analyze,AA,Computer Science,formal,novice,competency_development,autonomous
+P0470,Evaluate,EC,Art History,humanistic,informed,comprehensive_mastery,collaborative
+P0471,Analyze,AA,Ethics,humanistic,informed,conceptual_orientation,guided
+P0472,Evaluate,EC,Literature,humanistic,misinformed,conceptual_orientation,collaborative
+P0473,Create,EC,Art History,humanistic,novice,conceptual_orientation,autonomous
+P0474,Understand,RU,Mathematics,formal,informed,skill_building,collaborative
+P0475,Understand,RU,History,humanistic,misinformed,competency_development,guided
+P0476,Create,EC,Physics,formal,novice,skill_building,guided
+P0477,Remember,RU,Art History,humanistic,misinformed,comprehensive_mastery,collaborative
+P0478,Apply,AA,Ethics,humanistic,informed,comprehensive_mastery,guided
+P0479,Evaluate,EC,Sociology,applied,informed,conceptual_orientation,collaborative
+P0480,Create,EC,Psychology,natural,misinformed,conceptual_orientation,guided
+P0481,Analyze,AA,Ethics,humanistic,misinformed,skill_building,collaborative
+P0482,Evaluate,EC,History,humanistic,misinformed,competency_development,guided
+P0483,Create,EC,Physics,formal,informed,competency_development,autonomous
+P0484,Remember,RU,History,humanistic,novice,skill_building,guided
+P0485,Evaluate,EC,History,humanistic,novice,conceptual_orientation,autonomous
+P0486,Analyze,AA,Literature,humanistic,informed,competency_development,autonomous
+P0487,Apply,AA,Ethics,humanistic,novice,skill_building,collaborative
+P0488,Understand,RU,Mathematics,formal,informed,competency_development,autonomous
+P0489,Evaluate,EC,Biology,natural,informed,competency_development,autonomous
+P0490,Analyze,AA,Art History,humanistic,misinformed,conceptual_orientation,collaborative
+P0491,Evaluate,EC,Physics,formal,novice,competency_development,autonomous
+P0492,Analyze,AA,Psychology,natural,informed,competency_development,collaborative
+P0493,Apply,AA,Physics,formal,misinformed,competency_development,guided
+P0494,Remember,RU,Biology,natural,informed,comprehensive_mastery,guided
+P0495,Apply,AA,Biology,natural,informed,skill_building,autonomous
+P0496,Apply,AA,Literature,humanistic,novice,competency_development,autonomous
+P0497,Create,EC,History,humanistic,misinformed,skill_building,guided
+P0498,Analyze,AA,Computer Science,formal,informed,conceptual_orientation,collaborative
+P0499,Evaluate,EC,Ethics,humanistic,novice,competency_development,autonomous
+P0500,Evaluate,EC,Mathematics,formal,informed,skill_building,collaborative
+P0501,Understand,RU,Psychology,natural,misinformed,conceptual_orientation,guided
+P0502,Create,EC,Literature,humanistic,novice,conceptual_orientation,autonomous
+P0503,Create,EC,Psychology,natural,informed,competency_development,autonomous
+P0504,Create,EC,Literature,humanistic,misinformed,comprehensive_mastery,guided
+P0505,Apply,AA,Ethics,humanistic,informed,skill_building,guided
+P0506,Understand,RU,Art History,humanistic,novice,conceptual_orientation,autonomous
+P0507,Remember,RU,Ethics,humanistic,novice,conceptual_orientation,collaborative
+P0508,Analyze,AA,History,humanistic,novice,comprehensive_mastery,guided
+P0509,Evaluate,EC,Art History,humanistic,informed,skill_building,guided
+P0510,Analyze,AA,Mathematics,formal,informed,conceptual_orientation,autonomous
+P0511,Evaluate,EC,Ethics,humanistic,misinformed,skill_building,autonomous
+P0512,Analyze,AA,Literature,humanistic,misinformed,competency_development,guided
+P0513,Analyze,AA,Sociology,applied,informed,conceptual_orientation,guided
+P0514,Create,EC,History,humanistic,misinformed,skill_building,autonomous
+P0515,Understand,RU,Physics,formal,informed,competency_development,autonomous
+P0516,Evaluate,EC,Ethics,humanistic,novice,skill_building,collaborative
+P0517,Analyze,AA,Physics,formal,novice,conceptual_orientation,collaborative
+P0518,Understand,RU,Biology,natural,misinformed,comprehensive_mastery,collaborative
+P0519,Create,EC,Physics,formal,informed,skill_building,guided
+P0520,Understand,RU,Computer Science,formal,novice,competency_development,guided
+P0521,Apply,AA,Biology,natural,novice,conceptual_orientation,autonomous
+P0522,Remember,RU,Computer Science,formal,misinformed,competency_development,autonomous
+P0523,Apply,AA,Art History,humanistic,novice,comprehensive_mastery,autonomous
+P0524,Understand,RU,Psychology,natural,misinformed,skill_building,collaborative
+P0525,Understand,RU,Psychology,natural,misinformed,skill_building,guided
+P0526,Create,EC,Ethics,humanistic,novice,comprehensive_mastery,autonomous
+P0527,Understand,RU,Ethics,humanistic,informed,skill_building,autonomous
+P0528,Analyze,AA,History,humanistic,misinformed,skill_building,collaborative
+P0529,Evaluate,EC,Sociology,applied,misinformed,comprehensive_mastery,collaborative
+P0530,Apply,AA,Mathematics,formal,novice,competency_development,collaborative
+P0531,Analyze,AA,Physics,formal,misinformed,comprehensive_mastery,autonomous
+P0532,Remember,RU,Literature,humanistic,novice,skill_building,autonomous
+P0533,Analyze,AA,History,humanistic,informed,comprehensive_mastery,guided
+P0534,Evaluate,EC,Mathematics,formal,informed,competency_development,guided
+P0535,Understand,RU,Mathematics,formal,misinformed,conceptual_orientation,guided
+P0536,Evaluate,EC,History,humanistic,misinformed,skill_building,guided
+P0537,Remember,RU,Biology,natural,informed,skill_building,collaborative
+P0538,Understand,RU,History,humanistic,informed,comprehensive_mastery,autonomous
+P0539,Evaluate,EC,Biology,natural,novice,conceptual_orientation,autonomous
+P0540,Analyze,AA,Physics,formal,informed,comprehensive_mastery,collaborative
+P0541,Understand,RU,Sociology,applied,informed,conceptual_orientation,guided
+P0542,Analyze,AA,Art History,humanistic,informed,skill_building,collaborative
+P0543,Understand,RU,Sociology,applied,informed,skill_building,collaborative
+P0544,Apply,AA,Physics,formal,novice,conceptual_orientation,autonomous
+P0545,Analyze,AA,Ethics,humanistic,misinformed,competency_development,guided
+P0546,Understand,RU,Mathematics,formal,misinformed,skill_building,collaborative
+P0547,Analyze,AA,Biology,natural,novice,skill_building,guided
+P0548,Analyze,AA,Sociology,applied,novice,conceptual_orientation,guided
+P0549,Create,EC,Ethics,humanistic,misinformed,conceptual_orientation,autonomous
+P0550,Create,EC,Ethics,humanistic,misinformed,skill_building,autonomous
+P0551,Analyze,AA,History,humanistic,misinformed,competency_development,autonomous
+P0552,Remember,RU,Sociology,applied,misinformed,conceptual_orientation,autonomous
+P0553,Evaluate,EC,Ethics,humanistic,misinformed,comprehensive_mastery,autonomous
+P0554,Remember,RU,Biology,natural,informed,conceptual_orientation,guided
+P0555,Create,EC,Physics,formal,misinformed,comprehensive_mastery,guided
+P0556,Create,EC,Biology,natural,informed,competency_development,autonomous
+P0557,Apply,AA,Art History,humanistic,informed,conceptual_orientation,collaborative
+P0558,Apply,AA,Mathematics,formal,misinformed,competency_development,collaborative
+P0559,Remember,RU,Computer Science,formal,novice,competency_development,autonomous
+P0560,Analyze,AA,Sociology,applied,informed,comprehensive_mastery,autonomous
+P0561,Apply,AA,Sociology,applied,informed,comprehensive_mastery,autonomous
+P0562,Apply,AA,Psychology,natural,misinformed,conceptual_orientation,guided
+P0563,Apply,AA,Ethics,humanistic,misinformed,skill_building,guided
+P0564,Apply,AA,Ethics,humanistic,informed,comprehensive_mastery,autonomous
+P0565,Understand,RU,Art History,humanistic,novice,comprehensive_mastery,guided
+P0566,Evaluate,EC,Physics,formal,misinformed,comprehensive_mastery,autonomous
+P0567,Apply,AA,Ethics,humanistic,informed,competency_development,collaborative
+P0568,Create,EC,Sociology,applied,novice,skill_building,collaborative
+P0569,Analyze,AA,Art History,humanistic,informed,comprehensive_mastery,autonomous
+P0570,Remember,RU,Physics,formal,novice,comprehensive_mastery,guided
+P0571,Apply,AA,Sociology,applied,informed,comprehensive_mastery,guided
+P0572,Remember,RU,Physics,formal,novice,skill_building,guided
+P0573,Remember,RU,History,humanistic,misinformed,skill_building,collaborative
+P0574,Evaluate,EC,Literature,humanistic,informed,conceptual_orientation,collaborative
+P0575,Create,EC,Psychology,natural,informed,skill_building,collaborative
+P0576,Create,EC,Computer Science,formal,novice,conceptual_orientation,autonomous
+P0577,Evaluate,EC,Psychology,natural,novice,comprehensive_mastery,autonomous
+P0578,Analyze,AA,Literature,humanistic,novice,competency_development,collaborative
+P0579,Evaluate,EC,Physics,formal,misinformed,competency_development,collaborative
+P0580,Analyze,AA,Mathematics,formal,novice,conceptual_orientation,guided
+P0581,Evaluate,EC,Physics,formal,informed,comprehensive_mastery,guided
+P0582,Analyze,AA,Sociology,applied,misinformed,conceptual_orientation,collaborative
+P0583,Analyze,AA,Ethics,humanistic,novice,skill_building,collaborative
+P0584,Apply,AA,Biology,natural,novice,skill_building,autonomous
+P0585,Apply,AA,Art History,humanistic,informed,comprehensive_mastery,collaborative
+P0586,Evaluate,EC,Ethics,humanistic,informed,conceptual_orientation,autonomous
+P0587,Analyze,AA,Computer Science,formal,informed,skill_building,autonomous
+P0588,Remember,RU,Literature,humanistic,misinformed,skill_building,collaborative
+P0589,Remember,RU,Art History,humanistic,informed,comprehensive_mastery,guided
+P0590,Create,EC,Psychology,natural,misinformed,comprehensive_mastery,autonomous
+P0591,Analyze,AA,History,humanistic,novice,comprehensive_mastery,autonomous
+P0592,Remember,RU,Sociology,applied,novice,conceptual_orientation,guided
+P0593,Understand,RU,Physics,formal,misinformed,conceptual_orientation,collaborative
+P0594,Remember,RU,Literature,humanistic,informed,skill_building,guided
+P0595,Apply,AA,Literature,humanistic,misinformed,skill_building,guided
+P0596,Understand,RU,History,humanistic,misinformed,skill_building,autonomous
+P0597,Apply,AA,Art History,humanistic,misinformed,competency_development,collaborative
+P0598,Apply,AA,Physics,formal,novice,skill_building,autonomous
+P0599,Apply,AA,Mathematics,formal,novice,skill_building,guided
+P0600,Evaluate,EC,Mathematics,formal,informed,comprehensive_mastery,guided
+P0601,Create,EC,Literature,humanistic,misinformed,competency_development,autonomous
+P0602,Create,EC,Ethics,humanistic,misinformed,comprehensive_mastery,collaborative
+P0603,Remember,RU,Psychology,natural,misinformed,skill_building,guided
+P0604,Evaluate,EC,Physics,formal,informed,conceptual_orientation,guided
+P0605,Remember,RU,Computer Science,formal,misinformed,skill_building,autonomous
+P0606,Remember,RU,Ethics,humanistic,misinformed,comprehensive_mastery,guided
+P0607,Create,EC,Literature,humanistic,misinformed,conceptual_orientation,collaborative
+P0608,Understand,RU,Mathematics,formal,novice,comprehensive_mastery,autonomous
+P0609,Evaluate,EC,Ethics,humanistic,novice,skill_building,guided
+P0610,Create,EC,Sociology,applied,informed,comprehensive_mastery,collaborative
+P0611,Apply,AA,Sociology,applied,misinformed,skill_building,autonomous
+P0612,Remember,RU,Ethics,humanistic,novice,conceptual_orientation,autonomous
+P0613,Evaluate,EC,Mathematics,formal,novice,skill_building,collaborative
+P0614,Analyze,AA,Computer Science,formal,novice,skill_building,collaborative
+P0615,Create,EC,Ethics,humanistic,informed,competency_development,autonomous
+P0616,Apply,AA,Sociology,applied,novice,competency_development,autonomous
+P0617,Create,EC,Biology,natural,informed,skill_building,autonomous
+P0618,Analyze,AA,Computer Science,formal,novice,comprehensive_mastery,guided
+P0619,Create,EC,Sociology,applied,misinformed,competency_development,autonomous
+P0620,Apply,AA,Mathematics,formal,informed,competency_development,autonomous
+P0621,Remember,RU,Mathematics,formal,misinformed,competency_development,collaborative
+P0622,Evaluate,EC,Physics,formal,informed,skill_building,guided
+P0623,Apply,AA,Computer Science,formal,misinformed,comprehensive_mastery,guided
+P0624,Analyze,AA,Computer Science,formal,informed,skill_building,collaborative
+P0625,Evaluate,EC,Mathematics,formal,informed,competency_development,collaborative
+P0626,Apply,AA,Literature,humanistic,informed,conceptual_orientation,autonomous
+P0627,Understand,RU,Computer Science,formal,misinformed,comprehensive_mastery,autonomous
+P0628,Understand,RU,Sociology,applied,informed,skill_building,guided
+P0629,Remember,RU,Physics,formal,misinformed,conceptual_orientation,collaborative
+P0630,Apply,AA,Ethics,humanistic,novice,conceptual_orientation,guided
+P0631,Evaluate,EC,Literature,humanistic,novice,competency_development,collaborative
+P0632,Create,EC,Mathematics,formal,informed,comprehensive_mastery,collaborative
+P0633,Evaluate,EC,Mathematics,formal,misinformed,skill_building,collaborative
+P0634,Remember,RU,Sociology,applied,informed,comprehensive_mastery,autonomous
+P0635,Evaluate,EC,Literature,humanistic,misinformed,comprehensive_mastery,autonomous
+P0636,Create,EC,Sociology,applied,informed,conceptual_orientation,collaborative
+P0637,Analyze,AA,Literature,humanistic,misinformed,skill_building,guided
+P0638,Understand,RU,Sociology,applied,novice,conceptual_orientation,guided
+P0639,Create,EC,Computer Science,formal,misinformed,conceptual_orientation,autonomous
+P0640,Understand,RU,Computer Science,formal,novice,comprehensive_mastery,autonomous
+P0641,Evaluate,EC,Ethics,humanistic,misinformed,skill_building,guided
+P0642,Evaluate,EC,Art History,humanistic,misinformed,conceptual_orientation,collaborative
+P0643,Remember,RU,Biology,natural,misinformed,comprehensive_mastery,autonomous
+P0644,Remember,RU,Literature,humanistic,novice,comprehensive_mastery,autonomous
+P0645,Evaluate,EC,Physics,formal,misinformed,comprehensive_mastery,guided
+P0646,Apply,AA,Sociology,applied,novice,conceptual_orientation,guided
+P0647,Understand,RU,History,humanistic,misinformed,conceptual_orientation,autonomous
+P0648,Create,EC,Ethics,humanistic,novice,skill_building,guided
+P0649,Apply,AA,Literature,humanistic,misinformed,competency_development,autonomous
+P0650,Apply,AA,Mathematics,formal,misinformed,skill_building,autonomous
+P0651,Understand,RU,Biology,natural,informed,comprehensive_mastery,guided
+P0652,Evaluate,EC,Art History,humanistic,misinformed,conceptual_orientation,guided
+P0653,Create,EC,History,humanistic,misinformed,conceptual_orientation,autonomous
+P0654,Understand,RU,Literature,humanistic,misinformed,skill_building,autonomous
+P0655,Apply,AA,Computer Science,formal,misinformed,competency_development,autonomous
+P0656,Apply,AA,Sociology,applied,novice,skill_building,guided
+P0657,Evaluate,EC,Sociology,applied,informed,competency_development,guided
+P0658,Analyze,AA,Sociology,applied,misinformed,comprehensive_mastery,guided
+P0659,Evaluate,EC,Ethics,humanistic,misinformed,comprehensive_mastery,guided
+P0660,Remember,RU,Mathematics,formal,informed,competency_development,collaborative
+P0661,Analyze,AA,Art History,humanistic,informed,conceptual_orientation,collaborative
+P0662,Remember,RU,Biology,natural,informed,conceptual_orientation,collaborative
+P0663,Understand,RU,Ethics,humanistic,informed,skill_building,guided
+P0664,Apply,AA,Psychology,natural,novice,comprehensive_mastery,collaborative
+P0665,Remember,RU,Sociology,applied,misinformed,conceptual_orientation,collaborative
+P0666,Understand,RU,Literature,humanistic,novice,competency_development,guided
+P0667,Create,EC,Mathematics,formal,informed,skill_building,collaborative
+P0668,Analyze,AA,Biology,natural,misinformed,skill_building,collaborative
+P0669,Understand,RU,Art History,humanistic,misinformed,skill_building,collaborative
+P0670,Create,EC,History,humanistic,informed,competency_development,collaborative
+P0671,Understand,RU,Biology,natural,informed,skill_building,collaborative
+P0672,Create,EC,Biology,natural,novice,competency_development,guided
+P0673,Remember,RU,Mathematics,formal,informed,comprehensive_mastery,guided
+P0674,Create,EC,Ethics,humanistic,misinformed,competency_development,collaborative
+P0675,Apply,AA,Mathematics,formal,misinformed,competency_development,guided
+P0676,Apply,AA,History,humanistic,novice,competency_development,guided
+P0677,Evaluate,EC,Computer Science,formal,misinformed,skill_building,guided
+P0678,Create,EC,Ethics,humanistic,informed,conceptual_orientation,autonomous
+P0679,Evaluate,EC,Sociology,applied,novice,competency_development,autonomous
+P0680,Apply,AA,Physics,formal,informed,skill_building,autonomous
+P0681,Remember,RU,Psychology,natural,misinformed,comprehensive_mastery,collaborative
+P0682,Remember,RU,Physics,formal,misinformed,skill_building,autonomous
+P0683,Apply,AA,Ethics,humanistic,novice,conceptual_orientation,autonomous
+P0684,Create,EC,Ethics,humanistic,misinformed,skill_building,guided
+P0685,Create,EC,Computer Science,formal,informed,skill_building,guided
+P0686,Apply,AA,Sociology,applied,misinformed,competency_development,collaborative
+P0687,Analyze,AA,Ethics,humanistic,misinformed,comprehensive_mastery,autonomous
+P0688,Apply,AA,History,humanistic,informed,skill_building,collaborative
+P0689,Analyze,AA,Computer Science,formal,misinformed,competency_development,guided
+P0690,Analyze,AA,Sociology,applied,misinformed,conceptual_orientation,autonomous
+P0691,Evaluate,EC,Sociology,applied,misinformed,conceptual_orientation,autonomous
+P0692,Analyze,AA,Literature,humanistic,novice,conceptual_orientation,guided
+P0693,Evaluate,EC,Ethics,humanistic,novice,comprehensive_mastery,collaborative
+P0694,Remember,RU,Biology,natural,novice,comprehensive_mastery,autonomous
+P0695,Evaluate,EC,Ethics,humanistic,novice,conceptual_orientation,guided
+P0696,Understand,RU,Psychology,natural,informed,competency_development,autonomous
+P0697,Create,EC,Sociology,applied,novice,skill_building,guided
+P0698,Remember,RU,Psychology,natural,informed,conceptual_orientation,collaborative
+P0699,Apply,AA,Biology,natural,novice,comprehensive_mastery,guided
+P0700,Evaluate,EC,History,humanistic,novice,conceptual_orientation,collaborative
+P0701,Create,EC,History,humanistic,misinformed,comprehensive_mastery,autonomous
+P0702,Understand,RU,Art History,humanistic,novice,conceptual_orientation,guided
+P0703,Apply,AA,Ethics,humanistic,novice,competency_development,autonomous
+P0704,Create,EC,Literature,humanistic,informed,conceptual_orientation,collaborative
+P0705,Remember,RU,Art History,humanistic,misinformed,conceptual_orientation,collaborative
+P0706,Evaluate,EC,Sociology,applied,novice,skill_building,guided
+P0707,Understand,RU,Mathematics,formal,novice,conceptual_orientation,guided
+P0708,Apply,AA,Computer Science,formal,novice,conceptual_orientation,autonomous
+P0709,Evaluate,EC,Literature,humanistic,misinformed,conceptual_orientation,autonomous
+P0710,Apply,AA,Psychology,natural,novice,conceptual_orientation,autonomous
+P0711,Remember,RU,Art History,humanistic,novice,comprehensive_mastery,autonomous
+P0712,Evaluate,EC,Biology,natural,misinformed,skill_building,guided
+P0713,Analyze,AA,Computer Science,formal,novice,comprehensive_mastery,collaborative
+P0714,Understand,RU,Literature,humanistic,novice,skill_building,guided
+P0715,Apply,AA,Psychology,natural,misinformed,competency_development,autonomous
+P0716,Understand,RU,Art History,humanistic,misinformed,competency_development,autonomous
+P0717,Understand,RU,History,humanistic,novice,conceptual_orientation,collaborative
+P0718,Analyze,AA,Physics,formal,novice,comprehensive_mastery,guided
+P0719,Evaluate,EC,Sociology,applied,informed,comprehensive_mastery,autonomous
+P0720,Create,EC,History,humanistic,novice,conceptual_orientation,collaborative
+P0721,Understand,RU,Art History,humanistic,novice,competency_development,collaborative
+P0722,Create,EC,Literature,humanistic,novice,skill_building,autonomous
+P0723,Apply,AA,Literature,humanistic,informed,skill_building,collaborative
+P0724,Evaluate,EC,Sociology,applied,informed,skill_building,collaborative
+P0725,Understand,RU,Computer Science,formal,novice,conceptual_orientation,guided
+P0726,Understand,RU,Psychology,natural,novice,comprehensive_mastery,guided
+P0727,Remember,RU,History,humanistic,novice,competency_development,collaborative
+P0728,Create,EC,Literature,humanistic,novice,competency_development,autonomous
+P0729,Create,EC,Literature,humanistic,informed,comprehensive_mastery,guided
+P0730,Analyze,AA,History,humanistic,novice,conceptual_orientation,guided
+P0731,Analyze,AA,Biology,natural,misinformed,competency_development,autonomous
+P0732,Evaluate,EC,History,humanistic,informed,skill_building,guided
+P0733,Remember,RU,Mathematics,formal,novice,comprehensive_mastery,guided
+P0734,Analyze,AA,Sociology,applied,informed,competency_development,autonomous
+P0735,Evaluate,EC,Computer Science,formal,informed,competency_development,guided
+P0736,Understand,RU,Physics,formal,novice,competency_development,guided
+P0737,Create,EC,Biology,natural,novice,conceptual_orientation,guided
+P0738,Understand,RU,Biology,natural,misinformed,conceptual_orientation,autonomous
+P0739,Analyze,AA,Biology,natural,misinformed,comprehensive_mastery,collaborative
+P0740,Remember,RU,Mathematics,formal,informed,conceptual_orientation,autonomous
+P0741,Analyze,AA,Computer Science,formal,informed,competency_development,autonomous
+P0742,Create,EC,Art History,humanistic,novice,competency_development,autonomous
+P0743,Apply,AA,Ethics,humanistic,informed,conceptual_orientation,guided
+P0744,Create,EC,Mathematics,formal,misinformed,conceptual_orientation,autonomous
+P0745,Remember,RU,Mathematics,formal,misinformed,competency_development,guided
+P0746,Analyze,AA,Art History,humanistic,misinformed,skill_building,autonomous
+P0747,Analyze,AA,Mathematics,formal,misinformed,conceptual_orientation,autonomous
+P0748,Evaluate,EC,Art History,humanistic,informed,conceptual_orientation,guided
+P0749,Remember,RU,Literature,humanistic,informed,conceptual_orientation,guided
+P0750,Analyze,AA,Mathematics,formal,novice,skill_building,collaborative
+P0751,Evaluate,EC,Mathematics,formal,misinformed,competency_development,collaborative
+P0752,Apply,AA,Art History,humanistic,informed,comprehensive_mastery,autonomous
+P0753,Apply,AA,Physics,formal,novice,competency_development,guided
+P0754,Apply,AA,Mathematics,formal,informed,skill_building,guided
+P0755,Analyze,AA,Biology,natural,misinformed,competency_development,collaborative
+P0756,Apply,AA,History,humanistic,novice,conceptual_orientation,autonomous
+P0757,Analyze,AA,Psychology,natural,misinformed,conceptual_orientation,autonomous
+P0758,Apply,AA,Physics,formal,misinformed,skill_building,guided
+P0759,Remember,RU,Art History,humanistic,misinformed,conceptual_orientation,guided
+P0760,Understand,RU,Computer Science,formal,misinformed,comprehensive_mastery,guided
+P0761,Evaluate,EC,Computer Science,formal,informed,comprehensive_mastery,guided
+P0762,Understand,RU,Ethics,humanistic,informed,conceptual_orientation,collaborative
+P0763,Evaluate,EC,History,humanistic,novice,comprehensive_mastery,guided
+P0764,Apply,AA,Computer Science,formal,novice,comprehensive_mastery,autonomous
+P0765,Evaluate,EC,Literature,humanistic,novice,conceptual_orientation,autonomous
+P0766,Understand,RU,Psychology,natural,novice,skill_building,autonomous
+P0767,Analyze,AA,Psychology,natural,misinformed,comprehensive_mastery,autonomous
+P0768,Create,EC,History,humanistic,informed,skill_building,collaborative
+P0769,Create,EC,Psychology,natural,misinformed,skill_building,autonomous
+P0770,Understand,RU,Biology,natural,misinformed,comprehensive_mastery,autonomous
+P0771,Understand,RU,Mathematics,formal,misinformed,conceptual_orientation,autonomous
+P0772,Understand,RU,Mathematics,formal,novice,competency_development,guided
+P0773,Apply,AA,History,humanistic,misinformed,conceptual_orientation,autonomous
+P0774,Create,EC,Sociology,applied,informed,skill_building,collaborative
+P0775,Understand,RU,Ethics,humanistic,novice,comprehensive_mastery,collaborative
+P0776,Evaluate,EC,Psychology,natural,informed,conceptual_orientation,autonomous
+P0777,Evaluate,EC,History,humanistic,misinformed,skill_building,collaborative
+P0778,Apply,AA,History,humanistic,misinformed,comprehensive_mastery,autonomous
+P0779,Remember,RU,Sociology,applied,informed,comprehensive_mastery,collaborative
+P0780,Create,EC,Sociology,applied,misinformed,comprehensive_mastery,collaborative
+P0781,Remember,RU,Literature,humanistic,novice,conceptual_orientation,autonomous
+P0782,Analyze,AA,Psychology,natural,misinformed,competency_development,collaborative
+P0783,Remember,RU,Psychology,natural,novice,skill_building,autonomous
+P0784,Apply,AA,Psychology,natural,informed,conceptual_orientation,guided
+P0785,Analyze,AA,Physics,formal,novice,comprehensive_mastery,autonomous
+P0786,Understand,RU,Sociology,applied,novice,conceptual_orientation,autonomous
+P0787,Analyze,AA,Computer Science,formal,misinformed,conceptual_orientation,autonomous
+P0788,Create,EC,Ethics,humanistic,informed,skill_building,collaborative
+P0789,Evaluate,EC,Psychology,natural,novice,competency_development,collaborative
+P0790,Understand,RU,Psychology,natural,informed,conceptual_orientation,guided
+P0791,Apply,AA,Computer Science,formal,informed,competency_development,guided
+P0792,Understand,RU,Physics,formal,novice,comprehensive_mastery,autonomous
+P0793,Remember,RU,Art History,humanistic,misinformed,competency_development,collaborative
+P0794,Apply,AA,Ethics,humanistic,misinformed,competency_development,guided
+P0795,Analyze,AA,History,humanistic,informed,conceptual_orientation,collaborative
+P0796,Understand,RU,Mathematics,formal,novice,comprehensive_mastery,guided
+P0797,Analyze,AA,History,humanistic,misinformed,comprehensive_mastery,collaborative
+P0798,Apply,AA,Mathematics,formal,misinformed,comprehensive_mastery,collaborative
+P0799,Understand,RU,Literature,humanistic,misinformed,competency_development,autonomous
+P0800,Apply,AA,Mathematics,formal,novice,comprehensive_mastery,collaborative
+P0801,Create,EC,Sociology,applied,informed,skill_building,guided
+P0802,Create,EC,Biology,natural,misinformed,conceptual_orientation,autonomous
+P0803,Apply,AA,Biology,natural,misinformed,comprehensive_mastery,collaborative
+P0804,Apply,AA,Literature,humanistic,informed,competency_development,guided
+P0805,Apply,AA,History,humanistic,informed,competency_development,collaborative
+P0806,Understand,RU,Biology,natural,novice,skill_building,autonomous
+P0807,Analyze,AA,Sociology,applied,novice,conceptual_orientation,collaborative
+P0808,Remember,RU,Computer Science,formal,misinformed,competency_development,guided
+P0809,Create,EC,Biology,natural,informed,conceptual_orientation,autonomous
+P0810,Remember,RU,Art History,humanistic,misinformed,comprehensive_mastery,guided
+P0811,Remember,RU,History,humanistic,novice,conceptual_orientation,collaborative
+P0812,Apply,AA,Ethics,humanistic,misinformed,conceptual_orientation,collaborative
+P0813,Remember,RU,Biology,natural,novice,skill_building,collaborative
+P0814,Evaluate,EC,Computer Science,formal,misinformed,comprehensive_mastery,guided
+P0815,Analyze,AA,Computer Science,formal,novice,competency_development,guided
+P0816,Understand,RU,Sociology,applied,novice,competency_development,guided
+P0817,Analyze,AA,Biology,natural,informed,skill_building,guided
+P0818,Remember,RU,Literature,humanistic,misinformed,conceptual_orientation,collaborative
+P0819,Analyze,AA,Art History,humanistic,informed,skill_building,guided
+P0820,Create,EC,Mathematics,formal,novice,competency_development,autonomous
+P0821,Understand,RU,History,humanistic,novice,competency_development,autonomous
+P0822,Apply,AA,Literature,humanistic,informed,comprehensive_mastery,guided
+P0823,Understand,RU,Computer Science,formal,misinformed,skill_building,collaborative
+P0824,Understand,RU,Psychology,natural,novice,conceptual_orientation,guided
+P0825,Evaluate,EC,Psychology,natural,informed,skill_building,autonomous
+P0826,Create,EC,Art History,humanistic,informed,comprehensive_mastery,collaborative
+P0827,Understand,RU,Ethics,humanistic,misinformed,competency_development,autonomous
+P0828,Understand,RU,Computer Science,formal,novice,comprehensive_mastery,collaborative
+P0829,Analyze,AA,Psychology,natural,informed,skill_building,autonomous
+P0830,Apply,AA,Biology,natural,novice,comprehensive_mastery,autonomous
+P0831,Remember,RU,Art History,humanistic,informed,skill_building,collaborative
+P0832,Analyze,AA,Ethics,humanistic,misinformed,skill_building,guided
+P0833,Apply,AA,Biology,natural,informed,competency_development,guided
+P0834,Create,EC,Physics,formal,informed,competency_development,guided
+P0835,Create,EC,Sociology,applied,informed,conceptual_orientation,guided
+P0836,Understand,RU,Biology,natural,novice,conceptual_orientation,autonomous
+P0837,Create,EC,Ethics,humanistic,misinformed,conceptual_orientation,collaborative
+P0838,Analyze,AA,Art History,humanistic,informed,competency_development,autonomous
+P0839,Evaluate,EC,Biology,natural,novice,skill_building,guided
+P0840,Evaluate,EC,Biology,natural,novice,competency_development,collaborative
+P0841,Create,EC,Art History,humanistic,novice,skill_building,collaborative
+P0842,Understand,RU,Physics,formal,novice,conceptual_orientation,autonomous
+P0843,Evaluate,EC,Biology,natural,informed,skill_building,collaborative
+P0844,Create,EC,Computer Science,formal,informed,comprehensive_mastery,guided
+P0845,Evaluate,EC,Computer Science,formal,informed,skill_building,collaborative
+P0846,Create,EC,Literature,humanistic,misinformed,conceptual_orientation,autonomous
+P0847,Analyze,AA,Biology,natural,informed,comprehensive_mastery,collaborative
+P0848,Remember,RU,Physics,formal,misinformed,skill_building,guided
+P0849,Apply,AA,Psychology,natural,informed,comprehensive_mastery,guided
+P0850,Evaluate,EC,Mathematics,formal,informed,competency_development,autonomous
+P0851,Apply,AA,History,humanistic,misinformed,skill_building,autonomous
+P0852,Evaluate,EC,History,humanistic,informed,conceptual_orientation,collaborative
+P0853,Apply,AA,Art History,humanistic,informed,skill_building,autonomous
+P0854,Apply,AA,Literature,humanistic,novice,conceptual_orientation,guided
+P0855,Create,EC,Computer Science,formal,novice,conceptual_orientation,guided
+P0856,Create,EC,Psychology,natural,novice,conceptual_orientation,guided
+P0857,Evaluate,EC,Psychology,natural,misinformed,conceptual_orientation,collaborative
+P0858,Analyze,AA,Physics,formal,informed,skill_building,autonomous
+P0859,Evaluate,EC,Literature,humanistic,novice,skill_building,collaborative
+P0860,Remember,RU,Ethics,humanistic,misinformed,conceptual_orientation,autonomous
+P0861,Evaluate,EC,Ethics,humanistic,misinformed,comprehensive_mastery,collaborative
+P0862,Create,EC,Physics,formal,informed,competency_development,collaborative
+P0863,Understand,RU,Art History,humanistic,misinformed,comprehensive_mastery,collaborative
+P0864,Create,EC,Physics,formal,informed,comprehensive_mastery,autonomous
+P0865,Analyze,AA,Biology,natural,novice,competency_development,autonomous
+P0866,Analyze,AA,Biology,natural,novice,conceptual_orientation,collaborative
+P0867,Remember,RU,Sociology,applied,novice,conceptual_orientation,autonomous
+P0868,Create,EC,Mathematics,formal,novice,comprehensive_mastery,collaborative
+P0869,Remember,RU,Ethics,humanistic,informed,comprehensive_mastery,autonomous
+P0870,Apply,AA,Psychology,natural,misinformed,comprehensive_mastery,autonomous
+P0871,Create,EC,Art History,humanistic,informed,competency_development,autonomous
+P0872,Evaluate,EC,Art History,humanistic,misinformed,comprehensive_mastery,autonomous
+P0873,Create,EC,Art History,humanistic,misinformed,comprehensive_mastery,collaborative
+P0874,Create,EC,Literature,humanistic,misinformed,skill_building,autonomous
+P0875,Evaluate,EC,Psychology,natural,novice,conceptual_orientation,guided
+P0876,Understand,RU,Biology,natural,novice,competency_development,collaborative
+P0877,Analyze,AA,Biology,natural,informed,comprehensive_mastery,guided
+P0878,Remember,RU,Computer Science,formal,misinformed,competency_development,collaborative
+P0879,Understand,RU,Literature,humanistic,informed,competency_development,collaborative
+P0880,Create,EC,Art History,humanistic,novice,skill_building,guided
+P0881,Understand,RU,Sociology,applied,misinformed,skill_building,collaborative
+P0882,Remember,RU,Physics,formal,informed,comprehensive_mastery,guided
+P0883,Analyze,AA,Literature,humanistic,misinformed,conceptual_orientation,guided
+P0884,Remember,RU,Sociology,applied,informed,competency_development,autonomous
+P0885,Apply,AA,History,humanistic,misinformed,comprehensive_mastery,collaborative
+P0886,Create,EC,Computer Science,formal,informed,conceptual_orientation,guided
+P0887,Analyze,AA,Psychology,natural,informed,comprehensive_mastery,collaborative
+P0888,Evaluate,EC,Mathematics,formal,novice,comprehensive_mastery,guided
+P0889,Evaluate,EC,Computer Science,formal,informed,skill_building,guided
+P0890,Create,EC,Literature,humanistic,informed,skill_building,collaborative
+P0891,Understand,RU,Computer Science,formal,informed,skill_building,autonomous
+P0892,Remember,RU,Physics,formal,misinformed,comprehensive_mastery,autonomous
+P0893,Apply,AA,Mathematics,formal,novice,comprehensive_mastery,guided
+P0894,Analyze,AA,Sociology,applied,misinformed,comprehensive_mastery,autonomous
+P0895,Apply,AA,History,humanistic,novice,competency_development,collaborative
+P0896,Analyze,AA,Psychology,natural,misinformed,competency_development,guided
+P0897,Apply,AA,Literature,humanistic,informed,skill_building,guided
+P0898,Understand,RU,History,humanistic,misinformed,skill_building,guided
+P0899,Evaluate,EC,Biology,natural,novice,skill_building,collaborative
+P0900,Understand,RU,Art History,humanistic,misinformed,comprehensive_mastery,guided
+P0901,Remember,RU,Mathematics,formal,informed,skill_building,autonomous
+P0902,Evaluate,EC,Art History,humanistic,misinformed,skill_building,collaborative
+P0903,Analyze,AA,Biology,natural,novice,conceptual_orientation,guided
+P0904,Evaluate,EC,Computer Science,formal,informed,comprehensive_mastery,autonomous
+P0905,Create,EC,Biology,natural,misinformed,conceptual_orientation,collaborative
+P0906,Remember,RU,Literature,humanistic,misinformed,competency_development,guided
+P0907,Apply,AA,Ethics,humanistic,misinformed,competency_development,collaborative
+P0908,Apply,AA,Art History,humanistic,novice,conceptual_orientation,guided
+P0909,Create,EC,Computer Science,formal,novice,conceptual_orientation,collaborative
+P0910,Remember,RU,Literature,humanistic,informed,competency_development,autonomous
+P0911,Remember,RU,Sociology,applied,novice,skill_building,autonomous
+P0912,Understand,RU,Sociology,applied,misinformed,conceptual_orientation,collaborative
+P0913,Understand,RU,History,humanistic,informed,competency_development,collaborative
+P0914,Analyze,AA,Physics,formal,misinformed,skill_building,guided
+P0915,Analyze,AA,Computer Science,formal,novice,comprehensive_mastery,autonomous
+P0916,Evaluate,EC,Computer Science,formal,misinformed,conceptual_orientation,autonomous
+P0917,Remember,RU,Physics,formal,misinformed,comprehensive_mastery,collaborative
+P0918,Understand,RU,Literature,humanistic,novice,conceptual_orientation,collaborative
+P0919,Apply,AA,Ethics,humanistic,novice,comprehensive_mastery,guided
+P0920,Analyze,AA,Mathematics,formal,novice,comprehensive_mastery,guided
+P0921,Analyze,AA,Ethics,humanistic,novice,comprehensive_mastery,autonomous
+P0922,Evaluate,EC,Mathematics,formal,misinformed,comprehensive_mastery,collaborative
+P0923,Create,EC,Physics,formal,novice,competency_development,autonomous
+P0924,Apply,AA,Literature,humanistic,novice,skill_building,guided
+P0925,Create,EC,Art History,humanistic,misinformed,conceptual_orientation,autonomous
+P0926,Create,EC,Psychology,natural,misinformed,competency_development,autonomous
+P0927,Create,EC,Art History,humanistic,misinformed,comprehensive_mastery,guided
+P0928,Understand,RU,Art History,humanistic,informed,comprehensive_mastery,autonomous
+P0929,Apply,AA,Psychology,natural,informed,comprehensive_mastery,autonomous
+P0930,Apply,AA,Art History,humanistic,misinformed,conceptual_orientation,autonomous
+P0931,Understand,RU,History,humanistic,misinformed,comprehensive_mastery,collaborative
+P0932,Understand,RU,Art History,humanistic,informed,skill_building,collaborative
+P0933,Understand,RU,Art History,humanistic,misinformed,conceptual_orientation,autonomous
+P0934,Create,EC,Ethics,humanistic,novice,competency_development,collaborative
+P0935,Apply,AA,Physics,formal,novice,skill_building,collaborative
+P0936,Create,EC,Physics,formal,misinformed,skill_building,collaborative
+P0937,Apply,AA,Biology,natural,informed,conceptual_orientation,collaborative
+P0938,Apply,AA,Physics,formal,informed,competency_development,collaborative
+P0939,Remember,RU,Literature,humanistic,informed,conceptual_orientation,collaborative
+P0940,Analyze,AA,Psychology,natural,novice,competency_development,autonomous
+P0941,Analyze,AA,History,humanistic,misinformed,competency_development,collaborative
+P0942,Remember,RU,Ethics,humanistic,misinformed,comprehensive_mastery,collaborative
+P0943,Apply,AA,Ethics,humanistic,misinformed,comprehensive_mastery,guided
+P0944,Evaluate,EC,Computer Science,formal,informed,conceptual_orientation,autonomous
+P0945,Understand,RU,Mathematics,formal,informed,conceptual_orientation,guided
+P0946,Apply,AA,Mathematics,formal,novice,competency_development,autonomous
+P0947,Understand,RU,Literature,humanistic,misinformed,skill_building,collaborative
+P0948,Remember,RU,Computer Science,formal,informed,comprehensive_mastery,collaborative
+P0949,Create,EC,Computer Science,formal,informed,skill_building,autonomous
+P0950,Analyze,AA,History,humanistic,novice,conceptual_orientation,autonomous
+P0951,Analyze,AA,Biology,natural,novice,comprehensive_mastery,guided
+P0952,Remember,RU,Ethics,humanistic,novice,conceptual_orientation,guided
+P0953,Analyze,AA,Physics,formal,informed,skill_building,collaborative
+P0954,Create,EC,Physics,formal,misinformed,competency_development,collaborative
+P0955,Understand,RU,Psychology,natural,misinformed,comprehensive_mastery,autonomous
+P0956,Remember,RU,History,humanistic,misinformed,competency_development,autonomous
+P0957,Understand,RU,Art History,humanistic,misinformed,conceptual_orientation,collaborative
+P0958,Remember,RU,Mathematics,formal,novice,comprehensive_mastery,autonomous
+P0959,Apply,AA,Art History,humanistic,informed,competency_development,collaborative
+P0960,Analyze,AA,Computer Science,formal,misinformed,conceptual_orientation,collaborative
+P0961,Evaluate,EC,Psychology,natural,informed,skill_building,guided
+P0962,Evaluate,EC,Mathematics,formal,misinformed,comprehensive_mastery,autonomous
+P0963,Evaluate,EC,Psychology,natural,novice,comprehensive_mastery,guided
+P0964,Understand,RU,Mathematics,formal,misinformed,skill_building,guided
+P0965,Analyze,AA,Art History,humanistic,novice,skill_building,guided
+P0966,Analyze,AA,Physics,formal,novice,conceptual_orientation,autonomous
+P0967,Analyze,AA,Psychology,natural,misinformed,conceptual_orientation,guided
+P0968,Understand,RU,Literature,humanistic,informed,skill_building,guided
+P0969,Evaluate,EC,History,humanistic,misinformed,comprehensive_mastery,collaborative
+P0970,Remember,RU,Ethics,humanistic,novice,competency_development,autonomous
+P0971,Analyze,AA,Literature,humanistic,misinformed,skill_building,autonomous
+P0972,Understand,RU,History,humanistic,novice,skill_building,autonomous
+P0973,Understand,RU,Computer Science,formal,informed,competency_development,collaborative
+P0974,Understand,RU,Ethics,humanistic,novice,competency_development,collaborative
+P0975,Create,EC,Mathematics,formal,novice,skill_building,autonomous
+P0976,Understand,RU,Computer Science,formal,informed,conceptual_orientation,collaborative
+P0977,Understand,RU,Computer Science,formal,informed,skill_building,collaborative
+P0978,Understand,RU,History,humanistic,informed,skill_building,collaborative
+P0979,Understand,RU,Psychology,natural,novice,skill_building,collaborative
+P0980,Create,EC,Psychology,natural,misinformed,skill_building,guided
+P0981,Apply,AA,History,humanistic,informed,conceptual_orientation,guided
+P0982,Apply,AA,Psychology,natural,informed,competency_development,collaborative
+P0983,Understand,RU,Ethics,humanistic,informed,conceptual_orientation,autonomous
+P0984,Analyze,AA,Sociology,applied,informed,skill_building,collaborative
+P0985,Understand,RU,History,humanistic,novice,competency_development,collaborative
+P0986,Evaluate,EC,Art History,humanistic,informed,conceptual_orientation,autonomous
+P0987,Evaluate,EC,Ethics,humanistic,informed,comprehensive_mastery,guided
+P0988,Create,EC,Computer Science,formal,misinformed,competency_development,autonomous
+P0989,Evaluate,EC,Ethics,humanistic,informed,comprehensive_mastery,collaborative
+P0990,Evaluate,EC,Sociology,applied,novice,competency_development,collaborative
+P0991,Evaluate,EC,Psychology,natural,informed,skill_building,collaborative
+P0992,Apply,AA,History,humanistic,novice,comprehensive_mastery,autonomous
+P0993,Apply,AA,History,humanistic,informed,skill_building,guided
+P0994,Analyze,AA,Sociology,applied,informed,skill_building,autonomous
+P0995,Analyze,AA,Computer Science,formal,informed,competency_development,guided
+P0996,Understand,RU,Ethics,humanistic,misinformed,conceptual_orientation,guided
+P0997,Remember,RU,Physics,formal,novice,competency_development,autonomous
+P0998,Apply,AA,Physics,formal,misinformed,conceptual_orientation,collaborative
+P0999,Apply,AA,History,humanistic,novice,comprehensive_mastery,collaborative
+P1000,Apply,AA,Sociology,applied,novice,comprehensive_mastery,guided
+P1001,Understand,RU,Ethics,humanistic,novice,competency_development,guided
+P1002,Apply,AA,Art History,humanistic,informed,skill_building,collaborative
+P1003,Remember,RU,Physics,formal,misinformed,competency_development,autonomous
+P1004,Analyze,AA,Literature,humanistic,informed,skill_building,autonomous
+P1005,Analyze,AA,Mathematics,formal,misinformed,comprehensive_mastery,guided
+P1006,Understand,RU,Physics,formal,informed,conceptual_orientation,guided
+P1007,Analyze,AA,Mathematics,formal,novice,comprehensive_mastery,collaborative
+P1008,Evaluate,EC,Biology,natural,misinformed,competency_development,autonomous
+P1009,Evaluate,EC,Ethics,humanistic,novice,competency_development,guided
+P1010,Apply,AA,Sociology,applied,misinformed,comprehensive_mastery,autonomous
+P1011,Understand,RU,Physics,formal,informed,skill_building,collaborative
+P1012,Remember,RU,Sociology,applied,novice,competency_development,collaborative
+P1013,Analyze,AA,Biology,natural,informed,competency_development,guided
+P1014,Evaluate,EC,Ethics,humanistic,misinformed,competency_development,collaborative
+P1015,Evaluate,EC,Physics,formal,informed,skill_building,autonomous
+P1016,Apply,AA,Mathematics,formal,informed,competency_development,guided
+P1017,Analyze,AA,Sociology,applied,novice,comprehensive_mastery,guided
+P1018,Understand,RU,History,humanistic,informed,comprehensive_mastery,guided
+P1019,Create,EC,History,humanistic,informed,competency_development,autonomous
+P1020,Understand,RU,Ethics,humanistic,novice,conceptual_orientation,autonomous
+P1021,Understand,RU,History,humanistic,informed,competency_development,autonomous
+P1022,Create,EC,Mathematics,formal,misinformed,skill_building,autonomous
+P1023,Remember,RU,Biology,natural,informed,competency_development,collaborative
+P1024,Evaluate,EC,Art History,humanistic,novice,conceptual_orientation,guided
+P1025,Understand,RU,Physics,formal,misinformed,skill_building,autonomous
+P1026,Apply,AA,History,humanistic,misinformed,competency_development,autonomous
+P1027,Analyze,AA,Computer Science,formal,misinformed,comprehensive_mastery,autonomous
+P1028,Understand,RU,Physics,formal,informed,competency_development,collaborative
+P1029,Remember,RU,Art History,humanistic,novice,competency_development,guided
+P1030,Remember,RU,Physics,formal,misinformed,competency_development,collaborative
+P1031,Analyze,AA,Mathematics,formal,misinformed,comprehensive_mastery,collaborative
+P1032,Remember,RU,Biology,natural,novice,competency_development,autonomous
+P1033,Apply,AA,Physics,formal,informed,comprehensive_mastery,collaborative
+P1034,Create,EC,Biology,natural,misinformed,competency_development,guided
+P1035,Create,EC,Literature,humanistic,informed,skill_building,autonomous
+P1036,Create,EC,Ethics,humanistic,informed,conceptual_orientation,guided
+P1037,Apply,AA,History,humanistic,misinformed,competency_development,guided
+P1038,Understand,RU,Physics,formal,informed,conceptual_orientation,autonomous
+P1039,Understand,RU,Art History,humanistic,informed,skill_building,guided
+P1040,Apply,AA,Literature,humanistic,novice,conceptual_orientation,autonomous
+P1041,Analyze,AA,Computer Science,formal,informed,conceptual_orientation,guided
+P1042,Create,EC,Psychology,natural,informed,conceptual_orientation,autonomous
+P1043,Evaluate,EC,Mathematics,formal,misinformed,skill_building,guided
+P1044,Create,EC,Literature,humanistic,informed,competency_development,collaborative
+P1045,Analyze,AA,Biology,natural,misinformed,comprehensive_mastery,autonomous
+P1046,Remember,RU,Sociology,applied,misinformed,comprehensive_mastery,guided
+P1047,Create,EC,Literature,humanistic,novice,competency_development,collaborative
+P1048,Analyze,AA,Mathematics,formal,misinformed,competency_development,collaborative
+P1049,Analyze,AA,Sociology,applied,informed,conceptual_orientation,autonomous
+P1050,Evaluate,EC,History,humanistic,novice,competency_development,autonomous
+P1051,Evaluate,EC,Psychology,natural,informed,competency_development,guided
+P1052,Analyze,AA,Sociology,applied,misinformed,competency_development,guided
+P1053,Evaluate,EC,Biology,natural,misinformed,comprehensive_mastery,autonomous
+P1054,Understand,RU,History,humanistic,novice,conceptual_orientation,guided
+P1055,Create,EC,Biology,natural,informed,conceptual_orientation,guided
+P1056,Create,EC,History,humanistic,misinformed,skill_building,collaborative
+P1057,Evaluate,EC,Psychology,natural,novice,skill_building,guided
+P1058,Remember,RU,Art History,humanistic,misinformed,skill_building,collaborative
+P1059,Understand,RU,History,humanistic,informed,skill_building,guided
+P1060,Analyze,AA,Mathematics,formal,misinformed,competency_development,guided
+P1061,Understand,RU,Sociology,applied,novice,competency_development,autonomous
+P1062,Evaluate,EC,Mathematics,formal,novice,conceptual_orientation,guided
+P1063,Remember,RU,Psychology,natural,novice,comprehensive_mastery,guided
+P1064,Remember,RU,Computer Science,formal,informed,skill_building,autonomous
+P1065,Apply,AA,Sociology,applied,novice,comprehensive_mastery,collaborative
+P1066,Understand,RU,Mathematics,formal,misinformed,conceptual_orientation,collaborative
+P1067,Analyze,AA,Ethics,humanistic,informed,skill_building,guided
+P1068,Apply,AA,Literature,humanistic,novice,competency_development,collaborative
+P1069,Evaluate,EC,Biology,natural,misinformed,conceptual_orientation,autonomous
+P1070,Analyze,AA,Psychology,natural,informed,comprehensive_mastery,autonomous
+P1071,Remember,RU,Biology,natural,misinformed,comprehensive_mastery,collaborative
+P1072,Create,EC,Biology,natural,novice,conceptual_orientation,collaborative
+P1073,Apply,AA,Mathematics,formal,informed,comprehensive_mastery,autonomous
+P1074,Evaluate,EC,Physics,formal,novice,skill_building,collaborative
+P1075,Analyze,AA,Literature,humanistic,informed,comprehensive_mastery,guided
+P1076,Remember,RU,Biology,natural,informed,competency_development,guided
+P1077,Remember,RU,Literature,humanistic,novice,comprehensive_mastery,collaborative
+P1078,Create,EC,History,humanistic,misinformed,conceptual_orientation,collaborative
+P1079,Evaluate,EC,History,humanistic,informed,skill_building,collaborative
+P1080,Analyze,AA,History,humanistic,misinformed,skill_building,guided
+P1081,Understand,RU,Ethics,humanistic,misinformed,skill_building,autonomous
+P1082,Analyze,AA,Psychology,natural,informed,competency_development,autonomous
+P1083,Analyze,AA,History,humanistic,misinformed,comprehensive_mastery,guided
+P1084,Remember,RU,Literature,humanistic,misinformed,competency_development,autonomous
+P1085,Evaluate,EC,Mathematics,formal,misinformed,conceptual_orientation,collaborative
+P1086,Evaluate,EC,Computer Science,formal,novice,competency_development,collaborative
+P1087,Understand,RU,Mathematics,formal,misinformed,comprehensive_mastery,guided
+P1088,Understand,RU,Sociology,applied,misinformed,competency_development,guided
+P1089,Understand,RU,Sociology,applied,misinformed,conceptual_orientation,guided
+P1090,Analyze,AA,Physics,formal,misinformed,comprehensive_mastery,collaborative
+P1091,Remember,RU,Sociology,applied,misinformed,competency_development,guided
+P1092,Remember,RU,Sociology,applied,misinformed,skill_building,guided
+P1093,Apply,AA,Biology,natural,misinformed,conceptual_orientation,autonomous
+P1094,Create,EC,Computer Science,formal,novice,comprehensive_mastery,guided
+P1095,Understand,RU,Computer Science,formal,misinformed,conceptual_orientation,guided
+P1096,Evaluate,EC,History,humanistic,misinformed,conceptual_orientation,autonomous
+P1097,Evaluate,EC,Literature,humanistic,misinformed,competency_development,autonomous
+P1098,Remember,RU,Literature,humanistic,informed,comprehensive_mastery,guided
+P1099,Understand,RU,Art History,humanistic,misinformed,competency_development,collaborative
+P1100,Remember,RU,Biology,natural,novice,conceptual_orientation,autonomous
+P1101,Apply,AA,History,humanistic,misinformed,conceptual_orientation,guided
+P1102,Evaluate,EC,Ethics,humanistic,informed,competency_development,guided
+P1103,Understand,RU,Computer Science,formal,novice,competency_development,collaborative
+P1104,Evaluate,EC,Sociology,applied,novice,skill_building,autonomous
+P1105,Analyze,AA,Sociology,applied,novice,competency_development,guided
+P1106,Evaluate,EC,Psychology,natural,misinformed,conceptual_orientation,guided
+P1107,Analyze,AA,Literature,humanistic,misinformed,competency_development,collaborative
+P1108,Remember,RU,Ethics,humanistic,misinformed,conceptual_orientation,guided
+P1109,Apply,AA,Ethics,humanistic,informed,comprehensive_mastery,collaborative
+P1110,Create,EC,Psychology,natural,misinformed,conceptual_orientation,autonomous
+P1111,Evaluate,EC,Physics,formal,informed,comprehensive_mastery,collaborative
+P1112,Analyze,AA,Mathematics,formal,informed,skill_building,guided
+P1113,Remember,RU,History,humanistic,misinformed,comprehensive_mastery,guided
+P1114,Evaluate,EC,Physics,formal,informed,conceptual_orientation,autonomous
+P1115,Understand,RU,Art History,humanistic,novice,comprehensive_mastery,collaborative
+P1116,Evaluate,EC,Literature,humanistic,informed,skill_building,autonomous
+P1117,Remember,RU,Physics,formal,novice,competency_development,guided
+P1118,Analyze,AA,History,humanistic,informed,competency_development,collaborative
+P1119,Create,EC,Biology,natural,misinformed,skill_building,guided
+P1120,Evaluate,EC,History,humanistic,novice,skill_building,guided
+P1121,Evaluate,EC,Psychology,natural,misinformed,competency_development,autonomous
+P1122,Evaluate,EC,Computer Science,formal,novice,conceptual_orientation,collaborative
+P1123,Create,EC,Ethics,humanistic,novice,competency_development,autonomous
+P1124,Understand,RU,Art History,humanistic,misinformed,skill_building,autonomous
+P1125,Remember,RU,Mathematics,formal,informed,competency_development,guided
+P1126,Understand,RU,Biology,natural,novice,comprehensive_mastery,autonomous
+P1127,Create,EC,Literature,humanistic,novice,conceptual_orientation,guided
+P1128,Remember,RU,Psychology,natural,informed,comprehensive_mastery,autonomous
+P1129,Remember,RU,Computer Science,formal,informed,comprehensive_mastery,guided
+P1130,Remember,RU,Sociology,applied,novice,comprehensive_mastery,guided
+P1131,Analyze,AA,Ethics,humanistic,novice,skill_building,autonomous
+P1132,Analyze,AA,Literature,humanistic,misinformed,comprehensive_mastery,guided
+P1133,Apply,AA,Physics,formal,misinformed,conceptual_orientation,guided
+P1134,Remember,RU,Mathematics,formal,misinformed,skill_building,autonomous
+P1135,Create,EC,Ethics,humanistic,misinformed,comprehensive_mastery,autonomous
+P1136,Remember,RU,History,humanistic,informed,competency_development,guided
+P1137,Evaluate,EC,Computer Science,formal,novice,comprehensive_mastery,collaborative
+P1138,Analyze,AA,Computer Science,formal,misinformed,comprehensive_mastery,guided
+P1139,Analyze,AA,History,humanistic,informed,skill_building,autonomous
+P1140,Remember,RU,Biology,natural,misinformed,conceptual_orientation,guided
+P1141,Analyze,AA,Psychology,natural,misinformed,conceptual_orientation,collaborative
+P1142,Understand,RU,Computer Science,formal,novice,conceptual_orientation,autonomous
+P1143,Evaluate,EC,History,humanistic,novice,competency_development,collaborative
+P1144,Evaluate,EC,Literature,humanistic,novice,competency_development,guided
+P1145,Evaluate,EC,Biology,natural,misinformed,comprehensive_mastery,collaborative
+P1146,Evaluate,EC,Physics,formal,novice,skill_building,guided
+P1147,Apply,AA,Sociology,applied,informed,skill_building,collaborative
+P1148,Create,EC,Sociology,applied,informed,comprehensive_mastery,guided
+P1149,Apply,AA,Sociology,applied,informed,conceptual_orientation,guided
+P1150,Evaluate,EC,Art History,humanistic,novice,comprehensive_mastery,collaborative
+P1151,Evaluate,EC,Psychology,natural,informed,competency_development,autonomous
+P1152,Create,EC,History,humanistic,novice,comprehensive_mastery,collaborative
+P1153,Apply,AA,Mathematics,formal,misinformed,skill_building,collaborative
+P1154,Understand,RU,Physics,formal,misinformed,comprehensive_mastery,collaborative
+P1155,Remember,RU,Psychology,natural,novice,competency_development,guided
+P1156,Understand,RU,Ethics,humanistic,novice,skill_building,autonomous
+P1157,Apply,AA,Psychology,natural,misinformed,comprehensive_mastery,guided
+P1158,Remember,RU,Mathematics,formal,misinformed,comprehensive_mastery,autonomous
+P1159,Apply,AA,Computer Science,formal,misinformed,competency_development,collaborative
+P1160,Remember,RU,Ethics,humanistic,misinformed,comprehensive_mastery,autonomous
+P1161,Apply,AA,History,humanistic,informed,comprehensive_mastery,autonomous
+P1162,Analyze,AA,Sociology,applied,novice,skill_building,autonomous
+P1163,Remember,RU,Psychology,natural,informed,conceptual_orientation,autonomous
+P1164,Remember,RU,Physics,formal,novice,conceptual_orientation,guided
+P1165,Understand,RU,Computer Science,formal,informed,comprehensive_mastery,autonomous
+P1166,Remember,RU,Art History,humanistic,informed,conceptual_orientation,guided
+P1167,Analyze,AA,Literature,humanistic,informed,conceptual_orientation,autonomous
+P1168,Analyze,AA,Psychology,natural,novice,comprehensive_mastery,guided
+P1169,Apply,AA,Literature,humanistic,misinformed,comprehensive_mastery,guided
+P1170,Remember,RU,History,humanistic,novice,conceptual_orientation,autonomous
+P1171,Understand,RU,Ethics,humanistic,misinformed,conceptual_orientation,autonomous
+P1172,Create,EC,Physics,formal,misinformed,comprehensive_mastery,autonomous
+P1173,Understand,RU,Computer Science,formal,informed,comprehensive_mastery,collaborative
+P1174,Evaluate,EC,Literature,humanistic,novice,competency_development,autonomous
+P1175,Remember,RU,Sociology,applied,informed,skill_building,guided
+P1176,Apply,AA,Biology,natural,novice,skill_building,collaborative
+P1177,Create,EC,Sociology,applied,novice,competency_development,autonomous
+P1178,Analyze,AA,Computer Science,formal,misinformed,comprehensive_mastery,collaborative
+P1179,Evaluate,EC,Literature,humanistic,misinformed,comprehensive_mastery,collaborative
+P1180,Understand,RU,Biology,natural,informed,competency_development,autonomous
+P1181,Evaluate,EC,Ethics,humanistic,informed,conceptual_orientation,guided
+P1182,Remember,RU,Sociology,applied,informed,skill_building,autonomous
+P1183,Remember,RU,Art History,humanistic,informed,skill_building,autonomous
+P1184,Understand,RU,History,humanistic,misinformed,skill_building,collaborative
+P1185,Create,EC,Ethics,humanistic,informed,conceptual_orientation,collaborative
+P1186,Understand,RU,Ethics,humanistic,novice,conceptual_orientation,collaborative
+P1187,Understand,RU,Literature,humanistic,novice,comprehensive_mastery,guided
+P1188,Create,EC,Ethics,humanistic,misinformed,skill_building,collaborative
+P1189,Apply,AA,Biology,natural,novice,conceptual_orientation,collaborative
+P1190,Apply,AA,Ethics,humanistic,novice,conceptual_orientation,collaborative
+P1191,Evaluate,EC,Sociology,applied,misinformed,competency_development,autonomous
+P1192,Remember,RU,Ethics,humanistic,misinformed,competency_development,guided
+P1193,Create,EC,Literature,humanistic,misinformed,competency_development,collaborative
+P1194,Apply,AA,Ethics,humanistic,informed,conceptual_orientation,collaborative
+P1195,Remember,RU,Computer Science,formal,misinformed,conceptual_orientation,guided
+P1196,Understand,RU,History,humanistic,novice,comprehensive_mastery,guided
+P1197,Remember,RU,Literature,humanistic,informed,competency_development,guided
+P1198,Apply,AA,Biology,natural,informed,skill_building,collaborative
+P1199,Apply,AA,Biology,natural,informed,competency_development,collaborative
+P1200,Analyze,AA,Literature,humanistic,informed,skill_building,collaborative
+P1201,Understand,RU,Biology,natural,misinformed,competency_development,guided
+P1202,Create,EC,History,humanistic,informed,conceptual_orientation,collaborative
+P1203,Apply,AA,Sociology,applied,informed,competency_development,guided
+P1204,Remember,RU,History,humanistic,misinformed,skill_building,guided
+P1205,Evaluate,EC,Art History,humanistic,novice,competency_development,collaborative
+P1206,Remember,RU,Computer Science,formal,informed,skill_building,collaborative
+P1207,Understand,RU,Computer Science,formal,novice,skill_building,guided
+P1208,Apply,AA,Literature,humanistic,informed,skill_building,autonomous
+P1209,Remember,RU,Mathematics,formal,novice,competency_development,collaborative
+P1210,Analyze,AA,Sociology,applied,informed,conceptual_orientation,collaborative
+P1211,Create,EC,Physics,formal,informed,conceptual_orientation,collaborative
+P1212,Apply,AA,Biology,natural,misinformed,comprehensive_mastery,autonomous
+P1213,Remember,RU,Art History,humanistic,novice,skill_building,guided
+P1214,Understand,RU,Psychology,natural,novice,competency_development,collaborative
+P1215,Evaluate,EC,Literature,humanistic,informed,skill_building,collaborative
+P1216,Analyze,AA,Ethics,humanistic,misinformed,conceptual_orientation,collaborative
+P1217,Create,EC,Biology,natural,informed,skill_building,collaborative
+P1218,Understand,RU,Psychology,natural,novice,comprehensive_mastery,collaborative
+P1219,Remember,RU,Physics,formal,misinformed,conceptual_orientation,autonomous
+P1220,Remember,RU,Literature,humanistic,misinformed,comprehensive_mastery,collaborative
+P1221,Apply,AA,Physics,formal,informed,competency_development,guided
+P1222,Apply,AA,Literature,humanistic,misinformed,conceptual_orientation,collaborative
+P1223,Apply,AA,Psychology,natural,misinformed,conceptual_orientation,collaborative
+P1224,Create,EC,Art History,humanistic,misinformed,skill_building,autonomous
+P1225,Remember,RU,Computer Science,formal,misinformed,skill_building,collaborative
+P1226,Evaluate,EC,Art History,humanistic,informed,competency_development,guided
+P1227,Evaluate,EC,Literature,humanistic,misinformed,skill_building,guided
+P1228,Understand,RU,Biology,natural,misinformed,competency_development,collaborative
+P1229,Remember,RU,Literature,humanistic,novice,competency_development,autonomous
+P1230,Remember,RU,Sociology,applied,misinformed,competency_development,autonomous
+P1231,Remember,RU,Physics,formal,informed,competency_development,collaborative
+P1232,Remember,RU,History,humanistic,misinformed,comprehensive_mastery,autonomous
+P1233,Understand,RU,Literature,humanistic,informed,comprehensive_mastery,collaborative
+P1234,Evaluate,EC,Art History,humanistic,novice,skill_building,collaborative
+P1235,Understand,RU,Literature,humanistic,misinformed,comprehensive_mastery,guided
+P1236,Understand,RU,Computer Science,formal,informed,conceptual_orientation,autonomous
+P1237,Create,EC,Biology,natural,novice,skill_building,collaborative
+P1238,Evaluate,EC,Ethics,humanistic,informed,competency_development,autonomous
+P1239,Apply,AA,Mathematics,formal,informed,conceptual_orientation,collaborative
+P1240,Create,EC,Biology,natural,informed,comprehensive_mastery,autonomous
+P1241,Understand,RU,Sociology,applied,novice,conceptual_orientation,collaborative
+P1242,Understand,RU,Art History,humanistic,informed,conceptual_orientation,guided
+P1243,Create,EC,Literature,humanistic,misinformed,conceptual_orientation,guided
+P1244,Create,EC,Biology,natural,misinformed,comprehensive_mastery,collaborative
+P1245,Understand,RU,Psychology,natural,informed,conceptual_orientation,collaborative
+P1246,Evaluate,EC,Ethics,humanistic,informed,skill_building,autonomous
+P1247,Create,EC,Computer Science,formal,misinformed,competency_development,collaborative
+P1248,Understand,RU,Sociology,applied,informed,comprehensive_mastery,autonomous
+P1249,Analyze,AA,Physics,formal,informed,competency_development,guided
+P1250,Evaluate,EC,Sociology,applied,informed,conceptual_orientation,autonomous
+P1251,Evaluate,EC,Art History,humanistic,misinformed,competency_development,guided
+P1252,Create,EC,Sociology,applied,misinformed,competency_development,collaborative
+P1253,Remember,RU,Biology,natural,misinformed,conceptual_orientation,autonomous
+P1254,Evaluate,EC,History,humanistic,misinformed,competency_development,collaborative
+P1255,Evaluate,EC,Physics,formal,misinformed,competency_development,autonomous
+P1256,Analyze,AA,Biology,natural,misinformed,skill_building,autonomous
+P1257,Apply,AA,Art History,humanistic,novice,conceptual_orientation,autonomous
+P1258,Apply,AA,Art History,humanistic,novice,competency_development,collaborative
+P1259,Understand,RU,History,humanistic,informed,skill_building,autonomous
+P1260,Remember,RU,History,humanistic,informed,comprehensive_mastery,collaborative
+P1261,Evaluate,EC,History,humanistic,informed,conceptual_orientation,guided
+P1262,Analyze,AA,Physics,formal,novice,competency_development,guided
+P1263,Remember,RU,Psychology,natural,informed,conceptual_orientation,guided
+P1264,Apply,AA,Mathematics,formal,misinformed,conceptual_orientation,guided
+P1265,Apply,AA,Literature,humanistic,novice,competency_development,guided
+P1266,Evaluate,EC,Biology,natural,novice,conceptual_orientation,guided
+P1267,Remember,RU,Art History,humanistic,novice,comprehensive_mastery,collaborative
+P1268,Understand,RU,Computer Science,formal,misinformed,conceptual_orientation,autonomous
+P1269,Evaluate,EC,History,humanistic,misinformed,comprehensive_mastery,guided
+P1270,Understand,RU,Psychology,natural,informed,skill_building,collaborative
+P1271,Remember,RU,Mathematics,formal,misinformed,conceptual_orientation,collaborative
+P1272,Evaluate,EC,Biology,natural,informed,skill_building,guided
+P1273,Understand,RU,Literature,humanistic,informed,skill_building,autonomous
+P1274,Analyze,AA,Mathematics,formal,misinformed,competency_development,autonomous
+P1275,Apply,AA,Computer Science,formal,informed,competency_development,collaborative
+P1276,Evaluate,EC,Computer Science,formal,informed,skill_building,autonomous
+P1277,Apply,AA,Literature,humanistic,misinformed,conceptual_orientation,guided
+P1278,Create,EC,Physics,formal,novice,competency_development,collaborative
+P1279,Create,EC,Computer Science,formal,misinformed,conceptual_orientation,collaborative
+P1280,Analyze,AA,Physics,formal,informed,comprehensive_mastery,autonomous
+P1281,Understand,RU,Literature,humanistic,misinformed,comprehensive_mastery,autonomous
+P1282,Understand,RU,Mathematics,formal,informed,skill_building,guided
+P1283,Evaluate,EC,Physics,formal,novice,comprehensive_mastery,autonomous
+P1284,Remember,RU,Computer Science,formal,informed,conceptual_orientation,guided
+P1285,Analyze,AA,Literature,humanistic,informed,comprehensive_mastery,collaborative
+P1286,Evaluate,EC,Sociology,applied,misinformed,skill_building,collaborative
+P1287,Analyze,AA,Sociology,applied,misinformed,competency_development,autonomous
+P1288,Analyze,AA,Biology,natural,misinformed,conceptual_orientation,autonomous
+P1289,Apply,AA,Art History,humanistic,informed,skill_building,guided
+P1290,Apply,AA,Psychology,natural,misinformed,skill_building,collaborative
+P1291,Analyze,AA,Mathematics,formal,informed,skill_building,autonomous
+P1292,Evaluate,EC,Literature,humanistic,novice,skill_building,guided
+P1293,Create,EC,Mathematics,formal,misinformed,competency_development,autonomous
+P1294,Analyze,AA,History,humanistic,informed,comprehensive_mastery,collaborative
+P1295,Analyze,AA,Art History,humanistic,novice,comprehensive_mastery,collaborative
+P1296,Apply,AA,Physics,formal,informed,competency_development,autonomous
+P1297,Apply,AA,Physics,formal,novice,comprehensive_mastery,autonomous
+P1298,Analyze,AA,Literature,humanistic,novice,skill_building,guided
+P1299,Understand,RU,Psychology,natural,misinformed,skill_building,autonomous
+P1300,Create,EC,Ethics,humanistic,novice,skill_building,collaborative
+P1301,Remember,RU,Physics,formal,informed,conceptual_orientation,autonomous
+P1302,Apply,AA,Biology,natural,misinformed,competency_development,guided
+P1303,Create,EC,Biology,natural,informed,skill_building,guided
+P1304,Evaluate,EC,Ethics,humanistic,informed,competency_development,collaborative
+P1305,Create,EC,Biology,natural,misinformed,skill_building,collaborative
+P1306,Evaluate,EC,Sociology,applied,misinformed,conceptual_orientation,collaborative
+P1307,Create,EC,Physics,formal,novice,comprehensive_mastery,collaborative
+P1308,Remember,RU,Literature,humanistic,novice,conceptual_orientation,collaborative
+P1309,Analyze,AA,Ethics,humanistic,informed,comprehensive_mastery,autonomous
+P1310,Analyze,AA,Sociology,applied,informed,skill_building,guided
+P1311,Apply,AA,Art History,humanistic,misinformed,conceptual_orientation,collaborative
+P1312,Analyze,AA,Mathematics,formal,novice,skill_building,autonomous
+P1313,Evaluate,EC,Psychology,natural,informed,conceptual_orientation,collaborative
+P1314,Understand,RU,Art History,humanistic,informed,skill_building,autonomous
+P1315,Remember,RU,Ethics,humanistic,informed,competency_development,autonomous
+P1316,Apply,AA,Psychology,natural,informed,conceptual_orientation,collaborative
+P1317,Remember,RU,Psychology,natural,novice,conceptual_orientation,collaborative
+P1318,Create,EC,Ethics,humanistic,informed,comprehensive_mastery,collaborative
+P1319,Analyze,AA,Physics,formal,novice,competency_development,autonomous
+P1320,Evaluate,EC,Physics,formal,informed,competency_development,guided
+P1321,Analyze,AA,Art History,humanistic,misinformed,comprehensive_mastery,guided
+P1322,Create,EC,Physics,formal,informed,conceptual_orientation,guided
+P1323,Create,EC,Mathematics,formal,informed,competency_development,collaborative
+P1324,Create,EC,Physics,formal,novice,skill_building,collaborative
+P1325,Create,EC,Ethics,humanistic,misinformed,competency_development,autonomous
+P1326,Create,EC,Art History,humanistic,informed,comprehensive_mastery,autonomous
+P1327,Create,EC,Psychology,natural,misinformed,comprehensive_mastery,collaborative
+P1328,Remember,RU,Physics,formal,misinformed,conceptual_orientation,guided
+P1329,Remember,RU,Computer Science,formal,misinformed,comprehensive_mastery,autonomous
+P1330,Understand,RU,Physics,formal,novice,comprehensive_mastery,guided
+P1331,Apply,AA,Computer Science,formal,informed,skill_building,guided
+P1332,Create,EC,Sociology,applied,misinformed,competency_development,guided
+P1333,Apply,AA,Psychology,natural,novice,comprehensive_mastery,guided
+P1334,Understand,RU,Mathematics,formal,novice,conceptual_orientation,autonomous
+P1335,Create,EC,Ethics,humanistic,novice,competency_development,guided
+P1336,Analyze,AA,Physics,formal,misinformed,conceptual_orientation,collaborative
+P1337,Analyze,AA,Mathematics,formal,misinformed,skill_building,guided
+P1338,Evaluate,EC,Ethics,humanistic,informed,skill_building,guided
+P1339,Analyze,AA,Ethics,humanistic,misinformed,comprehensive_mastery,guided
+P1340,Understand,RU,Computer Science,formal,novice,skill_building,collaborative
+P1341,Create,EC,Literature,humanistic,misinformed,skill_building,guided
+P1342,Understand,RU,Biology,natural,informed,skill_building,guided
+P1343,Understand,RU,Physics,formal,misinformed,conceptual_orientation,guided
+P1344,Remember,RU,Physics,formal,novice,competency_development,collaborative
+P1345,Apply,AA,Ethics,humanistic,misinformed,skill_building,autonomous
+P1346,Analyze,AA,Sociology,applied,informed,comprehensive_mastery,guided
+P1347,Apply,AA,Computer Science,formal,misinformed,conceptual_orientation,collaborative
+P1348,Create,EC,Physics,formal,misinformed,skill_building,autonomous
+P1349,Analyze,AA,Psychology,natural,informed,skill_building,guided
+P1350,Understand,RU,Art History,humanistic,informed,conceptual_orientation,autonomous
+P1351,Create,EC,Mathematics,formal,novice,comprehensive_mastery,autonomous
+P1352,Evaluate,EC,Literature,humanistic,misinformed,comprehensive_mastery,guided
+P1353,Analyze,AA,Literature,humanistic,misinformed,conceptual_orientation,autonomous
+P1354,Understand,RU,Sociology,applied,misinformed,skill_building,guided
+P1355,Understand,RU,Biology,natural,informed,comprehensive_mastery,autonomous
+P1356,Create,EC,Biology,natural,misinformed,competency_development,autonomous
+P1357,Evaluate,EC,Physics,formal,informed,skill_building,collaborative
+P1358,Analyze,AA,Computer Science,formal,novice,competency_development,collaborative
+P1359,Understand,RU,Ethics,humanistic,misinformed,comprehensive_mastery,collaborative
+P1360,Understand,RU,Computer Science,formal,novice,conceptual_orientation,collaborative
+P1361,Create,EC,Psychology,natural,novice,skill_building,autonomous
+P1362,Evaluate,EC,Sociology,applied,informed,competency_development,autonomous
+P1363,Analyze,AA,Biology,natural,misinformed,conceptual_orientation,collaborative
+P1364,Remember,RU,Ethics,humanistic,novice,comprehensive_mastery,autonomous
+P1365,Understand,RU,Ethics,humanistic,informed,competency_development,guided
+P1366,Apply,AA,Psychology,natural,informed,comprehensive_mastery,collaborative
+P1367,Analyze,AA,Computer Science,formal,novice,skill_building,guided
+P1368,Create,EC,Computer Science,formal,novice,comprehensive_mastery,autonomous
+P1369,Evaluate,EC,Mathematics,formal,informed,conceptual_orientation,autonomous
+P1370,Understand,RU,Physics,formal,novice,skill_building,autonomous
+P1371,Apply,AA,Sociology,applied,informed,skill_building,guided
+P1372,Analyze,AA,Biology,natural,novice,comprehensive_mastery,autonomous
+P1373,Understand,RU,Art History,humanistic,informed,competency_development,autonomous
+P1374,Remember,RU,Psychology,natural,novice,competency_development,autonomous
+P1375,Apply,AA,Sociology,applied,informed,skill_building,autonomous
+P1376,Understand,RU,Physics,formal,informed,conceptual_orientation,collaborative
+P1377,Evaluate,EC,Literature,humanistic,misinformed,skill_building,autonomous
+P1378,Analyze,AA,Art History,humanistic,misinformed,competency_development,autonomous
+P1379,Analyze,AA,Ethics,humanistic,novice,conceptual_orientation,autonomous
+P1380,Evaluate,EC,Mathematics,formal,misinformed,competency_development,guided
+P1381,Analyze,AA,Physics,formal,misinformed,competency_development,autonomous
+P1382,Understand,RU,Ethics,humanistic,novice,competency_development,autonomous
+P1383,Evaluate,EC,Biology,natural,informed,competency_development,collaborative
+P1384,Remember,RU,Psychology,natural,informed,competency_development,collaborative
+P1385,Remember,RU,Psychology,natural,novice,comprehensive_mastery,collaborative
+P1386,Analyze,AA,Mathematics,formal,misinformed,conceptual_orientation,guided
+P1387,Evaluate,EC,Sociology,applied,misinformed,competency_development,guided
+P1388,Apply,AA,Psychology,natural,misinformed,skill_building,guided
+P1389,Apply,AA,Biology,natural,misinformed,competency_development,collaborative
+P1390,Remember,RU,History,humanistic,informed,comprehensive_mastery,autonomous
+P1391,Evaluate,EC,Mathematics,formal,informed,skill_building,guided
+P1392,Create,EC,History,humanistic,novice,competency_development,collaborative
+P1393,Evaluate,EC,Physics,formal,misinformed,conceptual_orientation,autonomous
+P1394,Understand,RU,History,humanistic,novice,skill_building,guided
+P1395,Create,EC,Psychology,natural,informed,conceptual_orientation,guided
+P1396,Evaluate,EC,Psychology,natural,novice,competency_development,guided
+P1397,Create,EC,History,humanistic,novice,comprehensive_mastery,autonomous
+P1398,Understand,RU,Ethics,humanistic,misinformed,skill_building,guided
+P1399,Remember,RU,Computer Science,formal,novice,competency_development,guided
+P1400,Analyze,AA,Mathematics,formal,novice,competency_development,guided
+P1401,Apply,AA,Art History,humanistic,misinformed,competency_development,autonomous
+P1402,Apply,AA,Ethics,humanistic,misinformed,comprehensive_mastery,autonomous
+P1403,Understand,RU,Literature,humanistic,misinformed,conceptual_orientation,collaborative
+P1404,Create,EC,Biology,natural,informed,conceptual_orientation,collaborative
+P1405,Remember,RU,Art History,humanistic,novice,skill_building,collaborative
+P1406,Remember,RU,Art History,humanistic,novice,skill_building,autonomous
+P1407,Analyze,AA,Art History,humanistic,novice,competency_development,autonomous
+P1408,Apply,AA,Psychology,natural,novice,skill_building,collaborative
+P1409,Understand,RU,Physics,formal,misinformed,conceptual_orientation,autonomous
+P1410,Remember,RU,Sociology,applied,informed,conceptual_orientation,collaborative
+P1411,Remember,RU,Sociology,applied,informed,conceptual_orientation,guided
+P1412,Understand,RU,Mathematics,formal,informed,competency_development,collaborative
+P1413,Apply,AA,Art History,humanistic,novice,comprehensive_mastery,guided
+P1414,Create,EC,Psychology,natural,novice,skill_building,guided
+P1415,Analyze,AA,Literature,humanistic,novice,skill_building,autonomous
+P1416,Understand,RU,Literature,humanistic,novice,competency_development,autonomous
+P1417,Remember,RU,History,humanistic,novice,skill_building,collaborative
+P1418,Apply,AA,Literature,humanistic,misinformed,conceptual_orientation,autonomous
+P1419,Create,EC,Mathematics,formal,informed,skill_building,guided
+P1420,Remember,RU,Psychology,natural,informed,comprehensive_mastery,collaborative
+P1421,Apply,AA,Ethics,humanistic,misinformed,comprehensive_mastery,collaborative
+P1422,Analyze,AA,Art History,humanistic,informed,conceptual_orientation,guided
+P1423,Evaluate,EC,Ethics,humanistic,misinformed,skill_building,collaborative
+P1424,Evaluate,EC,Psychology,natural,misinformed,skill_building,guided
+P1425,Understand,RU,Psychology,natural,misinformed,comprehensive_mastery,guided
+P1426,Create,EC,Art History,humanistic,informed,skill_building,guided
+P1427,Apply,AA,Physics,formal,misinformed,competency_development,collaborative
+P1428,Create,EC,Computer Science,formal,novice,comprehensive_mastery,collaborative
+P1429,Apply,AA,Mathematics,formal,misinformed,comprehensive_mastery,autonomous
+P1430,Create,EC,Sociology,applied,misinformed,comprehensive_mastery,guided
+P1431,Apply,AA,Computer Science,formal,misinformed,conceptual_orientation,autonomous
+P1432,Analyze,AA,Biology,natural,informed,competency_development,autonomous
+P1433,Understand,RU,Physics,formal,informed,skill_building,guided
+P1434,Apply,AA,Sociology,applied,novice,skill_building,collaborative
+P1435,Remember,RU,Computer Science,formal,misinformed,conceptual_orientation,autonomous
+P1436,Analyze,AA,Computer Science,formal,novice,skill_building,autonomous
+P1437,Apply,AA,History,humanistic,informed,conceptual_orientation,autonomous
+P1438,Analyze,AA,Literature,humanistic,misinformed,comprehensive_mastery,collaborative
+P1439,Remember,RU,Ethics,humanistic,informed,comprehensive_mastery,guided
+P1440,Understand,RU,History,humanistic,misinformed,conceptual_orientation,guided
+P1441,Analyze,AA,History,humanistic,misinformed,conceptual_orientation,autonomous
+P1442,Understand,RU,Computer Science,formal,informed,conceptual_orientation,guided
+P1443,Understand,RU,Literature,humanistic,informed,comprehensive_mastery,guided
+P1444,Create,EC,Computer Science,formal,misinformed,comprehensive_mastery,collaborative
+P1445,Create,EC,Computer Science,formal,misinformed,competency_development,guided
+P1446,Understand,RU,Literature,humanistic,misinformed,competency_development,collaborative
+P1447,Understand,RU,Mathematics,formal,informed,conceptual_orientation,autonomous
+P1448,Apply,AA,Art History,humanistic,informed,comprehensive_mastery,guided
+P1449,Apply,AA,Literature,humanistic,informed,conceptual_orientation,collaborative
+P1450,Remember,RU,Physics,formal,informed,conceptual_orientation,collaborative
+P1451,Evaluate,EC,Psychology,natural,misinformed,comprehensive_mastery,collaborative
+P1452,Apply,AA,History,humanistic,novice,skill_building,collaborative
+P1453,Create,EC,Psychology,natural,informed,skill_building,guided
+P1454,Analyze,AA,Biology,natural,informed,conceptual_orientation,autonomous
+P1455,Remember,RU,Literature,humanistic,misinformed,comprehensive_mastery,autonomous
+P1456,Apply,AA,Computer Science,formal,misinformed,comprehensive_mastery,autonomous
+P1457,Evaluate,EC,Sociology,applied,novice,conceptual_orientation,autonomous
+P1458,Create,EC,Mathematics,formal,novice,competency_development,collaborative
+P1459,Understand,RU,History,humanistic,informed,conceptual_orientation,collaborative
+P1460,Create,EC,History,humanistic,informed,comprehensive_mastery,autonomous
+P1461,Analyze,AA,Computer Science,formal,novice,conceptual_orientation,guided
+P1462,Apply,AA,Physics,formal,informed,skill_building,guided
+P1463,Apply,AA,Computer Science,formal,novice,comprehensive_mastery,collaborative
+P1464,Create,EC,Literature,humanistic,novice,comprehensive_mastery,autonomous
+P1465,Understand,RU,Biology,natural,informed,comprehensive_mastery,collaborative
+P1466,Understand,RU,History,humanistic,informed,conceptual_orientation,autonomous
+P1467,Understand,RU,Mathematics,formal,novice,competency_development,autonomous
+P1468,Remember,RU,Biology,natural,novice,competency_development,collaborative
+P1469,Remember,RU,Psychology,natural,misinformed,comprehensive_mastery,autonomous
+P1470,Understand,RU,Computer Science,formal,misinformed,skill_building,autonomous
+P1471,Create,EC,Art History,humanistic,novice,conceptual_orientation,guided
+P1472,Apply,AA,Psychology,natural,novice,conceptual_orientation,collaborative
+P1473,Create,EC,Sociology,applied,informed,competency_development,collaborative
+P1474,Analyze,AA,Sociology,applied,misinformed,skill_building,guided
+P1475,Evaluate,EC,Psychology,natural,novice,conceptual_orientation,autonomous
+P1476,Evaluate,EC,Psychology,natural,misinformed,competency_development,guided
+P1477,Remember,RU,History,humanistic,novice,competency_development,guided
+P1478,Analyze,AA,Literature,humanistic,informed,skill_building,guided
+P1479,Remember,RU,Psychology,natural,misinformed,skill_building,autonomous
+P1480,Apply,AA,Mathematics,formal,novice,conceptual_orientation,collaborative
+P1481,Apply,AA,Physics,formal,informed,skill_building,collaborative
+P1482,Evaluate,EC,Sociology,applied,informed,comprehensive_mastery,collaborative
+P1483,Create,EC,Literature,humanistic,misinformed,comprehensive_mastery,autonomous
+P1484,Analyze,AA,Literature,humanistic,informed,conceptual_orientation,guided
+P1485,Apply,AA,Biology,natural,informed,conceptual_orientation,guided
+P1486,Create,EC,Mathematics,formal,misinformed,competency_development,guided
+P1487,Apply,AA,Physics,formal,informed,conceptual_orientation,autonomous
+P1488,Analyze,AA,Art History,humanistic,informed,conceptual_orientation,autonomous
+P1489,Remember,RU,Art History,humanistic,misinformed,comprehensive_mastery,autonomous
+P1490,Evaluate,EC,History,humanistic,informed,comprehensive_mastery,autonomous
+P1491,Apply,AA,Sociology,applied,misinformed,skill_building,guided
+P1492,Evaluate,EC,Literature,humanistic,misinformed,competency_development,guided
+P1493,Remember,RU,Art History,humanistic,informed,conceptual_orientation,autonomous
+P1494,Analyze,AA,Sociology,applied,misinformed,conceptual_orientation,guided
+P1495,Analyze,AA,Sociology,applied,misinformed,skill_building,collaborative
+P1496,Evaluate,EC,Mathematics,formal,novice,comprehensive_mastery,collaborative
+P1497,Understand,RU,Mathematics,formal,novice,skill_building,guided
+P1498,Apply,AA,Physics,formal,novice,skill_building,guided
+P1499,Apply,AA,Ethics,humanistic,novice,competency_development,collaborative
+P1500,Apply,AA,Mathematics,formal,informed,competency_development,collaborative
+P1501,Evaluate,EC,Literature,humanistic,novice,comprehensive_mastery,autonomous
+P1502,Create,EC,Sociology,applied,novice,comprehensive_mastery,autonomous
+P1503,Create,EC,Computer Science,formal,novice,skill_building,guided
+P1504,Remember,RU,Literature,humanistic,informed,skill_building,collaborative
+P1505,Create,EC,Ethics,humanistic,misinformed,competency_development,guided
+P1506,Understand,RU,Physics,formal,misinformed,skill_building,guided
+P1507,Evaluate,EC,Art History,humanistic,misinformed,skill_building,autonomous
+P1508,Analyze,AA,Mathematics,formal,informed,comprehensive_mastery,autonomous
+P1509,Remember,RU,Mathematics,formal,misinformed,skill_building,guided
+P1510,Remember,RU,Mathematics,formal,informed,skill_building,guided
+P1511,Remember,RU,Literature,humanistic,misinformed,conceptual_orientation,guided
+P1512,Create,EC,Biology,natural,novice,comprehensive_mastery,collaborative
+P1513,Remember,RU,History,humanistic,misinformed,competency_development,guided
+P1514,Create,EC,Literature,humanistic,informed,skill_building,guided
+P1515,Create,EC,Mathematics,formal,misinformed,skill_building,collaborative
+P1516,Analyze,AA,Art History,humanistic,misinformed,skill_building,collaborative
+P1517,Analyze,AA,Psychology,natural,informed,comprehensive_mastery,guided
+P1518,Apply,AA,Mathematics,formal,misinformed,conceptual_orientation,collaborative
+P1519,Understand,RU,Mathematics,formal,novice,skill_building,autonomous
+P1520,Apply,AA,History,humanistic,misinformed,comprehensive_mastery,guided
+P1521,Evaluate,EC,Mathematics,formal,informed,conceptual_orientation,collaborative
+P1522,Remember,RU,Biology,natural,informed,conceptual_orientation,autonomous
+P1523,Understand,RU,Literature,humanistic,informed,conceptual_orientation,autonomous
+P1524,Remember,RU,Ethics,humanistic,novice,competency_development,collaborative
+P1525,Apply,AA,Literature,humanistic,misinformed,skill_building,collaborative
+P1526,Evaluate,EC,Art History,humanistic,misinformed,comprehensive_mastery,guided
+P1527,Remember,RU,Psychology,natural,misinformed,competency_development,collaborative
+P1528,Understand,RU,Literature,humanistic,informed,conceptual_orientation,collaborative
+P1529,Analyze,AA,Ethics,humanistic,misinformed,competency_development,collaborative
+P1530,Analyze,AA,Literature,humanistic,novice,comprehensive_mastery,collaborative
+P1531,Apply,AA,Biology,natural,misinformed,skill_building,autonomous
+P1532,Remember,RU,History,humanistic,informed,competency_development,autonomous
+P1533,Evaluate,EC,Computer Science,formal,misinformed,comprehensive_mastery,autonomous
+P1534,Apply,AA,Art History,humanistic,misinformed,comprehensive_mastery,autonomous
+P1535,Evaluate,EC,Biology,natural,informed,competency_development,guided
+P1536,Apply,AA,Sociology,applied,informed,conceptual_orientation,autonomous
+P1537,Apply,AA,Psychology,natural,informed,skill_building,collaborative
+P1538,Create,EC,Sociology,applied,novice,skill_building,autonomous
+P1539,Remember,RU,Sociology,applied,misinformed,skill_building,autonomous
+P1540,Apply,AA,Computer Science,formal,misinformed,skill_building,autonomous
+P1541,Remember,RU,Computer Science,formal,informed,competency_development,autonomous
+P1542,Create,EC,Mathematics,formal,novice,competency_development,guided
+P1543,Create,EC,Art History,humanistic,informed,skill_building,autonomous
+P1544,Understand,RU,Physics,formal,misinformed,competency_development,collaborative
+P1545,Remember,RU,Sociology,applied,misinformed,competency_development,collaborative
+P1546,Remember,RU,Sociology,applied,novice,comprehensive_mastery,collaborative
+P1547,Analyze,AA,Physics,formal,informed,comprehensive_mastery,guided
+P1548,Understand,RU,Sociology,applied,misinformed,comprehensive_mastery,guided
+P1549,Analyze,AA,Physics,formal,novice,skill_building,guided
+P1550,Create,EC,Psychology,natural,informed,comprehensive_mastery,autonomous
+P1551,Create,EC,Physics,formal,misinformed,comprehensive_mastery,collaborative
+P1552,Create,EC,Mathematics,formal,informed,skill_building,autonomous
+P1553,Evaluate,EC,Physics,formal,misinformed,skill_building,guided
+P1554,Remember,RU,Biology,natural,informed,skill_building,autonomous
+P1555,Evaluate,EC,Psychology,natural,misinformed,skill_building,autonomous
+P1556,Analyze,AA,Biology,natural,novice,skill_building,collaborative
+P1557,Apply,AA,Physics,formal,novice,conceptual_orientation,collaborative
+P1558,Apply,AA,Art History,humanistic,novice,comprehensive_mastery,collaborative
+P1559,Remember,RU,Physics,formal,novice,comprehensive_mastery,autonomous
+P1560,Evaluate,EC,Ethics,humanistic,misinformed,conceptual_orientation,autonomous
+P1561,Create,EC,Mathematics,formal,informed,conceptual_orientation,guided
+P1562,Create,EC,Art History,humanistic,novice,comprehensive_mastery,collaborative
+P1563,Understand,RU,Psychology,natural,novice,comprehensive_mastery,autonomous
+P1564,Evaluate,EC,Biology,natural,informed,comprehensive_mastery,guided
+P1565,Remember,RU,History,humanistic,novice,competency_development,autonomous
+P1566,Remember,RU,Psychology,natural,informed,competency_development,guided
+P1567,Remember,RU,Physics,formal,novice,skill_building,autonomous
+P1568,Remember,RU,History,humanistic,informed,skill_building,guided
+P1569,Understand,RU,Physics,formal,informed,competency_development,guided
+P1570,Understand,RU,Physics,formal,misinformed,skill_building,collaborative
+P1571,Apply,AA,History,humanistic,misinformed,conceptual_orientation,collaborative
+P1572,Apply,AA,Computer Science,formal,novice,competency_development,collaborative
+P1573,Understand,RU,Biology,natural,informed,conceptual_orientation,autonomous
+P1574,Apply,AA,Computer Science,formal,novice,conceptual_orientation,guided
+P1575,Apply,AA,History,humanistic,misinformed,competency_development,collaborative
+P1576,Apply,AA,Art History,humanistic,informed,competency_development,guided
+P1577,Understand,RU,Sociology,applied,misinformed,comprehensive_mastery,collaborative
+P1578,Evaluate,EC,Computer Science,formal,novice,competency_development,autonomous
+P1579,Understand,RU,Literature,humanistic,novice,conceptual_orientation,autonomous
+P1580,Remember,RU,Ethics,humanistic,informed,conceptual_orientation,collaborative
+P1581,Evaluate,EC,Psychology,natural,novice,competency_development,autonomous
+P1582,Remember,RU,Ethics,humanistic,novice,comprehensive_mastery,collaborative
+P1583,Remember,RU,Biology,natural,novice,competency_development,guided
+P1584,Remember,RU,Biology,natural,novice,skill_building,guided
+P1585,Remember,RU,Art History,humanistic,informed,competency_development,guided
+P1586,Create,EC,Sociology,applied,informed,competency_development,autonomous
+P1587,Evaluate,EC,Computer Science,formal,misinformed,conceptual_orientation,collaborative
+P1588,Create,EC,Mathematics,formal,informed,competency_development,guided
+P1589,Evaluate,EC,Physics,formal,informed,comprehensive_mastery,autonomous
+P1590,Create,EC,Psychology,natural,novice,conceptual_orientation,collaborative
+P1591,Apply,AA,Psychology,natural,informed,skill_building,guided
+P1592,Remember,RU,Art History,humanistic,novice,conceptual_orientation,guided
+P1593,Create,EC,Art History,humanistic,informed,competency_development,collaborative
+P1594,Understand,RU,Literature,humanistic,novice,conceptual_orientation,guided
+P1595,Create,EC,Physics,formal,novice,comprehensive_mastery,guided
+P1596,Remember,RU,Physics,formal,informed,competency_development,autonomous
+P1597,Apply,AA,Biology,natural,novice,competency_development,collaborative
+P1598,Evaluate,EC,Art History,humanistic,misinformed,conceptual_orientation,autonomous
+P1599,Apply,AA,Computer Science,formal,informed,comprehensive_mastery,autonomous
+P1600,Understand,RU,Ethics,humanistic,misinformed,competency_development,guided
+P1601,Analyze,AA,Literature,humanistic,novice,conceptual_orientation,autonomous
+P1602,Remember,RU,Physics,formal,misinformed,comprehensive_mastery,guided
+P1603,Analyze,AA,Biology,natural,misinformed,conceptual_orientation,guided
+P1604,Understand,RU,Literature,humanistic,novice,competency_development,collaborative
+P1605,Remember,RU,Psychology,natural,misinformed,conceptual_orientation,guided
+P1606,Create,EC,Sociology,applied,novice,competency_development,collaborative
+P1607,Evaluate,EC,Psychology,natural,novice,skill_building,collaborative
+P1608,Understand,RU,Biology,natural,novice,conceptual_orientation,collaborative
+P1609,Evaluate,EC,Art History,humanistic,informed,skill_building,collaborative
+P1610,Create,EC,Physics,formal,misinformed,skill_building,guided
+P1611,Understand,RU,Ethics,humanistic,misinformed,skill_building,collaborative
+P1612,Remember,RU,History,humanistic,informed,skill_building,autonomous
+P1613,Create,EC,Psychology,natural,misinformed,comprehensive_mastery,guided
+P1614,Analyze,AA,Literature,humanistic,novice,comprehensive_mastery,guided
+P1615,Create,EC,Literature,humanistic,misinformed,competency_development,guided
+P1616,Apply,AA,Psychology,natural,novice,competency_development,collaborative
+P1617,Create,EC,Physics,formal,novice,conceptual_orientation,guided
+P1618,Analyze,AA,Psychology,natural,informed,conceptual_orientation,guided
+P1619,Apply,AA,Physics,formal,informed,conceptual_orientation,collaborative
+P1620,Analyze,AA,Art History,humanistic,novice,comprehensive_mastery,autonomous
+P1621,Understand,RU,Physics,formal,novice,competency_development,autonomous
+P1622,Understand,RU,History,humanistic,novice,conceptual_orientation,autonomous
+P1623,Analyze,AA,Mathematics,formal,informed,conceptual_orientation,collaborative
+P1624,Apply,AA,Psychology,natural,misinformed,competency_development,collaborative
+P1625,Remember,RU,Mathematics,formal,informed,skill_building,collaborative
+P1626,Analyze,AA,Literature,humanistic,novice,competency_development,autonomous
+P1627,Create,EC,Literature,humanistic,informed,conceptual_orientation,guided
+P1628,Remember,RU,Physics,formal,novice,conceptual_orientation,collaborative
+P1629,Evaluate,EC,Computer Science,formal,novice,skill_building,autonomous
+P1630,Understand,RU,Computer Science,formal,informed,competency_development,autonomous
+P1631,Remember,RU,Physics,formal,novice,comprehensive_mastery,collaborative
+P1632,Evaluate,EC,History,humanistic,informed,competency_development,autonomous
+P1633,Apply,AA,Art History,humanistic,informed,conceptual_orientation,guided
+P1634,Create,EC,Sociology,applied,novice,competency_development,guided
+P1635,Remember,RU,Literature,humanistic,novice,competency_development,collaborative
+P1636,Analyze,AA,Computer Science,formal,informed,skill_building,guided
+P1637,Remember,RU,Sociology,applied,misinformed,comprehensive_mastery,collaborative
+P1638,Apply,AA,Ethics,humanistic,misinformed,skill_building,collaborative
+P1639,Evaluate,EC,Art History,humanistic,misinformed,competency_development,autonomous
+P1640,Evaluate,EC,History,humanistic,misinformed,conceptual_orientation,collaborative
+P1641,Remember,RU,Sociology,applied,novice,competency_development,autonomous
+P1642,Remember,RU,Physics,formal,novice,skill_building,collaborative
+P1643,Remember,RU,Physics,formal,informed,comprehensive_mastery,autonomous
+P1644,Apply,AA,Psychology,natural,misinformed,skill_building,autonomous
+P1645,Create,EC,Ethics,humanistic,novice,conceptual_orientation,autonomous
+P1646,Evaluate,EC,Physics,formal,misinformed,conceptual_orientation,collaborative
+P1647,Analyze,AA,Ethics,humanistic,informed,competency_development,guided
+P1648,Evaluate,EC,Computer Science,formal,novice,competency_development,guided
+P1649,Remember,RU,History,humanistic,informed,competency_development,collaborative
+P1650,Remember,RU,Psychology,natural,misinformed,comprehensive_mastery,guided
+P1651,Remember,RU,Computer Science,formal,novice,skill_building,collaborative
+P1652,Apply,AA,Physics,formal,novice,comprehensive_mastery,collaborative
+P1653,Evaluate,EC,Literature,humanistic,misinformed,conceptual_orientation,guided
+P1654,Understand,RU,Sociology,applied,misinformed,competency_development,autonomous
+P1655,Analyze,AA,Psychology,natural,novice,competency_development,collaborative
+P1656,Remember,RU,Sociology,applied,informed,conceptual_orientation,autonomous
+P1657,Create,EC,Psychology,natural,informed,competency_development,guided
+P1658,Create,EC,History,humanistic,informed,skill_building,guided
+P1659,Analyze,AA,Psychology,natural,informed,competency_development,guided
+P1660,Create,EC,Literature,humanistic,novice,competency_development,guided
+P1661,Apply,AA,History,humanistic,novice,skill_building,autonomous
+P1662,Evaluate,EC,History,humanistic,misinformed,conceptual_orientation,guided
+P1663,Remember,RU,Ethics,humanistic,misinformed,skill_building,collaborative
+P1664,Evaluate,EC,History,humanistic,informed,competency_development,collaborative
+P1665,Evaluate,EC,Computer Science,formal,informed,comprehensive_mastery,collaborative
+P1666,Evaluate,EC,History,humanistic,informed,conceptual_orientation,autonomous
+P1667,Evaluate,EC,Art History,humanistic,informed,conceptual_orientation,collaborative
+P1668,Create,EC,Art History,humanistic,informed,comprehensive_mastery,guided
+P1669,Evaluate,EC,Mathematics,formal,misinformed,conceptual_orientation,autonomous
+P1670,Apply,AA,History,humanistic,novice,competency_development,autonomous
+P1671,Remember,RU,Literature,humanistic,misinformed,skill_building,autonomous
+P1672,Evaluate,EC,Literature,humanistic,novice,comprehensive_mastery,guided
+P1673,Create,EC,Art History,humanistic,misinformed,conceptual_orientation,guided
+P1674,Analyze,AA,Ethics,humanistic,novice,conceptual_orientation,guided
+P1675,Apply,AA,Psychology,natural,novice,competency_development,guided
+P1676,Evaluate,EC,Literature,humanistic,novice,skill_building,autonomous
+P1677,Create,EC,Computer Science,formal,informed,competency_development,autonomous
+P1678,Analyze,AA,Sociology,applied,novice,skill_building,collaborative
+P1679,Evaluate,EC,Literature,humanistic,informed,conceptual_orientation,guided
+P1680,Evaluate,EC,History,humanistic,novice,conceptual_orientation,guided
+P1681,Analyze,AA,Physics,formal,novice,skill_building,autonomous
+P1682,Create,EC,Literature,humanistic,novice,conceptual_orientation,collaborative
+P1683,Evaluate,EC,Literature,humanistic,informed,competency_development,collaborative
+P1684,Create,EC,Psychology,natural,novice,comprehensive_mastery,guided
+P1685,Remember,RU,Psychology,natural,novice,competency_development,collaborative
+P1686,Create,EC,Ethics,humanistic,informed,competency_development,guided
+P1687,Remember,RU,Biology,natural,misinformed,conceptual_orientation,collaborative
+P1688,Analyze,AA,Biology,natural,novice,skill_building,autonomous
+P1689,Analyze,AA,Ethics,humanistic,informed,competency_development,collaborative
+P1690,Understand,RU,History,humanistic,novice,comprehensive_mastery,collaborative
+P1691,Analyze,AA,Physics,formal,informed,competency_development,autonomous
+P1692,Evaluate,EC,Ethics,humanistic,informed,comprehensive_mastery,autonomous
+P1693,Create,EC,History,humanistic,misinformed,competency_development,autonomous
+P1694,Evaluate,EC,Literature,humanistic,informed,conceptual_orientation,autonomous
+P1695,Evaluate,EC,Literature,humanistic,novice,conceptual_orientation,collaborative
+P1696,Apply,AA,Computer Science,formal,informed,conceptual_orientation,autonomous
+P1697,Analyze,AA,Biology,natural,novice,competency_development,guided
+P1698,Remember,RU,Art History,humanistic,misinformed,skill_building,guided
+P1699,Create,EC,Biology,natural,informed,competency_development,guided
+P1700,Evaluate,EC,Sociology,applied,misinformed,skill_building,autonomous
+P1701,Create,EC,Psychology,natural,informed,skill_building,autonomous
+P1702,Remember,RU,Computer Science,formal,novice,conceptual_orientation,autonomous
+P1703,Create,EC,History,humanistic,informed,conceptual_orientation,autonomous
+P1704,Create,EC,Art History,humanistic,misinformed,conceptual_orientation,collaborative
+P1705,Understand,RU,Biology,natural,misinformed,conceptual_orientation,guided
+P1706,Analyze,AA,Literature,humanistic,novice,conceptual_orientation,collaborative
+P1707,Analyze,AA,Mathematics,formal,novice,comprehensive_mastery,autonomous
+P1708,Evaluate,EC,Sociology,applied,novice,conceptual_orientation,collaborative
+P1709,Remember,RU,Mathematics,formal,informed,conceptual_orientation,collaborative
+P1710,Evaluate,EC,Art History,humanistic,novice,comprehensive_mastery,guided
+P1711,Understand,RU,Computer Science,formal,misinformed,competency_development,collaborative
+P1712,Apply,AA,Art History,humanistic,novice,conceptual_orientation,collaborative
+P1713,Understand,RU,Psychology,natural,novice,skill_building,guided
+P1714,Remember,RU,History,humanistic,novice,conceptual_orientation,guided
+P1715,Create,EC,Mathematics,formal,novice,skill_building,collaborative
+P1716,Evaluate,EC,Art History,humanistic,informed,competency_development,autonomous
+P1717,Create,EC,Mathematics,formal,misinformed,conceptual_orientation,guided
+P1718,Analyze,AA,Biology,natural,misinformed,skill_building,guided
+P1719,Apply,AA,Sociology,applied,novice,conceptual_orientation,autonomous
+P1720,Evaluate,EC,Biology,natural,misinformed,skill_building,collaborative
+P1721,Create,EC,Art History,humanistic,informed,competency_development,guided
+P1722,Apply,AA,History,humanistic,informed,skill_building,autonomous
+P1723,Understand,RU,Physics,formal,misinformed,comprehensive_mastery,guided
+P1724,Evaluate,EC,Psychology,natural,misinformed,comprehensive_mastery,autonomous
+P1725,Analyze,AA,Literature,humanistic,informed,competency_development,guided
+P1726,Create,EC,Physics,formal,misinformed,competency_development,autonomous
+P1727,Analyze,AA,Computer Science,formal,informed,comprehensive_mastery,autonomous
+P1728,Understand,RU,Ethics,humanistic,informed,comprehensive_mastery,autonomous
+P1729,Create,EC,History,humanistic,misinformed,conceptual_orientation,guided
+P1730,Remember,RU,Computer Science,formal,novice,comprehensive_mastery,autonomous
+P1731,Create,EC,Ethics,humanistic,informed,competency_development,collaborative
+P1732,Remember,RU,Biology,natural,misinformed,competency_development,collaborative
+P1733,Apply,AA,Sociology,applied,misinformed,conceptual_orientation,autonomous
+P1734,Analyze,AA,Physics,formal,novice,conceptual_orientation,guided
+P1735,Create,EC,Literature,humanistic,misinformed,skill_building,collaborative
+P1736,Analyze,AA,Physics,formal,misinformed,skill_building,autonomous
+P1737,Understand,RU,Psychology,natural,informed,skill_building,autonomous
+P1738,Analyze,AA,Computer Science,formal,informed,comprehensive_mastery,collaborative
+P1739,Evaluate,EC,Art History,humanistic,informed,skill_building,autonomous
+P1740,Apply,AA,Biology,natural,novice,skill_building,guided
+P1741,Create,EC,Ethics,humanistic,novice,comprehensive_mastery,guided
+P1742,Remember,RU,Sociology,applied,informed,skill_building,collaborative
+P1743,Remember,RU,Ethics,humanistic,informed,conceptual_orientation,guided
+P1744,Understand,RU,Sociology,applied,informed,comprehensive_mastery,guided
+P1745,Evaluate,EC,Biology,natural,novice,comprehensive_mastery,autonomous
+P1746,Evaluate,EC,Mathematics,formal,informed,comprehensive_mastery,collaborative
+P1747,Apply,AA,Psychology,natural,novice,competency_development,autonomous
+P1748,Understand,RU,Ethics,humanistic,misinformed,comprehensive_mastery,guided
+P1749,Analyze,AA,Biology,natural,informed,skill_building,autonomous
+P1750,Create,EC,Ethics,humanistic,informed,skill_building,guided
+P1751,Evaluate,EC,Computer Science,formal,misinformed,competency_development,collaborative
+P1752,Apply,AA,Psychology,natural,informed,competency_development,autonomous
+P1753,Apply,AA,Physics,formal,misinformed,skill_building,collaborative
+P1754,Create,EC,Physics,formal,novice,competency_development,guided
+P1755,Evaluate,EC,Computer Science,formal,informed,conceptual_orientation,guided
+P1756,Create,EC,Sociology,applied,misinformed,conceptual_orientation,collaborative
+P1757,Analyze,AA,Mathematics,formal,misinformed,comprehensive_mastery,autonomous
+P1758,Analyze,AA,Mathematics,formal,informed,skill_building,collaborative
+P1759,Evaluate,EC,Mathematics,formal,informed,comprehensive_mastery,autonomous
+P1760,Apply,AA,Psychology,natural,novice,conceptual_orientation,guided
+P1761,Evaluate,EC,Mathematics,formal,informed,skill_building,autonomous
+P1762,Create,EC,Literature,humanistic,novice,skill_building,guided
+P1763,Understand,RU,Psychology,natural,misinformed,conceptual_orientation,autonomous
+P1764,Evaluate,EC,Literature,humanistic,informed,comprehensive_mastery,guided
+P1765,Analyze,AA,Art History,humanistic,novice,conceptual_orientation,autonomous
+P1766,Remember,RU,Ethics,humanistic,novice,skill_building,guided
+P1767,Apply,AA,Sociology,applied,informed,competency_development,autonomous
+P1768,Understand,RU,Mathematics,formal,misinformed,skill_building,autonomous
+P1769,Remember,RU,Art History,humanistic,misinformed,competency_development,guided
+P1770,Evaluate,EC,Computer Science,formal,misinformed,skill_building,collaborative
+P1771,Create,EC,History,humanistic,informed,comprehensive_mastery,guided
+P1772,Remember,RU,Computer Science,formal,novice,comprehensive_mastery,guided
+P1773,Analyze,AA,Literature,humanistic,novice,competency_development,guided
+P1774,Understand,RU,Sociology,applied,informed,conceptual_orientation,autonomous
+P1775,Apply,AA,Art History,humanistic,misinformed,competency_development,guided
+P1776,Create,EC,Computer Science,formal,misinformed,comprehensive_mastery,guided
+P1777,Evaluate,EC,Computer Science,formal,novice,skill_building,collaborative
+P1778,Understand,RU,Biology,natural,misinformed,skill_building,guided
+P1779,Create,EC,Computer Science,formal,misinformed,skill_building,autonomous
+P1780,Understand,RU,Computer Science,formal,novice,comprehensive_mastery,guided
+P1781,Analyze,AA,History,humanistic,informed,skill_building,collaborative
+P1782,Analyze,AA,Mathematics,formal,misinformed,conceptual_orientation,collaborative
+P1783,Analyze,AA,Sociology,applied,novice,comprehensive_mastery,collaborative
+P1784,Apply,AA,Ethics,humanistic,misinformed,competency_development,autonomous
+P1785,Create,EC,Ethics,humanistic,novice,conceptual_orientation,collaborative
+P1786,Apply,AA,Physics,formal,misinformed,conceptual_orientation,autonomous
+P1787,Analyze,AA,History,humanistic,novice,skill_building,autonomous
+P1788,Create,EC,Computer Science,formal,novice,skill_building,autonomous
+P1789,Apply,AA,Art History,humanistic,misinformed,skill_building,collaborative
+P1790,Understand,RU,Art History,humanistic,misinformed,comprehensive_mastery,autonomous
+P1791,Analyze,AA,Computer Science,formal,misinformed,skill_building,collaborative
+P1792,Understand,RU,Literature,humanistic,novice,comprehensive_mastery,collaborative
+P1793,Evaluate,EC,Sociology,applied,informed,competency_development,collaborative
+P1794,Create,EC,Computer Science,formal,informed,comprehensive_mastery,autonomous
+P1795,Remember,RU,Mathematics,formal,novice,conceptual_orientation,autonomous
+P1796,Analyze,AA,Sociology,applied,novice,competency_development,collaborative
+P1797,Create,EC,Art History,humanistic,misinformed,competency_development,autonomous
+P1798,Create,EC,Computer Science,formal,informed,conceptual_orientation,collaborative
+P1799,Understand,RU,Psychology,natural,informed,comprehensive_mastery,autonomous
+P1800,Remember,RU,History,humanistic,misinformed,skill_building,autonomous
+P1801,Apply,AA,Art History,humanistic,novice,skill_building,collaborative
+P1802,Remember,RU,Biology,natural,misinformed,competency_development,guided
+P1803,Understand,RU,Physics,formal,informed,comprehensive_mastery,autonomous
+P1804,Apply,AA,Computer Science,formal,novice,skill_building,collaborative
+P1805,Analyze,AA,Ethics,humanistic,novice,comprehensive_mastery,guided
+P1806,Evaluate,EC,Ethics,humanistic,novice,competency_development,collaborative
+P1807,Create,EC,Psychology,natural,informed,competency_development,collaborative
+P1808,Apply,AA,Ethics,humanistic,informed,skill_building,autonomous
+P1809,Create,EC,History,humanistic,novice,skill_building,autonomous
+P1810,Create,EC,Literature,humanistic,novice,comprehensive_mastery,guided
+P1811,Create,EC,Sociology,applied,misinformed,conceptual_orientation,autonomous
+P1812,Create,EC,History,humanistic,novice,competency_development,guided
+P1813,Analyze,AA,History,humanistic,novice,competency_development,guided
+P1814,Analyze,AA,Art History,humanistic,misinformed,competency_development,collaborative
+P1815,Remember,RU,Art History,humanistic,informed,comprehensive_mastery,collaborative
+P1816,Analyze,AA,Computer Science,formal,misinformed,skill_building,autonomous
+P1817,Create,EC,Psychology,natural,novice,conceptual_orientation,autonomous
+P1818,Apply,AA,Art History,humanistic,novice,competency_development,guided
+P1819,Create,EC,Ethics,humanistic,misinformed,conceptual_orientation,guided
+P1820,Remember,RU,History,humanistic,informed,comprehensive_mastery,guided
+P1821,Remember,RU,History,humanistic,novice,comprehensive_mastery,autonomous
+P1822,Remember,RU,Computer Science,formal,novice,skill_building,guided
+P1823,Apply,AA,Computer Science,formal,misinformed,skill_building,guided
+P1824,Create,EC,Computer Science,formal,novice,skill_building,collaborative
+P1825,Apply,AA,Physics,formal,novice,comprehensive_mastery,guided
+P1826,Evaluate,EC,Mathematics,formal,novice,comprehensive_mastery,autonomous
+P1827,Apply,AA,History,humanistic,novice,conceptual_orientation,collaborative
+P1828,Evaluate,EC,Physics,formal,misinformed,skill_building,collaborative
+P1829,Evaluate,EC,Biology,natural,novice,comprehensive_mastery,collaborative
+P1830,Understand,RU,Computer Science,formal,misinformed,competency_development,autonomous
+P1831,Evaluate,EC,Sociology,applied,informed,skill_building,guided
+P1832,Analyze,AA,Mathematics,formal,informed,conceptual_orientation,guided
+P1833,Evaluate,EC,Computer Science,formal,novice,comprehensive_mastery,guided
+P1834,Evaluate,EC,Physics,formal,novice,conceptual_orientation,collaborative
+P1835,Create,EC,Literature,humanistic,misinformed,comprehensive_mastery,collaborative
+P1836,Evaluate,EC,Art History,humanistic,misinformed,comprehensive_mastery,collaborative
+P1837,Remember,RU,History,humanistic,novice,skill_building,autonomous
+P1838,Apply,AA,Mathematics,formal,informed,conceptual_orientation,guided
+P1839,Evaluate,EC,Ethics,humanistic,novice,conceptual_orientation,autonomous
+P1840,Apply,AA,Art History,humanistic,misinformed,skill_building,autonomous
+P1841,Evaluate,EC,Psychology,natural,misinformed,comprehensive_mastery,guided
+P1842,Remember,RU,Computer Science,formal,novice,skill_building,autonomous
+P1843,Evaluate,EC,Art History,humanistic,novice,skill_building,autonomous
+P1844,Analyze,AA,Sociology,applied,informed,competency_development,collaborative
+P1845,Analyze,AA,History,humanistic,misinformed,skill_building,autonomous
+P1846,Analyze,AA,History,humanistic,informed,conceptual_orientation,autonomous
+P1847,Understand,RU,Physics,formal,informed,skill_building,autonomous
+P1848,Understand,RU,Biology,natural,informed,skill_building,autonomous
+P1849,Analyze,AA,History,humanistic,informed,conceptual_orientation,guided
+P1850,Evaluate,EC,Biology,natural,misinformed,conceptual_orientation,collaborative
+P1851,Understand,RU,Biology,natural,informed,competency_development,collaborative
+P1852,Create,EC,Sociology,applied,informed,skill_building,autonomous
+P1853,Evaluate,EC,History,humanistic,novice,comprehensive_mastery,collaborative
+P1854,Understand,RU,Biology,natural,misinformed,competency_development,autonomous
+P1855,Remember,RU,History,humanistic,misinformed,conceptual_orientation,collaborative
+P1856,Evaluate,EC,Sociology,applied,novice,conceptual_orientation,guided
+P1857,Remember,RU,Biology,natural,informed,comprehensive_mastery,collaborative
+P1858,Apply,AA,Ethics,humanistic,informed,competency_development,guided
+P1859,Analyze,AA,Ethics,humanistic,novice,conceptual_orientation,collaborative
+P1860,Evaluate,EC,Art History,humanistic,misinformed,competency_development,collaborative
+P1861,Evaluate,EC,Mathematics,formal,misinformed,skill_building,autonomous
+P1862,Apply,AA,Sociology,applied,informed,comprehensive_mastery,collaborative
+P1863,Evaluate,EC,Sociology,applied,novice,competency_development,guided
+P1864,Understand,RU,Ethics,humanistic,novice,skill_building,collaborative
+P1865,Analyze,AA,Ethics,humanistic,misinformed,comprehensive_mastery,collaborative
+P1866,Evaluate,EC,Literature,humanistic,informed,comprehensive_mastery,autonomous
+P1867,Evaluate,EC,Sociology,applied,novice,comprehensive_mastery,guided
+P1868,Apply,AA,Mathematics,formal,novice,conceptual_orientation,guided
+P1869,Evaluate,EC,Ethics,humanistic,novice,comprehensive_mastery,autonomous
+P1870,Understand,RU,History,humanistic,novice,comprehensive_mastery,autonomous
+P1871,Apply,AA,Mathematics,formal,novice,comprehensive_mastery,autonomous
+P1872,Evaluate,EC,Computer Science,formal,misinformed,comprehensive_mastery,collaborative
+P1873,Evaluate,EC,Mathematics,formal,novice,skill_building,autonomous
+P1874,Apply,AA,History,humanistic,informed,competency_development,guided
+P1875,Apply,AA,Art History,humanistic,misinformed,comprehensive_mastery,collaborative
+P1876,Analyze,AA,Physics,formal,misinformed,competency_development,guided
+P1877,Understand,RU,Computer Science,formal,informed,skill_building,guided
+P1878,Apply,AA,Ethics,humanistic,novice,comprehensive_mastery,autonomous
+P1879,Understand,RU,Biology,natural,misinformed,skill_building,autonomous
+P1880,Evaluate,EC,History,humanistic,informed,comprehensive_mastery,guided
+P1881,Create,EC,Computer Science,formal,informed,conceptual_orientation,autonomous
+P1882,Apply,AA,Physics,formal,misinformed,comprehensive_mastery,autonomous
+P1883,Remember,RU,Psychology,natural,misinformed,conceptual_orientation,autonomous
+P1884,Apply,AA,Physics,formal,novice,conceptual_orientation,guided
+P1885,Analyze,AA,Art History,humanistic,novice,conceptual_orientation,guided
+P1886,Apply,AA,Mathematics,formal,informed,skill_building,autonomous
+P1887,Apply,AA,Computer Science,formal,novice,comprehensive_mastery,guided
+P1888,Analyze,AA,Art History,humanistic,novice,conceptual_orientation,collaborative
+P1889,Evaluate,EC,Sociology,applied,informed,comprehensive_mastery,guided
+P1890,Analyze,AA,Psychology,natural,novice,skill_building,autonomous
+P1891,Understand,RU,Mathematics,formal,informed,conceptual_orientation,collaborative
+P1892,Analyze,AA,Art History,humanistic,misinformed,competency_development,guided
+P1893,Understand,RU,Mathematics,formal,misinformed,competency_development,collaborative
+P1894,Understand,RU,Physics,formal,misinformed,comprehensive_mastery,autonomous
+P1895,Evaluate,EC,Literature,humanistic,informed,competency_development,guided
+P1896,Create,EC,Biology,natural,misinformed,conceptual_orientation,guided
+P1897,Analyze,AA,Biology,natural,novice,comprehensive_mastery,collaborative
+P1898,Remember,RU,Biology,natural,novice,comprehensive_mastery,collaborative
+P1899,Apply,AA,Literature,humanistic,informed,comprehensive_mastery,autonomous
+P1900,Evaluate,EC,Literature,humanistic,misinformed,skill_building,collaborative
+P1901,Evaluate,EC,Computer Science,formal,novice,conceptual_orientation,autonomous
+P1902,Understand,RU,Literature,humanistic,novice,skill_building,autonomous
+P1903,Remember,RU,Ethics,humanistic,novice,skill_building,autonomous
+P1904,Understand,RU,Physics,formal,informed,comprehensive_mastery,collaborative
+P1905,Understand,RU,Literature,humanistic,misinformed,conceptual_orientation,guided
+P1906,Analyze,AA,Ethics,humanistic,novice,competency_development,autonomous
+P1907,Create,EC,History,humanistic,informed,conceptual_orientation,guided
+P1908,Evaluate,EC,Physics,formal,informed,competency_development,collaborative
+P1909,Remember,RU,Art History,humanistic,informed,comprehensive_mastery,autonomous
+P1910,Create,EC,Psychology,natural,novice,skill_building,collaborative
+P1911,Create,EC,Physics,formal,novice,comprehensive_mastery,autonomous
+P1912,Understand,RU,Sociology,applied,novice,comprehensive_mastery,guided
+P1913,Evaluate,EC,Literature,humanistic,novice,comprehensive_mastery,collaborative
+P1914,Apply,AA,Psychology,natural,novice,comprehensive_mastery,autonomous
+P1915,Analyze,AA,History,humanistic,novice,comprehensive_mastery,collaborative
+P1916,Understand,RU,Biology,natural,novice,conceptual_orientation,guided
+P1917,Evaluate,EC,Mathematics,formal,misinformed,competency_development,autonomous
+P1918,Understand,RU,Biology,natural,informed,competency_development,guided
+P1919,Create,EC,Mathematics,formal,misinformed,comprehensive_mastery,collaborative
+P1920,Remember,RU,Psychology,natural,novice,comprehensive_mastery,autonomous
+P1921,Create,EC,Computer Science,formal,misinformed,comprehensive_mastery,autonomous
+P1922,Evaluate,EC,Biology,natural,informed,conceptual_orientation,guided
+P1923,Create,EC,Literature,humanistic,novice,comprehensive_mastery,collaborative
+P1924,Remember,RU,Literature,humanistic,misinformed,conceptual_orientation,autonomous
+P1925,Remember,RU,Literature,humanistic,misinformed,competency_development,collaborative
+P1926,Create,EC,Sociology,applied,misinformed,skill_building,guided
+P1927,Apply,AA,Literature,humanistic,novice,comprehensive_mastery,guided
+P1928,Analyze,AA,Sociology,applied,misinformed,competency_development,collaborative
+P1929,Analyze,AA,Sociology,applied,misinformed,comprehensive_mastery,collaborative
+P1930,Understand,RU,Ethics,humanistic,misinformed,comprehensive_mastery,autonomous
+P1931,Understand,RU,Mathematics,formal,novice,skill_building,collaborative
+P1932,Analyze,AA,Mathematics,formal,novice,conceptual_orientation,collaborative
+P1933,Evaluate,EC,Biology,natural,misinformed,comprehensive_mastery,guided
+P1934,Remember,RU,History,humanistic,novice,comprehensive_mastery,collaborative
+P1935,Create,EC,Mathematics,formal,novice,conceptual_orientation,autonomous
+P1936,Create,EC,History,humanistic,informed,skill_building,autonomous
+P1937,Evaluate,EC,Computer Science,formal,misinformed,skill_building,autonomous
+P1938,Evaluate,EC,Psychology,natural,misinformed,skill_building,collaborative
+P1939,Create,EC,Ethics,humanistic,informed,comprehensive_mastery,guided
+P1940,Analyze,AA,Sociology,applied,informed,competency_development,guided
+P1941,Evaluate,EC,Art History,humanistic,informed,comprehensive_mastery,guided
+P1942,Remember,RU,Literature,humanistic,novice,conceptual_orientation,guided
+P1943,Apply,AA,Literature,humanistic,misinformed,comprehensive_mastery,autonomous
+P1944,Analyze,AA,Sociology,applied,novice,skill_building,guided
+P1945,Remember,RU,Computer Science,formal,novice,comprehensive_mastery,collaborative
+P1946,Apply,AA,Biology,natural,informed,comprehensive_mastery,collaborative
+P1947,Analyze,AA,Ethics,humanistic,novice,competency_development,collaborative
+P1948,Apply,AA,Computer Science,formal,misinformed,competency_development,guided
+P1949,Evaluate,EC,Computer Science,formal,informed,competency_development,collaborative
+P1950,Create,EC,Mathematics,formal,informed,comprehensive_mastery,autonomous
+P1951,Remember,RU,Biology,natural,novice,conceptual_orientation,collaborative
+P1952,Apply,AA,Literature,humanistic,informed,competency_development,collaborative
+P1953,Evaluate,EC,Ethics,humanistic,novice,conceptual_orientation,collaborative
+P1954,Remember,RU,History,humanistic,informed,conceptual_orientation,autonomous
+P1955,Understand,RU,Art History,humanistic,novice,conceptual_orientation,collaborative
+P1956,Understand,RU,Mathematics,formal,novice,competency_development,collaborative
+P1957,Remember,RU,History,humanistic,misinformed,conceptual_orientation,autonomous
+P1958,Analyze,AA,Sociology,applied,novice,conceptual_orientation,autonomous
+P1959,Understand,RU,Computer Science,formal,informed,comprehensive_mastery,guided
+P1960,Apply,AA,Biology,natural,novice,comprehensive_mastery,collaborative
+P1961,Understand,RU,Computer Science,formal,misinformed,conceptual_orientation,collaborative
+P1962,Apply,AA,Literature,humanistic,novice,skill_building,collaborative
+P1963,Evaluate,EC,Sociology,applied,informed,skill_building,autonomous
+P1964,Evaluate,EC,Sociology,applied,misinformed,competency_development,collaborative
+P1965,Analyze,AA,Art History,humanistic,misinformed,comprehensive_mastery,autonomous
+P1966,Remember,RU,Mathematics,formal,misinformed,skill_building,collaborative
+P1967,Create,EC,Biology,natural,informed,comprehensive_mastery,collaborative
+P1968,Remember,RU,Literature,humanistic,informed,comprehensive_mastery,autonomous
+P1969,Apply,AA,Ethics,humanistic,novice,comprehensive_mastery,collaborative
+P1970,Understand,RU,Art History,humanistic,informed,competency_development,guided
+P1971,Remember,RU,Ethics,humanistic,informed,skill_building,autonomous
+P1972,Remember,RU,Ethics,humanistic,novice,comprehensive_mastery,guided
+P1973,Analyze,AA,Mathematics,formal,misinformed,skill_building,autonomous
+P1974,Create,EC,Sociology,applied,novice,conceptual_orientation,collaborative
+P1975,Remember,RU,Ethics,humanistic,misinformed,skill_building,guided
+P1976,Understand,RU,Psychology,natural,misinformed,competency_development,collaborative
+P1977,Apply,AA,Physics,formal,informed,comprehensive_mastery,guided
+P1978,Create,EC,Physics,formal,novice,skill_building,autonomous
+P1979,Analyze,AA,Art History,humanistic,misinformed,conceptual_orientation,guided
+P1980,Understand,RU,Ethics,humanistic,informed,skill_building,collaborative
+P1981,Analyze,AA,Mathematics,formal,novice,competency_development,autonomous
+P1982,Analyze,AA,Physics,formal,novice,comprehensive_mastery,collaborative
+P1983,Apply,AA,Biology,natural,informed,conceptual_orientation,autonomous
+P1984,Evaluate,EC,Literature,humanistic,informed,skill_building,guided
+P1985,Understand,RU,Biology,natural,misinformed,skill_building,collaborative
+P1986,Remember,RU,Psychology,natural,informed,skill_building,autonomous
+P1987,Apply,AA,Mathematics,formal,novice,conceptual_orientation,autonomous
+P1988,Evaluate,EC,Physics,formal,novice,comprehensive_mastery,collaborative
+P1989,Apply,AA,Biology,natural,informed,skill_building,guided
+P1990,Create,EC,Biology,natural,novice,competency_development,autonomous
+P1991,Remember,RU,History,humanistic,informed,conceptual_orientation,collaborative
+P1992,Apply,AA,Sociology,applied,misinformed,competency_development,guided
+P1993,Remember,RU,Literature,humanistic,novice,skill_building,collaborative
+P1994,Apply,AA,Biology,natural,misinformed,comprehensive_mastery,guided
+P1995,Analyze,AA,Ethics,humanistic,novice,comprehensive_mastery,collaborative
+P1996,Evaluate,EC,Physics,formal,misinformed,competency_development,guided
+P1997,Understand,RU,Literature,humanistic,misinformed,conceptual_orientation,autonomous
+P1998,Create,EC,Psychology,natural,misinformed,skill_building,collaborative
+P1999,Evaluate,EC,Psychology,natural,informed,competency_development,collaborative
+P2000,Evaluate,EC,Ethics,humanistic,informed,conceptual_orientation,collaborative

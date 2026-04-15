@@ -2,8 +2,6 @@
 __pycache__/
 *.pyc
 .pytest_cache/
-data/stage1/
-data/stage2/
 data/logs/
 *.egg-info/
 dist/
