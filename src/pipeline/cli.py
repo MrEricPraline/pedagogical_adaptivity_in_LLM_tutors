@@ -18,13 +18,40 @@ def _add_common_args(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--resume", action="store_true", default=False)
     parser.add_argument("--retries", type=int, default=None)
     parser.add_argument(
-        "--requests-per-minute", type=int, default=None, dest="requests_per_minute"
+        "--requests-per-minute",
+        "--rpm",
+        type=int,
+        default=None,
+        dest="requests_per_minute",
     )
     parser.add_argument(
         "--checkpoint-every", type=int, default=None, dest="checkpoint_every"
     )
-    parser.add_argument("--input-path", type=str, default=None, dest="input_path")
+    parser.add_argument(
+        "--input",
+        "--input-path",
+        type=str,
+        default=None,
+        dest="input_path",
+    )
     parser.add_argument("--output-dir", type=str, default=None, dest="output_dir")
+
+
+def _add_stage4_args(parser: argparse.ArgumentParser) -> None:
+    """Stage-4-specific flags (Gemini)."""
+    parser.add_argument(
+        "--max-output-tokens",
+        type=int,
+        default=None,
+        dest="max_output_tokens",
+    )
+    parser.add_argument(
+        "--thinking-level",
+        type=str,
+        default=None,
+        dest="thinking_level",
+        choices=["low", "medium", "high"],
+    )
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -55,6 +82,13 @@ def build_parser() -> argparse.ArgumentParser:
     pv = sub.add_parser("audit", help="Validate a JSONL dataset")
     pv.add_argument("file", nargs="?", default=None, help="Path to JSONL (default: cases_final.jsonl)")
     _add_common_args(pv)
+
+    p4 = sub.add_parser(
+        "run-stage4",
+        help="Query Gemini 3.1 Pro Preview for activity plans (Stage 4)",
+    )
+    _add_common_args(p4)
+    _add_stage4_args(p4)
 
     return parser
 
@@ -107,6 +141,24 @@ def main(argv: list | None = None) -> None:
 
         audit_file = args.file or str(cfg.stage2_dir / "cases_final.jsonl")
         run_audit(Path(audit_file))
+
+    if args.command == "run-stage4":
+        from src.pipeline.config import DEFAULTS
+        from src.stage4_query.pipeline import run_stage4
+
+        # Apply Stage-4 defaults unless the user explicitly overrode them.
+        if "model" not in cli_overrides:
+            cfg.model = DEFAULTS["stage4_model"]
+        if "temperature" not in cli_overrides:
+            cfg.temperature = DEFAULTS["stage4_temperature"]
+        if "requests_per_minute" not in cli_overrides:
+            cfg.requests_per_minute = DEFAULTS["stage4_requests_per_minute"]
+        if "checkpoint_every" not in cli_overrides:
+            cfg.checkpoint_every = DEFAULTS["stage4_checkpoint_every"]
+        if "retries" not in cli_overrides:
+            cfg.retries = 3
+
+        run_stage4(cfg)
 
 
 if __name__ == "__main__":

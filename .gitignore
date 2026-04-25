@@ -7,3 +7,16 @@ data/logs/
 dist/
 build/
 .qodo/
+
+.env.*
+!.env.example
+.env.example
+
+.DS_Store
+data/logs/
+*.log
+
+# Virtual env
+
+.venv/
+venv/

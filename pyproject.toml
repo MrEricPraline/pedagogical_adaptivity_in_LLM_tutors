@@ -6,9 +6,10 @@ build-backend = "setuptools.backends._legacy:_Backend"
 name = "pedagogical-adaptivity-pipeline"
 version = "0.1.0"
 description = "Research pipeline for pedagogical adaptivity in LLM tutors"
-requires-python = ">=3.8"
+requires-python = ">=3.10"
 dependencies = [
     "openai>=1.0",
+    "google-genai>=1.51.0",
     "python-dotenv>=1.0",
 ]
 

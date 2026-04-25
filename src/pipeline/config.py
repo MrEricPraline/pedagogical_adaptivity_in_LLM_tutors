@@ -19,6 +19,13 @@ DEFAULTS = {
     "checkpoint_every": 50,
     "word_count_min": 80,
     "word_count_max": 120,
+    # Stage 4 (Gemini target-model querying)
+    "stage4_model": "gemini-3.1-pro-preview",
+    "stage4_temperature": 0.7,
+    "stage4_max_output_tokens": 8192,
+    "stage4_thinking_level": "high",
+    "stage4_requests_per_minute": 60,
+    "stage4_checkpoint_every": 25,
 }
 
 
@@ -30,6 +37,11 @@ class PipelineConfig:
     base_url: str = DEFAULTS["base_url"]
     temperature: float = DEFAULTS["temperature"]
     max_tokens: int = DEFAULTS["max_tokens"]
+
+    # Gemini / Stage 4
+    gemini_api_key: str = ""
+    max_output_tokens: int = DEFAULTS["stage4_max_output_tokens"]
+    thinking_level: str = DEFAULTS["stage4_thinking_level"]
 
     # execution
     start: int | None = None
@@ -46,6 +58,8 @@ class PipelineConfig:
     # paths
     stage1_dir: Path = field(default_factory=lambda: DATA_DIR / "stage1")
     stage2_dir: Path = field(default_factory=lambda: DATA_DIR / "stage2")
+    stage3_dir: Path = field(default_factory=lambda: DATA_DIR / "stage3")
+    stage4_dir: Path = field(default_factory=lambda: DATA_DIR / "stage4")
     logs_dir: Path = field(default_factory=lambda: DATA_DIR / "logs")
     input_path: Path | None = None
     output_dir: Path | None = None
@@ -56,10 +70,15 @@ class PipelineConfig:
         cfg = cls()
 
         cfg.xai_api_key = os.getenv("XAI_API_KEY", "")
+        cfg.gemini_api_key = os.getenv("GEMINI_API_KEY", "")
         cfg.model = os.getenv("MODEL", cfg.model)
         cfg.base_url = os.getenv("XAI_BASE_URL", cfg.base_url)
         cfg.temperature = float(os.getenv("TEMPERATURE", str(cfg.temperature)))
         cfg.max_tokens = int(os.getenv("MAX_TOKENS", str(cfg.max_tokens)))
+        cfg.max_output_tokens = int(
+            os.getenv("MAX_OUTPUT_TOKENS", str(cfg.max_output_tokens))
+        )
+        cfg.thinking_level = os.getenv("THINKING_LEVEL", cfg.thinking_level)
         cfg.retries = int(os.getenv("RETRIES", str(cfg.retries)))
         cfg.requests_per_minute = int(
             os.getenv("REQUESTS_PER_MINUTE", str(cfg.requests_per_minute))
@@ -79,7 +98,8 @@ class PipelineConfig:
                     else:
                         setattr(cfg, key, type(current)(value) if current is not None else value)
 
-        if cfg.input_path is None:
-            cfg.input_path = cfg.stage1_dir / "factorial_sample.csv"
+        # NOTE: each stage applies its own default for `input_path` if the user
+        # did not pass --input / --input-path. We deliberately leave it as None
+        # here so Stage 4 can distinguish "user-supplied" from "default".
 
         return cfg

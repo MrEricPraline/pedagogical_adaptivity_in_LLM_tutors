@@ -8,6 +8,8 @@ Research pipeline for generating and analysing case narratives that explore how 
 |-------|-------------|--------|
 | **Stage 1** — Factorial sampling | Generates the full-factorial crossing of five experimental variables (Bloom level, knowledge state, learning stage, learning context, subject). | `data/stage1/factorial_sample.csv` (2 160 rows) |
 | **Stage 2** — Case narrative generation | For each row, calls Grok via the xAI API to produce a realistic 80–120 word learning scenario where the experimental variables are embedded implicitly. | `data/stage2/case_narratives.jsonl` |
+| **Stage 3** — Final case preparation | Deduplication, regeneration and validation pass that produces the curated input set for the target-model query stage. | `data/stage2/cases_final.jsonl` |
+| **Stage 4** — Target model querying | Sends each curated case to **Gemini 3.1 Pro Preview** and asks for 5 learning activities, each annotated along 5 pedagogical dimensions (`content_level`, `student_task`, `tutor_role`, `student_engagement`, `disciplinary_method`). Uses structured JSON output. | `data/stage4/gemini_responses.jsonl` |
 
 ## Project structure
 
@@ -31,15 +33,23 @@ Research pipeline for generating and analysing case narratives that explore how 
 │   │   ├── generator.py        # Full-factorial crossing
 │   │   ├── exporter.py         # CSV + JSONL export
 │   │   └── pipeline.py         # Stage 1 orchestrator
-│   └── stage2_generation/
-│       ├── prompt_builder.py   # Variable → natural-language translation
-│       ├── provider_xai.py     # xAI/Grok client (retry + rate limit)
-│       ├── validator.py        # Narrative validation checks
-│       ├── checkpoint.py       # Resume support
-│       └── pipeline.py         # Stage 2 orchestrator
+│   ├── stage2_generation/
+│   │   ├── prompt_builder.py   # Variable → natural-language translation
+│   │   ├── provider_xai.py     # xAI/Grok client (retry + rate limit)
+│   │   ├── validator.py        # Narrative validation checks
+│   │   ├── checkpoint.py       # Resume support
+│   │   └── pipeline.py         # Stage 2 orchestrator
+│   └── stage4_query/
+│       ├── prompt_builder.py   # Stage 4 system instruction + JSON schema
+│       ├── provider_gemini.py  # Gemini 3.1 Pro Preview client
+│       ├── validator.py        # Local validation of structured responses
+│       ├── checkpoint.py       # Resume support (skip prompt_ids with status=ok)
+│       └── pipeline.py         # Stage 4 orchestrator
 ├── data/
 │   ├── stage1/                 # Stage 1 outputs
-│   ├── stage2/                 # Stage 2 outputs
+│   ├── stage2/                 # Stage 2 outputs (incl. cases_final.jsonl)
+│   ├── stage3/                 # Stage 3 outputs (optional)
+│   ├── stage4/                 # Stage 4 outputs (Gemini responses)
 │   └── logs/                   # Execution logs
 └── tests/
     ├── test_stage1_generator.py
@@ -50,7 +60,12 @@ Research pipeline for generating and analysing case narratives that explore how 
 
 ## Installation
 
+Requires **Python 3.10+** (Stage 4 depends on `google-genai`, which does not
+ship wheels for Python 3.8/3.9). Recommended: a per-project virtualenv.
+
 ```bash
+python3.11 -m venv .venv
+source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
@@ -74,6 +89,9 @@ Required:
 | `RETRIES` | API retry attempts | `3` |
 | `REQUESTS_PER_MINUTE` | Rate limit | `30` |
 | `CHECKPOINT_EVERY` | Save checkpoint every N cases | `50` |
+| `GEMINI_API_KEY` | Gemini API key | *(required for Stage 4)* |
+| `MAX_OUTPUT_TOKENS` | Max output tokens for Stage 4 | `8192` |
+| `THINKING_LEVEL` | Gemini thinking level (`low`/`medium`/`high`) | `high` |
 
 All variables can also be overridden via CLI flags.
 
@@ -114,6 +132,72 @@ python -m src.pipeline.cli run-stage2 --model grok-3-fast --resume
 python -m src.pipeline.cli run-all --model grok-3-fast
 ```
 
+### Run Stage 4 — query Gemini 3.1 Pro Preview
+
+Stage 4 reads the curated narratives (`data/stage3/cases_final.jsonl` if it
+exists, otherwise `data/stage2/cases_final.jsonl`) and asks Gemini 3.1 Pro
+Preview to design 5 learning activities per case under five pedagogical
+dimensions. Output is structured JSON, validated locally, and written
+incrementally.
+
+**1. Install / upgrade the SDK:**
+
+```bash
+pip install google-genai --upgrade
+```
+
+**2. Verify the installed version:**
+
+```bash
+python -c "import google.genai; print(google.genai.__version__)"
+```
+
+**3. Configure the API key:**
+
+```bash
+export GEMINI_API_KEY="your_key_here"
+```
+
+> **Important:** Gemini 3.1 Pro Preview requires an active billing account on
+> the Gemini API. Free-tier keys will fail.
+
+**4. Run a Stage 4 pilot (first 20 cases):**
+
+```bash
+python -m src.pipeline.cli run-stage4 --start 0 --end 20
+```
+
+**5. Run Stage 4 in full:**
+
+```bash
+python -m src.pipeline.cli run-stage4
+```
+
+**6. Resume an interrupted Stage 4 run:**
+
+```bash
+python -m src.pipeline.cli run-stage4 --resume
+```
+
+Stage-4-specific flags (in addition to the shared ones):
+
+| Flag | Description | Default |
+|------|-------------|---------|
+| `--input` | Path to `cases_final.jsonl` | `data/stage3/cases_final.jsonl` if present, else `data/stage2/cases_final.jsonl` |
+| `--output-dir` | Output directory | `data/stage4` |
+| `--model` | Gemini model id | `gemini-3.1-pro-preview` |
+| `--temperature` | Sampling temperature | `0.7` |
+| `--max-output-tokens` | Max output tokens | `8192` |
+| `--thinking-level` | `low` / `medium` / `high` | `high` |
+| `--rpm` | Requests per minute | `60` |
+| `--retries` | Retry attempts per case | `3` |
+
+Stage 4 outputs:
+
+- `data/stage4/gemini_responses.jsonl` — incremental records (one per case)
+- `data/stage4/gemini_responses.json` — consolidated JSON snapshot
+- `data/stage4/manifest.json` — run metadata
+
 ### All CLI flags
 
 | Flag | Description |
@@ -128,8 +212,10 @@ python -m src.pipeline.cli run-all --model grok-3-fast
 | `--retries` | Max API retries per case |
 | `--requests-per-minute` | Rate limit |
 | `--checkpoint-every` | Checkpoint frequency |
-| `--input-path` | Path to factorial CSV (default: `data/stage1/factorial_sample.csv`) |
+| `--input` / `--input-path` | Stage input file (default depends on the stage) |
 | `--output-dir` | Output directory for the stage being run |
+| `--max-output-tokens` | (Stage 4) Max output tokens for Gemini |
+| `--thinking-level` | (Stage 4) Gemini thinking level (`low` / `medium` / `high`) |
 
 ## Recommended workflow
 
@@ -216,14 +302,17 @@ python -m pytest tests/ -v
 
 - Stage 1: full-factorial sampling (2 160 conditions)
 - Stage 2: programmatic narrative generation via xAI/Grok
-- Resume support with checkpoint
-- Automatic validation with one retry
-- Incremental JSONL output
+- Stage 3: dedup + regeneration + final-case audit
+- Stage 4: target-model querying with Gemini 3.1 Pro Preview (structured JSON)
+- Resume support with checkpoint (Stage 2) and JSONL-derived resume (Stage 4)
+- Automatic validation with one retry (Stage 2) and per-case retries with local
+  schema validation (Stage 4)
+- Incremental JSONL output and consolidated JSON per stage
 - Manifests per stage
 - CLI with per-stage and chained execution
 
 ## What is not implemented
 
-- Stages 3+ (rating, analysis, etc.)
+- Analysis / rating stages downstream of Stage 4
 - Parallel/async API calls
 - Web UI or dashboard
