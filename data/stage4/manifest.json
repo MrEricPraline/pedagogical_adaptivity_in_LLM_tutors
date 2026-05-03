@@ -1,7 +1,7 @@
 {
   "stage": "stage4_query_gemini",
-  "timestamp": "2026-04-25T06:38:12.427511+00:00",
-  "row_count": 20,
+  "timestamp": "2026-05-03T17:16:06.644306+00:00",
+  "row_count": 64,
   "params": {
     "model": "gemini-3.1-pro-preview",
     "thinking_level": "high",
@@ -9,19 +9,20 @@
     "max_output_tokens": 8192,
     "requests_per_minute": 60,
     "retries": 3,
-    "input_file": "/Users/rafa/Development/pedagogical_adaptivity_in_LLM_tutors/data/stage2/cases_final.jsonl",
-    "output_jsonl": "/Users/rafa/Development/pedagogical_adaptivity_in_LLM_tutors/data/stage4/gemini_responses.jsonl",
-    "output_json": "/Users/rafa/Development/pedagogical_adaptivity_in_LLM_tutors/data/stage4/gemini_responses.json",
-    "start": 0,
-    "end": 20,
-    "resume": false
+    "input_file": "data/stage2/cases_final.jsonl",
+    "output_jsonl": "data/stage4/gemini_responses.jsonl",
+    "output_json": "data/stage4/gemini_responses.json",
+    "start": 1900,
+    "end": 2000,
+    "resume": true
   },
-  "total_input_cases": 20,
-  "processed_cases": 20,
-  "skipped_cases": 0,
-  "successful_cases": 20,
+  "total_input_cases": 100,
+  "processed_cases": 64,
+  "skipped_cases": 36,
+  "successful_cases": 64,
   "failed_cases": 0,
-  "started_at": "2026-04-25T06:26:51.999262+00:00",
-  "finished_at": "2026-04-25T06:38:12.427455+00:00",
-  "duration_seconds": 680.428
+  "interrupted": false,
+  "started_at": "2026-05-03T16:40:07.704417+00:00",
+  "finished_at": "2026-05-03T17:16:06.644036+00:00",
+  "duration_seconds": 2158.939
 }
