@@ -17,6 +17,10 @@ dependencies = [
 dev = [
     "pytest>=7.0",
 ]
+tinker = [
+    "tinker",
+    "tinker-cookbook",
+]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

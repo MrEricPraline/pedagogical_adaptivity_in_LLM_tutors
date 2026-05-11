@@ -1,0 +1,98 @@
+{
+  "stage": "stage5_query_post_intervention",
+  "timestamp": "2026-05-11T20:33:18.292471+00:00",
+  "row_count": 120,
+  "params": {
+    "base_model": "Qwen/Qwen3-32B",
+    "ranks": [
+      1,
+      4,
+      8,
+      16
+    ],
+    "max_tokens": 4096,
+    "temperature": 0.7,
+    "n_cases": 30
+  },
+  "summaries": {
+    "1": {
+      "rank": 1,
+      "total": 30,
+      "ok": 30,
+      "improved": 28,
+      "regressed": 2,
+      "unchanged": 0,
+      "delta_PAI_mean": 0.3064,
+      "delta_PAI_min": -0.1034,
+      "delta_PAI_max": 0.7066,
+      "post_PAI_mean": 0.3556,
+      "delta_dp_means": {
+        "content_level": 0.4,
+        "student_task": 0.3183,
+        "tutor_role": 0.415,
+        "student_engagement": 0.0622,
+        "disciplinary_method": 0.3367
+      }
+    },
+    "4": {
+      "rank": 4,
+      "total": 30,
+      "ok": 30,
+      "improved": 29,
+      "regressed": 1,
+      "unchanged": 0,
+      "delta_PAI_mean": 0.282,
+      "delta_PAI_min": -0.18,
+      "delta_PAI_max": 0.6333,
+      "post_PAI_mean": 0.3311,
+      "delta_dp_means": {
+        "content_level": 0.4,
+        "student_task": 0.315,
+        "tutor_role": 0.38,
+        "student_engagement": 0.0767,
+        "disciplinary_method": 0.2383
+      }
+    },
+    "8": {
+      "rank": 8,
+      "total": 30,
+      "ok": 30,
+      "improved": 29,
+      "regressed": 1,
+      "unchanged": 0,
+      "delta_PAI_mean": 0.2587,
+      "delta_PAI_min": -0.06,
+      "delta_PAI_max": 0.6333,
+      "post_PAI_mean": 0.3078,
+      "delta_dp_means": {
+        "content_level": 0.4,
+        "student_task": 0.34,
+        "tutor_role": 0.33,
+        "student_engagement": 0.0267,
+        "disciplinary_method": 0.1967
+      }
+    },
+    "16": {
+      "rank": 16,
+      "total": 30,
+      "ok": 30,
+      "improved": 28,
+      "regressed": 2,
+      "unchanged": 0,
+      "delta_PAI_mean": 0.2752,
+      "delta_PAI_min": -0.18,
+      "delta_PAI_max": 0.6833,
+      "post_PAI_mean": 0.3243,
+      "delta_dp_means": {
+        "content_level": 0.4,
+        "student_task": 0.3717,
+        "tutor_role": 0.3367,
+        "student_engagement": -0.0189,
+        "disciplinary_method": 0.2867
+      }
+    }
+  },
+  "started_at": "2026-05-11T18:49:06.988608+00:00",
+  "finished_at": "2026-05-11T20:33:18.292442+00:00",
+  "duration_seconds": 6251.304
+}

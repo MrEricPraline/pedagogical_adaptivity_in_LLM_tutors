@@ -90,6 +90,56 @@ def build_parser() -> argparse.ArgumentParser:
     _add_common_args(p4)
     _add_stage4_args(p4)
 
+    # ── Stage 5 ─────────────────────────────────────────────────────────
+    p5s = sub.add_parser(
+        "run-stage5-score",
+        help="Score Stage 4 outputs with the PAI matrices (Stage 5 / scoring)",
+    )
+    _add_common_args(p5s)
+
+    p5c = sub.add_parser(
+        "run-stage5-corrective",
+        help="Build the corrective LoRA training set from the lowest-PAI cases",
+    )
+    _add_common_args(p5c)
+    p5c.add_argument(
+        "--n", type=int, default=30,
+        help="Number of lowest-PAI cases to include (default: 30)",
+    )
+
+    p5f = sub.add_parser(
+        "run-stage5-finetune",
+        help="LoRA fine-tune Qwen3-32B on Tinker (Stage 5 Phase 1, Step 2)",
+    )
+    _add_common_args(p5f)
+    p5f.add_argument("--rank", type=int, default=None,
+                     help="Single LoRA rank (omit to use --all-ranks)")
+    p5f.add_argument("--all-ranks", action="store_true", dest="all_ranks",
+                     default=False, help="Train r=1, 4, 8, 16 in sequence")
+    p5f.add_argument("--epochs", type=int, default=3)
+    p5f.add_argument("--lr", type=float, default=1e-4)
+    p5f.add_argument("--base-model", type=str, default="Qwen/Qwen3-32B",
+                     dest="base_model")
+
+    p5q = sub.add_parser(
+        "run-stage5-query",
+        help="Query the LoRA-fine-tuned model and re-score with PAI",
+    )
+    _add_common_args(p5q)
+    p5q.add_argument("--rank", type=int, default=None)
+    p5q.add_argument("--all-ranks", action="store_true", dest="all_ranks",
+                     default=False)
+    p5q.add_argument("--base-model", type=str, default="Qwen/Qwen3-32B",
+                     dest="base_model")
+    p5q.add_argument("--max-tokens-out", type=int, default=4096,
+                     dest="max_tokens_out")
+
+    p5i = sub.add_parser(
+        "run-stage5-interference",
+        help="Cross-dimensional interference analysis from post-intervention runs",
+    )
+    _add_common_args(p5i)
+
     return parser
 
 
@@ -99,10 +149,16 @@ def main(argv: list | None = None) -> None:
     parser = build_parser()
     args = parser.parse_args(argv)
 
+    # Stage-5-specific args that aren't part of PipelineConfig — strip them
+    # before building the config so they don't leak into setattr() calls.
+    stage5_only = {
+        "n", "rank", "all_ranks", "epochs", "lr", "base_model", "max_tokens_out",
+    }
     cli_overrides = {
         k: v
         for k, v in vars(args).items()
-        if k not in ("command", "file") and v is not None and v is not False
+        if k not in ("command", "file") and k not in stage5_only
+        and v is not None and v is not False
     }
 
     from src.pipeline.config import PipelineConfig
@@ -159,6 +215,54 @@ def main(argv: list | None = None) -> None:
             cfg.retries = 3
 
         run_stage4(cfg)
+
+    if args.command == "run-stage5-score":
+        from src.stage5_scoring.pipeline import run_stage5_scoring
+
+        run_stage5_scoring(cfg)
+
+    if args.command == "run-stage5-corrective":
+        from src.stage5_finetune.corrective_data import run_build_corrective_data
+
+        run_build_corrective_data(cfg, n=args.n)
+
+    if args.command == "run-stage5-finetune":
+        from src.stage5_finetune.tinker_train import DEFAULT_RANKS, run_finetune
+
+        if args.all_ranks:
+            ranks = list(DEFAULT_RANKS)
+        elif args.rank is not None:
+            ranks = [args.rank]
+        else:
+            parser.error("run-stage5-finetune requires --rank N or --all-ranks")
+        run_finetune(
+            cfg,
+            ranks=ranks,
+            epochs=args.epochs,
+            lr=args.lr,
+            base_model=args.base_model,
+        )
+
+    if args.command == "run-stage5-query":
+        from src.stage5_finetune.tinker_query import run_query_post_intervention
+
+        if args.all_ranks:
+            ranks = None  # discover from disk
+        elif args.rank is not None:
+            ranks = [args.rank]
+        else:
+            parser.error("run-stage5-query requires --rank N or --all-ranks")
+        run_query_post_intervention(
+            cfg,
+            ranks=ranks,
+            base_model=args.base_model,
+            max_tokens=args.max_tokens_out,
+        )
+
+    if args.command == "run-stage5-interference":
+        from src.stage5_finetune.interference import run_interference_analysis
+
+        run_interference_analysis(cfg)
 
 
 if __name__ == "__main__":

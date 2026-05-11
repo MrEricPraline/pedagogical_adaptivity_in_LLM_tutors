@@ -1,0 +1,33 @@
+{
+  "stage": "stage5_pai_scoring",
+  "timestamp": "2026-05-10T22:39:44.969811+00:00",
+  "row_count": 2000,
+  "params": {
+    "input_file": "data/stage4/gemini_responses.json",
+    "output_json": "data/stage5/scored_dataset.json",
+    "output_jsonl": "data/stage5/scored_dataset.jsonl"
+  },
+  "input_records": 2000,
+  "scored": 2000,
+  "skipped_non_ok_or_invalid": 0,
+  "failed_to_score": 0,
+  "summary": {
+    "count": 2000,
+    "prompt_PAI": {
+      "mean": 0.2942,
+      "min": -0.02,
+      "max": 0.61
+    },
+    "dp_global_means": {
+      "content_level": 0.2888,
+      "student_task": 0.1955,
+      "tutor_role": 0.2449,
+      "student_engagement": 0.3646,
+      "disciplinary_method": 0.3772
+    },
+    "low_30_threshold": 0.07
+  },
+  "started_at": "2026-05-10T22:39:44.109426+00:00",
+  "finished_at": "2026-05-10T22:39:44.969588+00:00",
+  "duration_seconds": 0.86
+}

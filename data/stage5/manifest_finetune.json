@@ -1,0 +1,26 @@
+{
+  "stage": "stage5_finetune",
+  "timestamp": "2026-05-11T16:43:37.290120+00:00",
+  "row_count": 1,
+  "params": {
+    "base_model": "Qwen/Qwen3-32B",
+    "ranks": [
+      16
+    ],
+    "epochs": 3,
+    "learning_rate": 0.0001,
+    "n_examples": 30,
+    "input_corrective": "data/stage5/corrective_training_data.json",
+    "output_adapters_dir": "data/stage5/adapters"
+  },
+  "adapters": {
+    "16": {
+      "adapter_uri": "tinker://288056bb-607a-5a37-ac63-874aec94f073:train:0/sampler_weights/corrective_r16_e3",
+      "final_loss": 0.0059,
+      "duration_seconds": 415.362
+    }
+  },
+  "started_at": "2026-05-11T16:36:40.659473+00:00",
+  "finished_at": "2026-05-11T16:43:37.290095+00:00",
+  "duration_seconds": 416.63
+}

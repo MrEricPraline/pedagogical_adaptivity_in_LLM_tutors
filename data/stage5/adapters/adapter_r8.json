@@ -1,0 +1,33 @@
+{
+  "rank": 8,
+  "base_model": "Qwen/Qwen3-32B",
+  "epochs": 3,
+  "learning_rate": 0.0001,
+  "n_examples": 30,
+  "total_steps": 90,
+  "history": [
+    {
+      "epoch": 1,
+      "mean_loss": 0.2964,
+      "min_loss": 0.0044,
+      "max_loss": 0.8476
+    },
+    {
+      "epoch": 2,
+      "mean_loss": 0.0191,
+      "min_loss": 0.0017,
+      "max_loss": 0.1223
+    },
+    {
+      "epoch": 3,
+      "mean_loss": 0.0075,
+      "min_loss": 0.0014,
+      "max_loss": 0.0493
+    }
+  ],
+  "adapter_name": "corrective_r8_e3",
+  "adapter_uri": "tinker://d5e8d639-a171-5a4d-ae96-aac87e138f83:train:0/sampler_weights/corrective_r8_e3",
+  "started_at": "2026-05-11T08:57:03.782876+00:00",
+  "finished_at": "2026-05-11T09:02:05.656404+00:00",
+  "duration_seconds": 301.872
+}

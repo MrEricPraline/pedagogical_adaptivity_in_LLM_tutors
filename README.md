@@ -10,6 +10,7 @@ Research pipeline for generating and analysing case narratives that explore how 
 | **Stage 2** — Case narrative generation | For each row, calls Grok via the xAI API to produce a realistic 80–120 word learning scenario where the experimental variables are embedded implicitly. | `data/stage2/case_narratives.jsonl` |
 | **Stage 3** — Final case preparation | Deduplication, regeneration and validation pass that produces the curated input set for the target-model query stage. | `data/stage2/cases_final.jsonl` |
 | **Stage 4** — Target model querying | Sends each curated case to **Gemini 3.1 Pro Preview** and asks for 5 learning activities, each annotated along 5 pedagogical dimensions (`content_level`, `student_task`, `tutor_role`, `student_engagement`, `disciplinary_method`). Uses structured JSON output. | `data/stage4/gemini_responses.jsonl` |
+| **Stage 5** — PAI scoring + corrective LoRA | Applies the Pedagogical Adaptivity Index matrices to every Stage 4 response, builds a corrective LoRA training set from the lowest-PAI cases, fine-tunes Qwen3-32B on Tinker at ranks r∈{1,4,8,16}, re-queries the corrected model, and runs the cross-dimensional interference analysis. | `data/stage5/scored_dataset.json`, `data/stage5/corrective_training_data.json`, `data/stage5/post_intervention_r{rank}.json`, `data/stage5/interference_analysis.json` |
 
 ## Project structure
 
@@ -39,12 +40,22 @@ Research pipeline for generating and analysing case narratives that explore how 
 │   │   ├── validator.py        # Narrative validation checks
 │   │   ├── checkpoint.py       # Resume support
 │   │   └── pipeline.py         # Stage 2 orchestrator
-│   └── stage4_query/
-│       ├── prompt_builder.py   # Stage 4 system instruction + JSON schema
-│       ├── provider_gemini.py  # Gemini 3.1 Pro Preview client
-│       ├── validator.py        # Local validation of structured responses
-│       ├── checkpoint.py       # Resume support (skip prompt_ids with status=ok)
-│       └── pipeline.py         # Stage 4 orchestrator
+│   ├── stage4_query/
+│   │   ├── prompt_builder.py   # Stage 4 system instruction + JSON schema
+│   │   ├── provider_gemini.py  # Gemini 3.1 Pro Preview client
+│   │   ├── validator.py        # Local validation of structured responses
+│   │   ├── checkpoint.py       # Resume support (skip prompt_ids with status=ok)
+│   │   └── pipeline.py         # Stage 4 orchestrator
+│   ├── stage5_scoring/
+│   │   ├── matrices.py         # 11 PAI sub-matrices (DP1–DP5) + DECISION_POINTS registry
+│   │   ├── scorer.py           # score_response(), score_activity(), find_optimal_selections()
+│   │   └── pipeline.py         # Stage 5 scoring orchestrator
+│   └── stage5_finetune/
+│       ├── prompt_builder.py   # Diversified description variants for the corrective targets
+│       ├── corrective_data.py  # Build corrective_training_data.json from lowest-PAI cases
+│       ├── tinker_train.py     # LoRA fine-tune Qwen3-32B on Tinker (lazy SDK import)
+│       ├── tinker_query.py     # Query corrected adapter + re-score with PAI
+│       └── interference.py     # Cross-dimensional interference + effective-rank analysis
 ├── data/
 │   ├── stage1/                 # Stage 1 outputs
 │   ├── stage2/                 # Stage 2 outputs (incl. cases_final.jsonl)
@@ -92,6 +103,7 @@ Required:
 | `GEMINI_API_KEY` | Gemini API key | *(required for Stage 4)* |
 | `MAX_OUTPUT_TOKENS` | Max output tokens for Stage 4 | `8192` |
 | `THINKING_LEVEL` | Gemini thinking level (`low`/`medium`/`high`) | `high` |
+| `TINKER_API_KEY` | Tinker API key | *(required for Stage 5 fine-tuning)* |
 
 All variables can also be overridden via CLI flags.
 
@@ -197,6 +209,92 @@ Stage 4 outputs:
 - `data/stage4/gemini_responses.jsonl` — incremental records (one per case)
 - `data/stage4/gemini_responses.json` — consolidated JSON snapshot
 - `data/stage4/manifest.json` — run metadata
+
+### Run Stage 5 — PAI scoring + corrective LoRA fine-tuning
+
+Stage 5 implements **Experiment 2, Phase 1** of the study. It is split into
+five CLI commands so each step can be re-run independently:
+
+| Step | Command | Output | Requires |
+|------|---------|--------|----------|
+| Score every Stage 4 response with the PAI matrices | `run-stage5-score` | `data/stage5/scored_dataset.json` (sorted ascending by `prompt_PAI`) | Stage 4 outputs |
+| Build the corrective training set from the *N* lowest-PAI cases | `run-stage5-corrective --n 30` | `data/stage5/corrective_training_data.json` (chat-format triples with the pedagogically optimal selections per DP) | scored dataset + Stage 4 narratives |
+| LoRA fine-tune Qwen3-32B on Tinker at one or more ranks | `run-stage5-finetune --all-ranks` (or `--rank 8`) | `data/stage5/adapters/adapter_r{rank}.json` + Tinker checkpoints | Tinker SDK + `TINKER_API_KEY` |
+| Query the corrected adapter on the same low-PAI cases and compute pre/post PAI deltas | `run-stage5-query --all-ranks` | `data/stage5/post_intervention_r{rank}.json` (one per rank) | Tinker SDK + trained adapters |
+| Aggregate the rank sweep into the effective-rank + interference report | `run-stage5-interference` | `data/stage5/interference_analysis.json` | post-intervention files |
+
+**1. Score Stage 4 outputs with the PAI matrices:**
+
+```bash
+python -m src.pipeline.cli run-stage5-score
+```
+
+The matrices live in `src/stage5_scoring/matrices.py` (11 sub-matrices,
+one per DP × condition pair). Each case is scored as the mean over its
+5 activities of the mean over its 5 DPs of the mean over the relevant
+sub-matrix lookups (∈ [-1, +1]).
+
+**2. Build the corrective training set from the bottom-N cases:**
+
+```bash
+python -m src.pipeline.cli run-stage5-corrective --n 30
+```
+
+For each of the lowest-N cases by `prompt_PAI`, the optimal selection
+per DP is computed from the case's learner conditions and the matrices.
+The 5 activities of the assistant target reuse the optimal selection but
+rotate through 5 description variants per (DP, selection) cell to avoid
+training the model to memorise an identical string.
+
+**3. Install the Tinker SDK and configure the API key:**
+
+```bash
+pip install tinker
+export TINKER_API_KEY="your_key_here"
+```
+
+> Tinker access is gated by a waitlist (https://thinkingmachines.ai/tinker).
+> The Stage 5 scoring + corrective-data steps work without Tinker; only
+> `run-stage5-finetune` and `run-stage5-query` require the SDK.
+
+**4. LoRA fine-tune Qwen3-32B at the diagnostic rank sweep:**
+
+```bash
+python -m src.pipeline.cli run-stage5-finetune --all-ranks --epochs 3 --lr 1e-4
+```
+
+Or pin a single rank:
+
+```bash
+python -m src.pipeline.cli run-stage5-finetune --rank 8
+```
+
+The rank at which the corrective signal first lands is the
+representational-dimensionality diagnostic discussed in the study:
+low rank (r=1) suggests the pedagogical decision lives in a thin
+subspace; high rank (r=16) suggests the encoding is distributed.
+
+**5. Query the corrected model on the low-PAI cases and compute deltas:**
+
+```bash
+python -m src.pipeline.cli run-stage5-query --all-ranks
+```
+
+For every rank with a saved adapter, the same 30 cases are re-queried
+through the LoRA-augmented model, the response is re-scored with the
+PAI matrices, and a `post_intervention_r{rank}.json` file records the
+pre/post per-DP deltas.
+
+**6. Run the cross-dimensional interference analysis:**
+
+```bash
+python -m src.pipeline.cli run-stage5-interference
+```
+
+This produces `data/stage5/interference_analysis.json` with: a DP × rank
+heatmap of mean delta, the per-DP "first positive rank" (effective LoRA
+rank), and a top-tercile interference table that flags DPs whose
+already-high pre scores dropped after the unified corrective pass.
 
 ### All CLI flags
 
@@ -304,6 +402,12 @@ python -m pytest tests/ -v
 - Stage 2: programmatic narrative generation via xAI/Grok
 - Stage 3: dedup + regeneration + final-case audit
 - Stage 4: target-model querying with Gemini 3.1 Pro Preview (structured JSON)
+- Stage 5 (Phase 1):
+  - PAI scoring of every Stage 4 response with 11 theory-grounded matrices
+  - Corrective LoRA training set construction from the lowest-PAI cases
+  - LoRA fine-tuning pipeline for Qwen3-32B on Tinker (lazy SDK import — works without `tinker` installed for the non-training steps)
+  - Post-intervention sampling, re-scoring, and pre/post delta computation
+  - Cross-dimensional interference + effective-rank analysis across the LoRA rank sweep
 - Resume support with checkpoint (Stage 2) and JSONL-derived resume (Stage 4)
 - Automatic validation with one retry (Stage 2) and per-case retries with local
   schema validation (Stage 4)
@@ -313,6 +417,7 @@ python -m pytest tests/ -v
 
 ## What is not implemented
 
-- Analysis / rating stages downstream of Stage 4
+- Stage 5 Phase 2: human-perceptual validation in the classroom (out of scope for the code pipeline; lives in the Stage 2 student-form preparation)
+- Per-DP isolated LoRAs for the *causal* interference matrix (current interference analysis is observational; see the future-work notes at the bottom of `src/stage5_finetune/interference.py`)
 - Parallel/async API calls
 - Web UI or dashboard
