@@ -1,10 +1,17 @@
 {
-  "ranks_present": [
-    1,
-    4,
-    8,
-    16
-  ],
+  "ranks_present": {
+    "train": [
+      1,
+      4,
+      8,
+      16
+    ],
+    "heldout": []
+  },
+  "baselines_present": {
+    "train": false,
+    "heldout": false
+  },
   "dp_by_rank_heatmap": {
     "1": {
       "DP1": 0.4,
@@ -294,6 +301,22 @@
         "DP4": 0.2455,
         "DP5": 0.0864
       }
+    }
+  },
+  "deltas_clean": {
+    "memorization": {},
+    "generalization": {},
+    "vs_gemini": {},
+    "notes": {
+      "baseline_train_available": false,
+      "baseline_heldout_available": false,
+      "heldout_ranks_available": [],
+      "train_ranks_available": [
+        1,
+        4,
+        8,
+        16
+      ]
     }
   }
 }

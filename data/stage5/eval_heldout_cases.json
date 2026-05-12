@@ -1,0 +1,3062 @@
+[
+  {
+    "prompt_id": "P1762",
+    "bloom_band": "EC",
+    "knowledge_state": "novice",
+    "learning_stage": "skill_building",
+    "learning_context": "guided",
+    "subject_family": "humanistic",
+    "bloom": "Create",
+    "subject": "Literature",
+    "selections": [
+      {
+        "content_level": "a",
+        "student_task": "a",
+        "tutor_role": "a",
+        "student_engagement": "b",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "b",
+        "student_task": "a",
+        "tutor_role": "c",
+        "student_engagement": "c",
+        "disciplinary_method": "d",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "c",
+        "tutor_role": "c",
+        "student_engagement": "c",
+        "disciplinary_method": "d",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "b",
+        "student_task": "b",
+        "tutor_role": "a",
+        "student_engagement": "d",
+        "disciplinary_method": "a",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "d",
+        "tutor_role": "d",
+        "student_engagement": "c",
+        "disciplinary_method": "d",
+        "activity_PAI": null
+      }
+    ],
+    "activity_scores": [
+      {
+        "content_level": 0.0,
+        "student_task": -0.5,
+        "tutor_role": 0.25,
+        "student_engagement": 0.5,
+        "disciplinary_method": 0.25,
+        "activity_PAI": 0.1
+      },
+      {
+        "content_level": 0.0,
+        "student_task": -0.5,
+        "tutor_role": 0.0,
+        "student_engagement": 0.5,
+        "disciplinary_method": 0.0,
+        "activity_PAI": 0.0
+      },
+      {
+        "content_level": 0.0,
+        "student_task": 0.0,
+        "tutor_role": 0.0,
+        "student_engagement": 0.5,
+        "disciplinary_method": 0.0,
+        "activity_PAI": 0.1
+      },
+      {
+        "content_level": 0.0,
+        "student_task": 0.25,
+        "tutor_role": 0.25,
+        "student_engagement": 0.3333,
+        "disciplinary_method": 0.0,
+        "activity_PAI": 0.1667
+      },
+      {
+        "content_level": 0.0,
+        "student_task": 0.25,
+        "tutor_role": -0.75,
+        "student_engagement": 0.5,
+        "disciplinary_method": 0.0,
+        "activity_PAI": 0.0
+      }
+    ],
+    "dp_means": {
+      "content_level": 0.0,
+      "student_task": -0.1,
+      "tutor_role": -0.05,
+      "student_engagement": 0.4667,
+      "disciplinary_method": 0.05
+    },
+    "prompt_PAI": 0.0733
+  },
+  {
+    "prompt_id": "P0663",
+    "bloom_band": "RU",
+    "knowledge_state": "informed",
+    "learning_stage": "skill_building",
+    "learning_context": "guided",
+    "subject_family": "humanistic",
+    "bloom": "Understand",
+    "subject": "Ethics",
+    "selections": [
+      {
+        "content_level": "b",
+        "student_task": "a",
+        "tutor_role": "c",
+        "student_engagement": "c",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "c",
+        "tutor_role": "c",
+        "student_engagement": "d",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "b",
+        "tutor_role": "a",
+        "student_engagement": "c",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "d",
+        "student_task": "d",
+        "tutor_role": "c",
+        "student_engagement": "d",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "d",
+        "student_task": "c",
+        "tutor_role": "d",
+        "student_engagement": "c",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      }
+    ],
+    "activity_scores": [
+      {
+        "content_level": 0.75,
+        "student_task": 0.25,
+        "tutor_role": 0.5,
+        "student_engagement": 0.3333,
+        "disciplinary_method": 0.25,
+        "activity_PAI": 0.4167
+      },
+      {
+        "content_level": 0.0,
+        "student_task": -0.5,
+        "tutor_role": 0.5,
+        "student_engagement": -0.1667,
+        "disciplinary_method": 0.25,
+        "activity_PAI": 0.0167
+      },
+      {
+        "content_level": 0.0,
+        "student_task": 0.75,
+        "tutor_role": -0.25,
+        "student_engagement": 0.3333,
+        "disciplinary_method": 0.25,
+        "activity_PAI": 0.2167
+      },
+      {
+        "content_level": -0.75,
+        "student_task": -0.75,
+        "tutor_role": 0.5,
+        "student_engagement": -0.1667,
+        "disciplinary_method": 0.25,
+        "activity_PAI": -0.1833
+      },
+      {
+        "content_level": -0.75,
+        "student_task": -0.5,
+        "tutor_role": 0.25,
+        "student_engagement": 0.3333,
+        "disciplinary_method": 0.25,
+        "activity_PAI": -0.0833
+      }
+    ],
+    "dp_means": {
+      "content_level": -0.15,
+      "student_task": -0.15,
+      "tutor_role": 0.3,
+      "student_engagement": 0.1333,
+      "disciplinary_method": 0.25
+    },
+    "prompt_PAI": 0.0767
+  },
+  {
+    "prompt_id": "P1039",
+    "bloom_band": "RU",
+    "knowledge_state": "informed",
+    "learning_stage": "skill_building",
+    "learning_context": "guided",
+    "subject_family": "humanistic",
+    "bloom": "Understand",
+    "subject": "Art History",
+    "selections": [
+      {
+        "content_level": "c",
+        "student_task": "a",
+        "tutor_role": "c",
+        "student_engagement": "c",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "c",
+        "tutor_role": "c",
+        "student_engagement": "c",
+        "disciplinary_method": "b",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "d",
+        "student_task": "d",
+        "tutor_role": "c",
+        "student_engagement": "c",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "d",
+        "student_task": "b",
+        "tutor_role": "c",
+        "student_engagement": "c",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "d",
+        "student_task": "d",
+        "tutor_role": "d",
+        "student_engagement": "c",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      }
+    ],
+    "activity_scores": [
+      {
+        "content_level": 0.0,
+        "student_task": 0.25,
+        "tutor_role": 0.5,
+        "student_engagement": 0.3333,
+        "disciplinary_method": 0.25,
+        "activity_PAI": 0.2667
+      },
+      {
+        "content_level": 0.0,
+        "student_task": -0.5,
+        "tutor_role": 0.5,
+        "student_engagement": 0.3333,
+        "disciplinary_method": 0.25,
+        "activity_PAI": 0.1167
+      },
+      {
+        "content_level": -0.75,
+        "student_task": -0.75,
+        "tutor_role": 0.5,
+        "student_engagement": 0.3333,
+        "disciplinary_method": 0.25,
+        "activity_PAI": -0.0833
+      },
+      {
+        "content_level": -0.75,
+        "student_task": 0.75,
+        "tutor_role": 0.5,
+        "student_engagement": 0.3333,
+        "disciplinary_method": 0.25,
+        "activity_PAI": 0.2167
+      },
+      {
+        "content_level": -0.75,
+        "student_task": -0.75,
+        "tutor_role": 0.25,
+        "student_engagement": 0.3333,
+        "disciplinary_method": 0.25,
+        "activity_PAI": -0.1333
+      }
+    ],
+    "dp_means": {
+      "content_level": -0.45,
+      "student_task": -0.2,
+      "tutor_role": 0.45,
+      "student_engagement": 0.3333,
+      "disciplinary_method": 0.25
+    },
+    "prompt_PAI": 0.0767
+  },
+  {
+    "prompt_id": "P0714",
+    "bloom_band": "RU",
+    "knowledge_state": "novice",
+    "learning_stage": "skill_building",
+    "learning_context": "guided",
+    "subject_family": "humanistic",
+    "bloom": "Understand",
+    "subject": "Literature",
+    "selections": [
+      {
+        "content_level": "a",
+        "student_task": "a",
+        "tutor_role": "a",
+        "student_engagement": "a",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "b",
+        "student_task": "c",
+        "tutor_role": "c",
+        "student_engagement": "c",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "b",
+        "student_task": "a",
+        "tutor_role": "c",
+        "student_engagement": "b",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "c",
+        "tutor_role": "c",
+        "student_engagement": "c",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "d",
+        "tutor_role": "d",
+        "student_engagement": "c",
+        "disciplinary_method": "d",
+        "activity_PAI": null
+      }
+    ],
+    "activity_scores": [
+      {
+        "content_level": 1.0,
+        "student_task": 0.25,
+        "tutor_role": 0.25,
+        "student_engagement": 0.1667,
+        "disciplinary_method": 0.25,
+        "activity_PAI": 0.3833
+      },
+      {
+        "content_level": 0.5,
+        "student_task": -0.5,
+        "tutor_role": 0.0,
+        "student_engagement": 0.3333,
+        "disciplinary_method": 0.25,
+        "activity_PAI": 0.1167
+      },
+      {
+        "content_level": 0.5,
+        "student_task": 0.25,
+        "tutor_role": 0.0,
+        "student_engagement": 0.6667,
+        "disciplinary_method": 0.25,
+        "activity_PAI": 0.3333
+      },
+      {
+        "content_level": -0.5,
+        "student_task": -0.5,
+        "tutor_role": 0.0,
+        "student_engagement": 0.3333,
+        "disciplinary_method": 0.25,
+        "activity_PAI": -0.0833
+      },
+      {
+        "content_level": -0.5,
+        "student_task": -0.75,
+        "tutor_role": -0.75,
+        "student_engagement": 0.3333,
+        "disciplinary_method": 0.0,
+        "activity_PAI": -0.3333
+      }
+    ],
+    "dp_means": {
+      "content_level": 0.2,
+      "student_task": -0.25,
+      "tutor_role": -0.1,
+      "student_engagement": 0.3667,
+      "disciplinary_method": 0.2
+    },
+    "prompt_PAI": 0.0833
+  },
+  {
+    "prompt_id": "P0888",
+    "bloom_band": "EC",
+    "knowledge_state": "novice",
+    "learning_stage": "comprehensive_mastery",
+    "learning_context": "guided",
+    "subject_family": "formal",
+    "bloom": "Evaluate",
+    "subject": "Mathematics",
+    "selections": [
+      {
+        "content_level": "a",
+        "student_task": "a",
+        "tutor_role": "a",
+        "student_engagement": "a",
+        "disciplinary_method": "a",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "b",
+        "student_task": "b",
+        "tutor_role": "a",
+        "student_engagement": "b",
+        "disciplinary_method": "a",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "a",
+        "tutor_role": "c",
+        "student_engagement": "c",
+        "disciplinary_method": "b",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "c",
+        "tutor_role": "c",
+        "student_engagement": "c",
+        "disciplinary_method": "a",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "d",
+        "student_task": "d",
+        "tutor_role": "d",
+        "student_engagement": "c",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      }
+    ],
+    "activity_scores": [
+      {
+        "content_level": 0.0,
+        "student_task": -0.5,
+        "tutor_role": 0.25,
+        "student_engagement": -0.6667,
+        "disciplinary_method": 0.5,
+        "activity_PAI": -0.0833
+      },
+      {
+        "content_level": 0.0,
+        "student_task": -0.5,
+        "tutor_role": 0.25,
+        "student_engagement": 0.0,
+        "disciplinary_method": 0.5,
+        "activity_PAI": 0.05
+      },
+      {
+        "content_level": 0.0,
+        "student_task": -0.5,
+        "tutor_role": 0.0,
+        "student_engagement": 0.5,
+        "disciplinary_method": 0.0,
+        "activity_PAI": 0.0
+      },
+      {
+        "content_level": 0.0,
+        "student_task": 0.5,
+        "tutor_role": 0.0,
+        "student_engagement": 0.5,
+        "disciplinary_method": 0.5,
+        "activity_PAI": 0.3
+      },
+      {
+        "content_level": 0.0,
+        "student_task": 1.0,
+        "tutor_role": -0.75,
+        "student_engagement": 0.5,
+        "disciplinary_method": 0.0,
+        "activity_PAI": 0.15
+      }
+    ],
+    "dp_means": {
+      "content_level": 0.0,
+      "student_task": 0.0,
+      "tutor_role": -0.05,
+      "student_engagement": 0.1667,
+      "disciplinary_method": 0.3
+    },
+    "prompt_PAI": 0.0833
+  },
+  {
+    "prompt_id": "P1292",
+    "bloom_band": "EC",
+    "knowledge_state": "novice",
+    "learning_stage": "skill_building",
+    "learning_context": "guided",
+    "subject_family": "humanistic",
+    "bloom": "Evaluate",
+    "subject": "Literature",
+    "selections": [
+      {
+        "content_level": "a",
+        "student_task": "a",
+        "tutor_role": "a",
+        "student_engagement": "a",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "b",
+        "student_task": "c",
+        "tutor_role": "c",
+        "student_engagement": "b",
+        "disciplinary_method": "b",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "b",
+        "tutor_role": "c",
+        "student_engagement": "d",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "d",
+        "student_task": "d",
+        "tutor_role": "c",
+        "student_engagement": "c",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "b",
+        "student_task": "b",
+        "tutor_role": "d",
+        "student_engagement": "c",
+        "disciplinary_method": "d",
+        "activity_PAI": null
+      }
+    ],
+    "activity_scores": [
+      {
+        "content_level": 0.0,
+        "student_task": -0.5,
+        "tutor_role": 0.25,
+        "student_engagement": -0.5,
+        "disciplinary_method": 0.25,
+        "activity_PAI": -0.1
+      },
+      {
+        "content_level": 0.0,
+        "student_task": 0.0,
+        "tutor_role": 0.0,
+        "student_engagement": 0.5,
+        "disciplinary_method": 0.25,
+        "activity_PAI": 0.15
+      },
+      {
+        "content_level": 0.0,
+        "student_task": 0.25,
+        "tutor_role": 0.0,
+        "student_engagement": 0.3333,
+        "disciplinary_method": 0.25,
+        "activity_PAI": 0.1667
+      },
+      {
+        "content_level": 0.0,
+        "student_task": 0.25,
+        "tutor_role": 0.0,
+        "student_engagement": 0.5,
+        "disciplinary_method": 0.25,
+        "activity_PAI": 0.2
+      },
+      {
+        "content_level": 0.0,
+        "student_task": 0.25,
+        "tutor_role": -0.75,
+        "student_engagement": 0.5,
+        "disciplinary_method": 0.0,
+        "activity_PAI": 0.0
+      }
+    ],
+    "dp_means": {
+      "content_level": 0.0,
+      "student_task": 0.05,
+      "tutor_role": -0.1,
+      "student_engagement": 0.2667,
+      "disciplinary_method": 0.2
+    },
+    "prompt_PAI": 0.0833
+  },
+  {
+    "prompt_id": "P1282",
+    "bloom_band": "RU",
+    "knowledge_state": "informed",
+    "learning_stage": "skill_building",
+    "learning_context": "guided",
+    "subject_family": "formal",
+    "bloom": "Understand",
+    "subject": "Mathematics",
+    "selections": [
+      {
+        "content_level": "a",
+        "student_task": "a",
+        "tutor_role": "c",
+        "student_engagement": "c",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "b",
+        "student_task": "c",
+        "tutor_role": "c",
+        "student_engagement": "d",
+        "disciplinary_method": "a",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "b",
+        "tutor_role": "a",
+        "student_engagement": "c",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "d",
+        "tutor_role": "d",
+        "student_engagement": "c",
+        "disciplinary_method": "d",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "d",
+        "student_task": "c",
+        "tutor_role": "c",
+        "student_engagement": "d",
+        "disciplinary_method": "b",
+        "activity_PAI": null
+      }
+    ],
+    "activity_scores": [
+      {
+        "content_level": 0.5,
+        "student_task": 0.25,
+        "tutor_role": 0.5,
+        "student_engagement": 0.3333,
+        "disciplinary_method": -0.5,
+        "activity_PAI": 0.2167
+      },
+      {
+        "content_level": 0.75,
+        "student_task": -0.5,
+        "tutor_role": 0.5,
+        "student_engagement": -0.1667,
+        "disciplinary_method": 1.0,
+        "activity_PAI": 0.3167
+      },
+      {
+        "content_level": 0.0,
+        "student_task": 0.75,
+        "tutor_role": -0.25,
+        "student_engagement": 0.3333,
+        "disciplinary_method": -0.5,
+        "activity_PAI": 0.0667
+      },
+      {
+        "content_level": 0.0,
+        "student_task": -0.75,
+        "tutor_role": 0.25,
+        "student_engagement": 0.3333,
+        "disciplinary_method": 0.0,
+        "activity_PAI": -0.0333
+      },
+      {
+        "content_level": -0.75,
+        "student_task": -0.5,
+        "tutor_role": 0.5,
+        "student_engagement": -0.1667,
+        "disciplinary_method": 0.25,
+        "activity_PAI": -0.1333
+      }
+    ],
+    "dp_means": {
+      "content_level": 0.1,
+      "student_task": -0.15,
+      "tutor_role": 0.3,
+      "student_engagement": 0.1333,
+      "disciplinary_method": 0.05
+    },
+    "prompt_PAI": 0.0867
+  },
+  {
+    "prompt_id": "P0388",
+    "bloom_band": "RU",
+    "knowledge_state": "novice",
+    "learning_stage": "skill_building",
+    "learning_context": "collaborative",
+    "subject_family": "humanistic",
+    "bloom": "Understand",
+    "subject": "History",
+    "selections": [
+      {
+        "content_level": "a",
+        "student_task": "a",
+        "tutor_role": "a",
+        "student_engagement": "a",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "b",
+        "student_task": "b",
+        "tutor_role": "a",
+        "student_engagement": "b",
+        "disciplinary_method": "a",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "a",
+        "tutor_role": "c",
+        "student_engagement": "c",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "d",
+        "tutor_role": "c",
+        "student_engagement": "c",
+        "disciplinary_method": "d",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "b",
+        "student_task": "d",
+        "tutor_role": "d",
+        "student_engagement": "d",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      }
+    ],
+    "activity_scores": [
+      {
+        "content_level": 1.0,
+        "student_task": 0.25,
+        "tutor_role": 0.0,
+        "student_engagement": -0.1667,
+        "disciplinary_method": 0.25,
+        "activity_PAI": 0.2667
+      },
+      {
+        "content_level": 0.5,
+        "student_task": 0.75,
+        "tutor_role": 0.0,
+        "student_engagement": 0.3333,
+        "disciplinary_method": 0.0,
+        "activity_PAI": 0.3167
+      },
+      {
+        "content_level": -0.5,
+        "student_task": 0.25,
+        "tutor_role": 0.25,
+        "student_engagement": 0.1667,
+        "disciplinary_method": 0.25,
+        "activity_PAI": 0.0833
+      },
+      {
+        "content_level": -0.5,
+        "student_task": -0.75,
+        "tutor_role": 0.25,
+        "student_engagement": 0.1667,
+        "disciplinary_method": 0.0,
+        "activity_PAI": -0.1667
+      },
+      {
+        "content_level": 0.5,
+        "student_task": -0.75,
+        "tutor_role": -0.25,
+        "student_engagement": 0.0,
+        "disciplinary_method": 0.25,
+        "activity_PAI": -0.05
+      }
+    ],
+    "dp_means": {
+      "content_level": 0.2,
+      "student_task": -0.05,
+      "tutor_role": 0.05,
+      "student_engagement": 0.1,
+      "disciplinary_method": 0.15
+    },
+    "prompt_PAI": 0.09
+  },
+  {
+    "prompt_id": "P1237",
+    "bloom_band": "EC",
+    "knowledge_state": "novice",
+    "learning_stage": "skill_building",
+    "learning_context": "collaborative",
+    "subject_family": "natural",
+    "bloom": "Create",
+    "subject": "Biology",
+    "selections": [
+      {
+        "content_level": "a",
+        "student_task": "a",
+        "tutor_role": "a",
+        "student_engagement": "a",
+        "disciplinary_method": "b",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "b",
+        "student_task": "c",
+        "tutor_role": "c",
+        "student_engagement": "b",
+        "disciplinary_method": "b",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "c",
+        "tutor_role": "c",
+        "student_engagement": "c",
+        "disciplinary_method": "d",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "d",
+        "tutor_role": "b",
+        "student_engagement": "d",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "d",
+        "student_task": "d",
+        "tutor_role": "d",
+        "student_engagement": "c",
+        "disciplinary_method": "d",
+        "activity_PAI": null
+      }
+    ],
+    "activity_scores": [
+      {
+        "content_level": 0.0,
+        "student_task": -0.5,
+        "tutor_role": 0.0,
+        "student_engagement": -0.8333,
+        "disciplinary_method": 0.75,
+        "activity_PAI": -0.1167
+      },
+      {
+        "content_level": 0.0,
+        "student_task": 0.0,
+        "tutor_role": 0.25,
+        "student_engagement": 0.1667,
+        "disciplinary_method": 0.75,
+        "activity_PAI": 0.2333
+      },
+      {
+        "content_level": 0.0,
+        "student_task": 0.0,
+        "tutor_role": 0.25,
+        "student_engagement": 0.3333,
+        "disciplinary_method": 0.0,
+        "activity_PAI": 0.1167
+      },
+      {
+        "content_level": 0.0,
+        "student_task": 0.25,
+        "tutor_role": 0.25,
+        "student_engagement": 0.5,
+        "disciplinary_method": -0.25,
+        "activity_PAI": 0.15
+      },
+      {
+        "content_level": 0.0,
+        "student_task": 0.25,
+        "tutor_role": -0.25,
+        "student_engagement": 0.3333,
+        "disciplinary_method": 0.0,
+        "activity_PAI": 0.0667
+      }
+    ],
+    "dp_means": {
+      "content_level": 0.0,
+      "student_task": 0.0,
+      "tutor_role": 0.1,
+      "student_engagement": 0.1,
+      "disciplinary_method": 0.25
+    },
+    "prompt_PAI": 0.09
+  },
+  {
+    "prompt_id": "P0024",
+    "bloom_band": "EC",
+    "knowledge_state": "novice",
+    "learning_stage": "conceptual_orientation",
+    "learning_context": "guided",
+    "subject_family": "formal",
+    "bloom": "Evaluate",
+    "subject": "Physics",
+    "selections": [
+      {
+        "content_level": "b",
+        "student_task": "a",
+        "tutor_role": "a",
+        "student_engagement": "a",
+        "disciplinary_method": "a",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "c",
+        "tutor_role": "c",
+        "student_engagement": "d",
+        "disciplinary_method": "b",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "b",
+        "tutor_role": "c",
+        "student_engagement": "b",
+        "disciplinary_method": "a",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "b",
+        "student_task": "b",
+        "tutor_role": "a",
+        "student_engagement": "c",
+        "disciplinary_method": "a",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "d",
+        "student_task": "d",
+        "tutor_role": "d",
+        "student_engagement": "c",
+        "disciplinary_method": "d",
+        "activity_PAI": null
+      }
+    ],
+    "activity_scores": [
+      {
+        "content_level": 0.0,
+        "student_task": 0.25,
+        "tutor_role": 0.25,
+        "student_engagement": -0.1667,
+        "disciplinary_method": 0.25,
+        "activity_PAI": 0.1167
+      },
+      {
+        "content_level": 0.0,
+        "student_task": 0.25,
+        "tutor_role": 0.0,
+        "student_engagement": 0.5,
+        "disciplinary_method": 0.5,
+        "activity_PAI": 0.25
+      },
+      {
+        "content_level": 0.0,
+        "student_task": -0.5,
+        "tutor_role": 0.0,
+        "student_engagement": 0.0,
+        "disciplinary_method": 0.25,
+        "activity_PAI": -0.05
+      },
+      {
+        "content_level": 0.0,
+        "student_task": -0.5,
+        "tutor_role": 0.25,
+        "student_engagement": 0.5,
+        "disciplinary_method": 0.25,
+        "activity_PAI": 0.1
+      },
+      {
+        "content_level": 0.0,
+        "student_task": 0.25,
+        "tutor_role": -0.75,
+        "student_engagement": 0.5,
+        "disciplinary_method": 0.25,
+        "activity_PAI": 0.05
+      }
+    ],
+    "dp_means": {
+      "content_level": 0.0,
+      "student_task": -0.05,
+      "tutor_role": -0.05,
+      "student_engagement": 0.2667,
+      "disciplinary_method": 0.3
+    },
+    "prompt_PAI": 0.0933
+  },
+  {
+    "prompt_id": "P0428",
+    "bloom_band": "RU",
+    "knowledge_state": "novice",
+    "learning_stage": "comprehensive_mastery",
+    "learning_context": "collaborative",
+    "subject_family": "applied",
+    "bloom": "Understand",
+    "subject": "Sociology",
+    "selections": [
+      {
+        "content_level": "a",
+        "student_task": "a",
+        "tutor_role": "a",
+        "student_engagement": "a",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "b",
+        "student_task": "c",
+        "tutor_role": "c",
+        "student_engagement": "b",
+        "disciplinary_method": "b",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "b",
+        "tutor_role": "a",
+        "student_engagement": "c",
+        "disciplinary_method": "a",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "a",
+        "tutor_role": "c",
+        "student_engagement": "c",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "d",
+        "student_task": "d",
+        "tutor_role": "d",
+        "student_engagement": "d",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      }
+    ],
+    "activity_scores": [
+      {
+        "content_level": 1.0,
+        "student_task": 0.25,
+        "tutor_role": 0.0,
+        "student_engagement": -0.3333,
+        "disciplinary_method": 0.5,
+        "activity_PAI": 0.2833
+      },
+      {
+        "content_level": 0.5,
+        "student_task": 0.0,
+        "tutor_role": 0.25,
+        "student_engagement": -0.1667,
+        "disciplinary_method": 0.25,
+        "activity_PAI": 0.1667
+      },
+      {
+        "content_level": -0.5,
+        "student_task": 0.0,
+        "tutor_role": 0.0,
+        "student_engagement": 0.1667,
+        "disciplinary_method": 0.0,
+        "activity_PAI": -0.0667
+      },
+      {
+        "content_level": -0.5,
+        "student_task": 0.25,
+        "tutor_role": 0.25,
+        "student_engagement": 0.1667,
+        "disciplinary_method": 0.5,
+        "activity_PAI": 0.1333
+      },
+      {
+        "content_level": -1.0,
+        "student_task": 0.0,
+        "tutor_role": -0.25,
+        "student_engagement": 0.5,
+        "disciplinary_method": 0.5,
+        "activity_PAI": -0.05
+      }
+    ],
+    "dp_means": {
+      "content_level": -0.1,
+      "student_task": 0.1,
+      "tutor_role": 0.05,
+      "student_engagement": 0.0667,
+      "disciplinary_method": 0.35
+    },
+    "prompt_PAI": 0.0933
+  },
+  {
+    "prompt_id": "P0465",
+    "bloom_band": "EC",
+    "knowledge_state": "novice",
+    "learning_stage": "skill_building",
+    "learning_context": "collaborative",
+    "subject_family": "humanistic",
+    "bloom": "Create",
+    "subject": "History",
+    "selections": [
+      {
+        "content_level": "c",
+        "student_task": "a",
+        "tutor_role": "c",
+        "student_engagement": "d",
+        "disciplinary_method": "b",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "b",
+        "student_task": "c",
+        "tutor_role": "a",
+        "student_engagement": "a",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "d",
+        "tutor_role": "c",
+        "student_engagement": "c",
+        "disciplinary_method": "d",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "d",
+        "student_task": "b",
+        "tutor_role": "d",
+        "student_engagement": "d",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "d",
+        "tutor_role": "b",
+        "student_engagement": "c",
+        "disciplinary_method": "d",
+        "activity_PAI": null
+      }
+    ],
+    "activity_scores": [
+      {
+        "content_level": 0.0,
+        "student_task": -0.5,
+        "tutor_role": 0.25,
+        "student_engagement": 0.5,
+        "disciplinary_method": 0.25,
+        "activity_PAI": 0.1
+      },
+      {
+        "content_level": 0.0,
+        "student_task": 0.0,
+        "tutor_role": 0.0,
+        "student_engagement": -0.8333,
+        "disciplinary_method": 0.25,
+        "activity_PAI": -0.1167
+      },
+      {
+        "content_level": 0.0,
+        "student_task": 0.25,
+        "tutor_role": 0.25,
+        "student_engagement": 0.3333,
+        "disciplinary_method": 0.0,
+        "activity_PAI": 0.1667
+      },
+      {
+        "content_level": 0.0,
+        "student_task": 0.25,
+        "tutor_role": -0.25,
+        "student_engagement": 0.5,
+        "disciplinary_method": 0.25,
+        "activity_PAI": 0.15
+      },
+      {
+        "content_level": 0.0,
+        "student_task": 0.25,
+        "tutor_role": 0.25,
+        "student_engagement": 0.3333,
+        "disciplinary_method": 0.0,
+        "activity_PAI": 0.1667
+      }
+    ],
+    "dp_means": {
+      "content_level": 0.0,
+      "student_task": 0.05,
+      "tutor_role": 0.1,
+      "student_engagement": 0.1667,
+      "disciplinary_method": 0.15
+    },
+    "prompt_PAI": 0.0933
+  },
+  {
+    "prompt_id": "P0705",
+    "bloom_band": "RU",
+    "knowledge_state": "misinformed",
+    "learning_stage": "conceptual_orientation",
+    "learning_context": "collaborative",
+    "subject_family": "humanistic",
+    "bloom": "Remember",
+    "subject": "Art History",
+    "selections": [
+      {
+        "content_level": "a",
+        "student_task": "a",
+        "tutor_role": "a",
+        "student_engagement": "b",
+        "disciplinary_method": "a",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "b",
+        "student_task": "b",
+        "tutor_role": "c",
+        "student_engagement": "b",
+        "disciplinary_method": "b",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "b",
+        "student_task": "c",
+        "tutor_role": "b",
+        "student_engagement": "d",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "a",
+        "student_task": "b",
+        "tutor_role": "a",
+        "student_engagement": "b",
+        "disciplinary_method": "a",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "d",
+        "tutor_role": "c",
+        "student_engagement": "c",
+        "disciplinary_method": "d",
+        "activity_PAI": null
+      }
+    ],
+    "activity_scores": [
+      {
+        "content_level": 0.25,
+        "student_task": 1.0,
+        "tutor_role": -0.25,
+        "student_engagement": -0.1667,
+        "disciplinary_method": -0.75,
+        "activity_PAI": 0.0167
+      },
+      {
+        "content_level": 0.25,
+        "student_task": 0.0,
+        "tutor_role": 1.0,
+        "student_engagement": -0.1667,
+        "disciplinary_method": 0.5,
+        "activity_PAI": 0.3167
+      },
+      {
+        "content_level": 0.25,
+        "student_task": -0.25,
+        "tutor_role": 0.0,
+        "student_engagement": 0.1667,
+        "disciplinary_method": 0.75,
+        "activity_PAI": 0.1833
+      },
+      {
+        "content_level": 0.25,
+        "student_task": 0.0,
+        "tutor_role": -0.25,
+        "student_engagement": -0.1667,
+        "disciplinary_method": -0.75,
+        "activity_PAI": -0.1833
+      },
+      {
+        "content_level": 0.0,
+        "student_task": -0.75,
+        "tutor_role": 1.0,
+        "student_engagement": 0.1667,
+        "disciplinary_method": 0.25,
+        "activity_PAI": 0.1333
+      }
+    ],
+    "dp_means": {
+      "content_level": 0.2,
+      "student_task": 0.0,
+      "tutor_role": 0.3,
+      "student_engagement": -0.0333,
+      "disciplinary_method": 0.0
+    },
+    "prompt_PAI": 0.0933
+  },
+  {
+    "prompt_id": "P1024",
+    "bloom_band": "EC",
+    "knowledge_state": "novice",
+    "learning_stage": "conceptual_orientation",
+    "learning_context": "guided",
+    "subject_family": "humanistic",
+    "bloom": "Evaluate",
+    "subject": "Art History",
+    "selections": [
+      {
+        "content_level": "a",
+        "student_task": "a",
+        "tutor_role": "a",
+        "student_engagement": "a",
+        "disciplinary_method": "a",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "b",
+        "student_task": "b",
+        "tutor_role": "a",
+        "student_engagement": "b",
+        "disciplinary_method": "b",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "c",
+        "tutor_role": "c",
+        "student_engagement": "c",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "b",
+        "tutor_role": "c",
+        "student_engagement": "c",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "d",
+        "tutor_role": "d",
+        "student_engagement": "c",
+        "disciplinary_method": "d",
+        "activity_PAI": null
+      }
+    ],
+    "activity_scores": [
+      {
+        "content_level": 0.0,
+        "student_task": 0.25,
+        "tutor_role": 0.25,
+        "student_engagement": -0.1667,
+        "disciplinary_method": -0.75,
+        "activity_PAI": -0.0833
+      },
+      {
+        "content_level": 0.0,
+        "student_task": -0.5,
+        "tutor_role": 0.25,
+        "student_engagement": 0.0,
+        "disciplinary_method": 0.5,
+        "activity_PAI": 0.05
+      },
+      {
+        "content_level": 0.0,
+        "student_task": 0.25,
+        "tutor_role": 0.0,
+        "student_engagement": 0.5,
+        "disciplinary_method": 0.75,
+        "activity_PAI": 0.3
+      },
+      {
+        "content_level": 0.0,
+        "student_task": -0.5,
+        "tutor_role": 0.0,
+        "student_engagement": 0.5,
+        "disciplinary_method": 0.75,
+        "activity_PAI": 0.15
+      },
+      {
+        "content_level": 0.0,
+        "student_task": 0.25,
+        "tutor_role": -0.75,
+        "student_engagement": 0.5,
+        "disciplinary_method": 0.25,
+        "activity_PAI": 0.05
+      }
+    ],
+    "dp_means": {
+      "content_level": 0.0,
+      "student_task": -0.05,
+      "tutor_role": -0.05,
+      "student_engagement": 0.2667,
+      "disciplinary_method": 0.3
+    },
+    "prompt_PAI": 0.0933
+  },
+  {
+    "prompt_id": "P1394",
+    "bloom_band": "RU",
+    "knowledge_state": "novice",
+    "learning_stage": "skill_building",
+    "learning_context": "guided",
+    "subject_family": "humanistic",
+    "bloom": "Understand",
+    "subject": "History",
+    "selections": [
+      {
+        "content_level": "a",
+        "student_task": "a",
+        "tutor_role": "a",
+        "student_engagement": "b",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "b",
+        "student_task": "a",
+        "tutor_role": "c",
+        "student_engagement": "c",
+        "disciplinary_method": "b",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "d",
+        "tutor_role": "c",
+        "student_engagement": "b",
+        "disciplinary_method": "b",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "b",
+        "tutor_role": "c",
+        "student_engagement": "c",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "d",
+        "student_task": "d",
+        "tutor_role": "d",
+        "student_engagement": "c",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      }
+    ],
+    "activity_scores": [
+      {
+        "content_level": 1.0,
+        "student_task": 0.25,
+        "tutor_role": 0.25,
+        "student_engagement": 0.6667,
+        "disciplinary_method": 0.25,
+        "activity_PAI": 0.4833
+      },
+      {
+        "content_level": 0.5,
+        "student_task": 0.25,
+        "tutor_role": 0.0,
+        "student_engagement": 0.3333,
+        "disciplinary_method": 0.25,
+        "activity_PAI": 0.2667
+      },
+      {
+        "content_level": -0.5,
+        "student_task": -0.75,
+        "tutor_role": 0.0,
+        "student_engagement": 0.6667,
+        "disciplinary_method": 0.25,
+        "activity_PAI": -0.0667
+      },
+      {
+        "content_level": -0.5,
+        "student_task": 0.75,
+        "tutor_role": 0.0,
+        "student_engagement": 0.3333,
+        "disciplinary_method": 0.25,
+        "activity_PAI": 0.1667
+      },
+      {
+        "content_level": -1.0,
+        "student_task": -0.75,
+        "tutor_role": -0.75,
+        "student_engagement": 0.3333,
+        "disciplinary_method": 0.25,
+        "activity_PAI": -0.3833
+      }
+    ],
+    "dp_means": {
+      "content_level": -0.1,
+      "student_task": -0.05,
+      "tutor_role": -0.1,
+      "student_engagement": 0.4667,
+      "disciplinary_method": 0.25
+    },
+    "prompt_PAI": 0.0933
+  },
+  {
+    "prompt_id": "P1497",
+    "bloom_band": "RU",
+    "knowledge_state": "novice",
+    "learning_stage": "skill_building",
+    "learning_context": "guided",
+    "subject_family": "formal",
+    "bloom": "Understand",
+    "subject": "Mathematics",
+    "selections": [
+      {
+        "content_level": "a",
+        "student_task": "a",
+        "tutor_role": "a",
+        "student_engagement": "a",
+        "disciplinary_method": "b",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "b",
+        "student_task": "c",
+        "tutor_role": "c",
+        "student_engagement": "b",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "a",
+        "tutor_role": "c",
+        "student_engagement": "c",
+        "disciplinary_method": "d",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "b",
+        "student_task": "b",
+        "tutor_role": "a",
+        "student_engagement": "d",
+        "disciplinary_method": "a",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "d",
+        "tutor_role": "d",
+        "student_engagement": "c",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      }
+    ],
+    "activity_scores": [
+      {
+        "content_level": 1.0,
+        "student_task": 0.25,
+        "tutor_role": 0.25,
+        "student_engagement": 0.1667,
+        "disciplinary_method": 0.25,
+        "activity_PAI": 0.3833
+      },
+      {
+        "content_level": 0.5,
+        "student_task": -0.5,
+        "tutor_role": 0.0,
+        "student_engagement": 0.6667,
+        "disciplinary_method": -0.5,
+        "activity_PAI": 0.0333
+      },
+      {
+        "content_level": -0.5,
+        "student_task": 0.25,
+        "tutor_role": 0.0,
+        "student_engagement": 0.3333,
+        "disciplinary_method": 0.0,
+        "activity_PAI": 0.0167
+      },
+      {
+        "content_level": 0.5,
+        "student_task": 0.75,
+        "tutor_role": 0.25,
+        "student_engagement": -0.1667,
+        "disciplinary_method": 1.0,
+        "activity_PAI": 0.4667
+      },
+      {
+        "content_level": -0.5,
+        "student_task": -0.75,
+        "tutor_role": -0.75,
+        "student_engagement": 0.3333,
+        "disciplinary_method": -0.5,
+        "activity_PAI": -0.4333
+      }
+    ],
+    "dp_means": {
+      "content_level": 0.2,
+      "student_task": 0.0,
+      "tutor_role": -0.05,
+      "student_engagement": 0.2667,
+      "disciplinary_method": 0.05
+    },
+    "prompt_PAI": 0.0933
+  },
+  {
+    "prompt_id": "P1713",
+    "bloom_band": "RU",
+    "knowledge_state": "novice",
+    "learning_stage": "skill_building",
+    "learning_context": "guided",
+    "subject_family": "natural",
+    "bloom": "Understand",
+    "subject": "Psychology",
+    "selections": [
+      {
+        "content_level": "a",
+        "student_task": "a",
+        "tutor_role": "a",
+        "student_engagement": "b",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "b",
+        "student_task": "c",
+        "tutor_role": "c",
+        "student_engagement": "a",
+        "disciplinary_method": "b",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "a",
+        "tutor_role": "c",
+        "student_engagement": "d",
+        "disciplinary_method": "b",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "b",
+        "student_task": "c",
+        "tutor_role": "b",
+        "student_engagement": "c",
+        "disciplinary_method": "d",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "d",
+        "tutor_role": "d",
+        "student_engagement": "c",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      }
+    ],
+    "activity_scores": [
+      {
+        "content_level": 1.0,
+        "student_task": 0.25,
+        "tutor_role": 0.25,
+        "student_engagement": 0.6667,
+        "disciplinary_method": -0.25,
+        "activity_PAI": 0.3833
+      },
+      {
+        "content_level": 0.5,
+        "student_task": -0.5,
+        "tutor_role": 0.0,
+        "student_engagement": 0.1667,
+        "disciplinary_method": 0.75,
+        "activity_PAI": 0.1833
+      },
+      {
+        "content_level": -0.5,
+        "student_task": 0.25,
+        "tutor_role": 0.0,
+        "student_engagement": -0.1667,
+        "disciplinary_method": 0.75,
+        "activity_PAI": 0.0667
+      },
+      {
+        "content_level": 0.5,
+        "student_task": -0.5,
+        "tutor_role": 0.75,
+        "student_engagement": 0.3333,
+        "disciplinary_method": 0.0,
+        "activity_PAI": 0.2167
+      },
+      {
+        "content_level": -0.5,
+        "student_task": -0.75,
+        "tutor_role": -0.75,
+        "student_engagement": 0.3333,
+        "disciplinary_method": -0.25,
+        "activity_PAI": -0.3833
+      }
+    ],
+    "dp_means": {
+      "content_level": 0.2,
+      "student_task": -0.25,
+      "tutor_role": 0.05,
+      "student_engagement": 0.2667,
+      "disciplinary_method": 0.2
+    },
+    "prompt_PAI": 0.0933
+  },
+  {
+    "prompt_id": "P0066",
+    "bloom_band": "RU",
+    "knowledge_state": "novice",
+    "learning_stage": "skill_building",
+    "learning_context": "collaborative",
+    "subject_family": "humanistic",
+    "bloom": "Remember",
+    "subject": "Ethics",
+    "selections": [
+      {
+        "content_level": "a",
+        "student_task": "a",
+        "tutor_role": "a",
+        "student_engagement": "b",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "b",
+        "student_task": "c",
+        "tutor_role": "c",
+        "student_engagement": "c",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "d",
+        "tutor_role": "c",
+        "student_engagement": "b",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "b",
+        "student_task": "b",
+        "tutor_role": "a",
+        "student_engagement": "c",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "d",
+        "student_task": "c",
+        "tutor_role": "d",
+        "student_engagement": "c",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      }
+    ],
+    "activity_scores": [
+      {
+        "content_level": 1.0,
+        "student_task": 0.25,
+        "tutor_role": 0.0,
+        "student_engagement": 0.3333,
+        "disciplinary_method": 0.25,
+        "activity_PAI": 0.3667
+      },
+      {
+        "content_level": 0.5,
+        "student_task": -0.5,
+        "tutor_role": 0.25,
+        "student_engagement": 0.1667,
+        "disciplinary_method": 0.25,
+        "activity_PAI": 0.1333
+      },
+      {
+        "content_level": -0.5,
+        "student_task": -0.75,
+        "tutor_role": 0.25,
+        "student_engagement": 0.3333,
+        "disciplinary_method": 0.25,
+        "activity_PAI": -0.0833
+      },
+      {
+        "content_level": 0.5,
+        "student_task": 0.75,
+        "tutor_role": 0.0,
+        "student_engagement": 0.1667,
+        "disciplinary_method": 0.25,
+        "activity_PAI": 0.3333
+      },
+      {
+        "content_level": -1.0,
+        "student_task": -0.5,
+        "tutor_role": -0.25,
+        "student_engagement": 0.1667,
+        "disciplinary_method": 0.25,
+        "activity_PAI": -0.2667
+      }
+    ],
+    "dp_means": {
+      "content_level": 0.1,
+      "student_task": -0.15,
+      "tutor_role": 0.05,
+      "student_engagement": 0.2333,
+      "disciplinary_method": 0.25
+    },
+    "prompt_PAI": 0.0967
+  },
+  {
+    "prompt_id": "P1671",
+    "bloom_band": "RU",
+    "knowledge_state": "misinformed",
+    "learning_stage": "skill_building",
+    "learning_context": "autonomous",
+    "subject_family": "humanistic",
+    "bloom": "Remember",
+    "subject": "Literature",
+    "selections": [
+      {
+        "content_level": "b",
+        "student_task": "a",
+        "tutor_role": "a",
+        "student_engagement": "b",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "c",
+        "tutor_role": "c",
+        "student_engagement": "c",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "d",
+        "student_task": "d",
+        "tutor_role": "c",
+        "student_engagement": "c",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "d",
+        "student_task": "d",
+        "tutor_role": "d",
+        "student_engagement": "a",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "d",
+        "student_task": "d",
+        "tutor_role": "d",
+        "student_engagement": "c",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      }
+    ],
+    "activity_scores": [
+      {
+        "content_level": 0.25,
+        "student_task": 0.25,
+        "tutor_role": 0.75,
+        "student_engagement": 0.6667,
+        "disciplinary_method": 0.25,
+        "activity_PAI": 0.4333
+      },
+      {
+        "content_level": 0.0,
+        "student_task": -0.5,
+        "tutor_role": 0.25,
+        "student_engagement": 0.5,
+        "disciplinary_method": 0.25,
+        "activity_PAI": 0.1
+      },
+      {
+        "content_level": 0.0,
+        "student_task": -0.75,
+        "tutor_role": 0.25,
+        "student_engagement": 0.5,
+        "disciplinary_method": 0.25,
+        "activity_PAI": 0.05
+      },
+      {
+        "content_level": 0.0,
+        "student_task": -0.75,
+        "tutor_role": 0.0,
+        "student_engagement": 0.0,
+        "disciplinary_method": 0.25,
+        "activity_PAI": -0.1
+      },
+      {
+        "content_level": 0.0,
+        "student_task": -0.75,
+        "tutor_role": 0.0,
+        "student_engagement": 0.5,
+        "disciplinary_method": 0.25,
+        "activity_PAI": 0.0
+      }
+    ],
+    "dp_means": {
+      "content_level": 0.05,
+      "student_task": -0.5,
+      "tutor_role": 0.25,
+      "student_engagement": 0.4333,
+      "disciplinary_method": 0.25
+    },
+    "prompt_PAI": 0.0967
+  },
+  {
+    "prompt_id": "P0070",
+    "bloom_band": "EC",
+    "knowledge_state": "novice",
+    "learning_stage": "skill_building",
+    "learning_context": "autonomous",
+    "subject_family": "humanistic",
+    "bloom": "Create",
+    "subject": "Ethics",
+    "selections": [
+      {
+        "content_level": "b",
+        "student_task": "a",
+        "tutor_role": "c",
+        "student_engagement": "c",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "c",
+        "tutor_role": "a",
+        "student_engagement": "b",
+        "disciplinary_method": "d",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "d",
+        "student_task": "d",
+        "tutor_role": "c",
+        "student_engagement": "c",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "b",
+        "student_task": "c",
+        "tutor_role": "d",
+        "student_engagement": "c",
+        "disciplinary_method": "d",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "b",
+        "tutor_role": "c",
+        "student_engagement": "d",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      }
+    ],
+    "activity_scores": [
+      {
+        "content_level": 0.0,
+        "student_task": -0.5,
+        "tutor_role": -0.5,
+        "student_engagement": 0.6667,
+        "disciplinary_method": 0.25,
+        "activity_PAI": -0.0167
+      },
+      {
+        "content_level": 0.0,
+        "student_task": 0.0,
+        "tutor_role": 1.0,
+        "student_engagement": 0.5,
+        "disciplinary_method": 0.0,
+        "activity_PAI": 0.3
+      },
+      {
+        "content_level": 0.0,
+        "student_task": 0.25,
+        "tutor_role": -0.5,
+        "student_engagement": 0.6667,
+        "disciplinary_method": 0.25,
+        "activity_PAI": 0.1333
+      },
+      {
+        "content_level": 0.0,
+        "student_task": 0.0,
+        "tutor_role": -0.25,
+        "student_engagement": 0.6667,
+        "disciplinary_method": 0.0,
+        "activity_PAI": 0.0833
+      },
+      {
+        "content_level": 0.0,
+        "student_task": 0.25,
+        "tutor_role": -0.5,
+        "student_engagement": 0.0,
+        "disciplinary_method": 0.25,
+        "activity_PAI": 0.0
+      }
+    ],
+    "dp_means": {
+      "content_level": 0.0,
+      "student_task": 0.0,
+      "tutor_role": -0.15,
+      "student_engagement": 0.5,
+      "disciplinary_method": 0.15
+    },
+    "prompt_PAI": 0.1
+  },
+  {
+    "prompt_id": "P0095",
+    "bloom_band": "EC",
+    "knowledge_state": "novice",
+    "learning_stage": "skill_building",
+    "learning_context": "autonomous",
+    "subject_family": "natural",
+    "bloom": "Create",
+    "subject": "Biology",
+    "selections": [
+      {
+        "content_level": "a",
+        "student_task": "a",
+        "tutor_role": "a",
+        "student_engagement": "a",
+        "disciplinary_method": "d",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "b",
+        "student_task": "b",
+        "tutor_role": "a",
+        "student_engagement": "b",
+        "disciplinary_method": "a",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "c",
+        "tutor_role": "c",
+        "student_engagement": "a",
+        "disciplinary_method": "b",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "d",
+        "tutor_role": "c",
+        "student_engagement": "c",
+        "disciplinary_method": "d",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "d",
+        "student_task": "d",
+        "tutor_role": "d",
+        "student_engagement": "c",
+        "disciplinary_method": "d",
+        "activity_PAI": null
+      }
+    ],
+    "activity_scores": [
+      {
+        "content_level": 0.0,
+        "student_task": -0.5,
+        "tutor_role": 1.0,
+        "student_engagement": -0.6667,
+        "disciplinary_method": 0.0,
+        "activity_PAI": -0.0333
+      },
+      {
+        "content_level": 0.0,
+        "student_task": 0.25,
+        "tutor_role": 1.0,
+        "student_engagement": 0.5,
+        "disciplinary_method": 0.25,
+        "activity_PAI": 0.4
+      },
+      {
+        "content_level": 0.0,
+        "student_task": 0.0,
+        "tutor_role": -0.5,
+        "student_engagement": -0.6667,
+        "disciplinary_method": 0.75,
+        "activity_PAI": -0.0833
+      },
+      {
+        "content_level": 0.0,
+        "student_task": 0.25,
+        "tutor_role": -0.5,
+        "student_engagement": 0.6667,
+        "disciplinary_method": 0.0,
+        "activity_PAI": 0.0833
+      },
+      {
+        "content_level": 0.0,
+        "student_task": 0.25,
+        "tutor_role": -0.25,
+        "student_engagement": 0.6667,
+        "disciplinary_method": 0.0,
+        "activity_PAI": 0.1333
+      }
+    ],
+    "dp_means": {
+      "content_level": 0.0,
+      "student_task": 0.05,
+      "tutor_role": 0.15,
+      "student_engagement": 0.1,
+      "disciplinary_method": 0.2
+    },
+    "prompt_PAI": 0.1
+  },
+  {
+    "prompt_id": "P1324",
+    "bloom_band": "EC",
+    "knowledge_state": "novice",
+    "learning_stage": "skill_building",
+    "learning_context": "collaborative",
+    "subject_family": "formal",
+    "bloom": "Create",
+    "subject": "Physics",
+    "selections": [
+      {
+        "content_level": "a",
+        "student_task": "a",
+        "tutor_role": "a",
+        "student_engagement": "a",
+        "disciplinary_method": "b",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "b",
+        "student_task": "b",
+        "tutor_role": "c",
+        "student_engagement": "b",
+        "disciplinary_method": "a",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "c",
+        "tutor_role": "b",
+        "student_engagement": "d",
+        "disciplinary_method": "d",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "c",
+        "tutor_role": "c",
+        "student_engagement": "c",
+        "disciplinary_method": "b",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "d",
+        "student_task": "d",
+        "tutor_role": "d",
+        "student_engagement": "c",
+        "disciplinary_method": "d",
+        "activity_PAI": null
+      }
+    ],
+    "activity_scores": [
+      {
+        "content_level": 0.0,
+        "student_task": -0.5,
+        "tutor_role": 0.0,
+        "student_engagement": -0.8333,
+        "disciplinary_method": 0.25,
+        "activity_PAI": -0.2167
+      },
+      {
+        "content_level": 0.0,
+        "student_task": 0.25,
+        "tutor_role": 0.25,
+        "student_engagement": 0.1667,
+        "disciplinary_method": 1.0,
+        "activity_PAI": 0.3333
+      },
+      {
+        "content_level": 0.0,
+        "student_task": 0.0,
+        "tutor_role": 0.25,
+        "student_engagement": 0.5,
+        "disciplinary_method": 0.0,
+        "activity_PAI": 0.15
+      },
+      {
+        "content_level": 0.0,
+        "student_task": 0.0,
+        "tutor_role": 0.25,
+        "student_engagement": 0.3333,
+        "disciplinary_method": 0.25,
+        "activity_PAI": 0.1667
+      },
+      {
+        "content_level": 0.0,
+        "student_task": 0.25,
+        "tutor_role": -0.25,
+        "student_engagement": 0.3333,
+        "disciplinary_method": 0.0,
+        "activity_PAI": 0.0667
+      }
+    ],
+    "dp_means": {
+      "content_level": 0.0,
+      "student_task": 0.0,
+      "tutor_role": 0.1,
+      "student_engagement": 0.1,
+      "disciplinary_method": 0.3
+    },
+    "prompt_PAI": 0.1
+  },
+  {
+    "prompt_id": "P1834",
+    "bloom_band": "EC",
+    "knowledge_state": "novice",
+    "learning_stage": "conceptual_orientation",
+    "learning_context": "collaborative",
+    "subject_family": "formal",
+    "bloom": "Evaluate",
+    "subject": "Physics",
+    "selections": [
+      {
+        "content_level": "b",
+        "student_task": "a",
+        "tutor_role": "a",
+        "student_engagement": "a",
+        "disciplinary_method": "a",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "b",
+        "student_task": "b",
+        "tutor_role": "a",
+        "student_engagement": "b",
+        "disciplinary_method": "a",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "c",
+        "tutor_role": "c",
+        "student_engagement": "c",
+        "disciplinary_method": "b",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "c",
+        "tutor_role": "c",
+        "student_engagement": "d",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "d",
+        "student_task": "d",
+        "tutor_role": "d",
+        "student_engagement": "c",
+        "disciplinary_method": "d",
+        "activity_PAI": null
+      }
+    ],
+    "activity_scores": [
+      {
+        "content_level": 0.0,
+        "student_task": 0.25,
+        "tutor_role": 0.0,
+        "student_engagement": -0.5,
+        "disciplinary_method": 0.25,
+        "activity_PAI": 0.0
+      },
+      {
+        "content_level": 0.0,
+        "student_task": -0.5,
+        "tutor_role": 0.0,
+        "student_engagement": -0.3333,
+        "disciplinary_method": 0.25,
+        "activity_PAI": -0.1167
+      },
+      {
+        "content_level": 0.0,
+        "student_task": 0.25,
+        "tutor_role": 0.25,
+        "student_engagement": 0.3333,
+        "disciplinary_method": 0.5,
+        "activity_PAI": 0.2667
+      },
+      {
+        "content_level": 0.0,
+        "student_task": 0.25,
+        "tutor_role": 0.25,
+        "student_engagement": 0.6667,
+        "disciplinary_method": 0.0,
+        "activity_PAI": 0.2333
+      },
+      {
+        "content_level": 0.0,
+        "student_task": 0.25,
+        "tutor_role": -0.25,
+        "student_engagement": 0.3333,
+        "disciplinary_method": 0.25,
+        "activity_PAI": 0.1167
+      }
+    ],
+    "dp_means": {
+      "content_level": 0.0,
+      "student_task": 0.1,
+      "tutor_role": 0.05,
+      "student_engagement": 0.1,
+      "disciplinary_method": 0.25
+    },
+    "prompt_PAI": 0.1
+  },
+  {
+    "prompt_id": "P1993",
+    "bloom_band": "RU",
+    "knowledge_state": "novice",
+    "learning_stage": "skill_building",
+    "learning_context": "collaborative",
+    "subject_family": "humanistic",
+    "bloom": "Remember",
+    "subject": "Literature",
+    "selections": [
+      {
+        "content_level": "a",
+        "student_task": "a",
+        "tutor_role": "a",
+        "student_engagement": "a",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "b",
+        "student_task": "b",
+        "tutor_role": "a",
+        "student_engagement": "b",
+        "disciplinary_method": "a",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "c",
+        "tutor_role": "c",
+        "student_engagement": "c",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "a",
+        "tutor_role": "d",
+        "student_engagement": "d",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "b",
+        "student_task": "d",
+        "tutor_role": "c",
+        "student_engagement": "c",
+        "disciplinary_method": "d",
+        "activity_PAI": null
+      }
+    ],
+    "activity_scores": [
+      {
+        "content_level": 1.0,
+        "student_task": 0.25,
+        "tutor_role": 0.0,
+        "student_engagement": -0.1667,
+        "disciplinary_method": 0.25,
+        "activity_PAI": 0.2667
+      },
+      {
+        "content_level": 0.5,
+        "student_task": 0.75,
+        "tutor_role": 0.0,
+        "student_engagement": 0.3333,
+        "disciplinary_method": 0.0,
+        "activity_PAI": 0.3167
+      },
+      {
+        "content_level": -0.5,
+        "student_task": -0.5,
+        "tutor_role": 0.25,
+        "student_engagement": 0.1667,
+        "disciplinary_method": 0.25,
+        "activity_PAI": -0.0667
+      },
+      {
+        "content_level": -0.5,
+        "student_task": 0.25,
+        "tutor_role": -0.25,
+        "student_engagement": 0.0,
+        "disciplinary_method": 0.25,
+        "activity_PAI": -0.05
+      },
+      {
+        "content_level": 0.5,
+        "student_task": -0.75,
+        "tutor_role": 0.25,
+        "student_engagement": 0.1667,
+        "disciplinary_method": 0.0,
+        "activity_PAI": 0.0333
+      }
+    ],
+    "dp_means": {
+      "content_level": 0.2,
+      "student_task": 0.0,
+      "tutor_role": 0.05,
+      "student_engagement": 0.1,
+      "disciplinary_method": 0.15
+    },
+    "prompt_PAI": 0.1
+  },
+  {
+    "prompt_id": "P1218",
+    "bloom_band": "RU",
+    "knowledge_state": "novice",
+    "learning_stage": "comprehensive_mastery",
+    "learning_context": "collaborative",
+    "subject_family": "natural",
+    "bloom": "Understand",
+    "subject": "Psychology",
+    "selections": [
+      {
+        "content_level": "b",
+        "student_task": "a",
+        "tutor_role": "c",
+        "student_engagement": "a",
+        "disciplinary_method": "b",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "a",
+        "tutor_role": "c",
+        "student_engagement": "c",
+        "disciplinary_method": "d",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "d",
+        "student_task": "c",
+        "tutor_role": "a",
+        "student_engagement": "b",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "b",
+        "student_task": "b",
+        "tutor_role": "c",
+        "student_engagement": "d",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "d",
+        "tutor_role": "d",
+        "student_engagement": "c",
+        "disciplinary_method": "b",
+        "activity_PAI": null
+      }
+    ],
+    "activity_scores": [
+      {
+        "content_level": 0.5,
+        "student_task": 0.25,
+        "tutor_role": 0.25,
+        "student_engagement": -0.3333,
+        "disciplinary_method": 0.5,
+        "activity_PAI": 0.2333
+      },
+      {
+        "content_level": -0.5,
+        "student_task": 0.25,
+        "tutor_role": 0.25,
+        "student_engagement": 0.1667,
+        "disciplinary_method": 0.75,
+        "activity_PAI": 0.1833
+      },
+      {
+        "content_level": -1.0,
+        "student_task": 0.0,
+        "tutor_role": 0.0,
+        "student_engagement": -0.1667,
+        "disciplinary_method": 0.25,
+        "activity_PAI": -0.1833
+      },
+      {
+        "content_level": 0.5,
+        "student_task": 0.0,
+        "tutor_role": 0.25,
+        "student_engagement": 0.5,
+        "disciplinary_method": 0.25,
+        "activity_PAI": 0.3
+      },
+      {
+        "content_level": -0.5,
+        "student_task": 0.0,
+        "tutor_role": -0.25,
+        "student_engagement": 0.1667,
+        "disciplinary_method": 0.5,
+        "activity_PAI": -0.0167
+      }
+    ],
+    "dp_means": {
+      "content_level": -0.2,
+      "student_task": 0.1,
+      "tutor_role": 0.1,
+      "student_engagement": 0.0667,
+      "disciplinary_method": 0.45
+    },
+    "prompt_PAI": 0.1033
+  },
+  {
+    "prompt_id": "P0806",
+    "bloom_band": "RU",
+    "knowledge_state": "novice",
+    "learning_stage": "skill_building",
+    "learning_context": "autonomous",
+    "subject_family": "natural",
+    "bloom": "Understand",
+    "subject": "Biology",
+    "selections": [
+      {
+        "content_level": "a",
+        "student_task": "a",
+        "tutor_role": "c",
+        "student_engagement": "c",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "a",
+        "tutor_role": "c",
+        "student_engagement": "c",
+        "disciplinary_method": "d",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "b",
+        "student_task": "c",
+        "tutor_role": "a",
+        "student_engagement": "c",
+        "disciplinary_method": "a",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "b",
+        "tutor_role": "c",
+        "student_engagement": "b",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "b",
+        "student_task": "d",
+        "tutor_role": "d",
+        "student_engagement": "c",
+        "disciplinary_method": "d",
+        "activity_PAI": null
+      }
+    ],
+    "activity_scores": [
+      {
+        "content_level": 1.0,
+        "student_task": 0.25,
+        "tutor_role": -0.5,
+        "student_engagement": 0.5,
+        "disciplinary_method": -0.25,
+        "activity_PAI": 0.2
+      },
+      {
+        "content_level": -0.5,
+        "student_task": 0.25,
+        "tutor_role": -0.5,
+        "student_engagement": 0.5,
+        "disciplinary_method": 0.0,
+        "activity_PAI": -0.05
+      },
+      {
+        "content_level": 0.5,
+        "student_task": -0.5,
+        "tutor_role": 1.0,
+        "student_engagement": 0.5,
+        "disciplinary_method": 0.25,
+        "activity_PAI": 0.35
+      },
+      {
+        "content_level": -0.5,
+        "student_task": 0.75,
+        "tutor_role": -0.5,
+        "student_engagement": 0.6667,
+        "disciplinary_method": -0.25,
+        "activity_PAI": 0.0333
+      },
+      {
+        "content_level": 0.5,
+        "student_task": -0.75,
+        "tutor_role": -0.25,
+        "student_engagement": 0.5,
+        "disciplinary_method": 0.0,
+        "activity_PAI": 0.0
+      }
+    ],
+    "dp_means": {
+      "content_level": 0.2,
+      "student_task": 0.0,
+      "tutor_role": -0.15,
+      "student_engagement": 0.5333,
+      "disciplinary_method": -0.05
+    },
+    "prompt_PAI": 0.1067
+  },
+  {
+    "prompt_id": "P0828",
+    "bloom_band": "RU",
+    "knowledge_state": "novice",
+    "learning_stage": "comprehensive_mastery",
+    "learning_context": "collaborative",
+    "subject_family": "formal",
+    "bloom": "Understand",
+    "subject": "Computer Science",
+    "selections": [
+      {
+        "content_level": "a",
+        "student_task": "a",
+        "tutor_role": "c",
+        "student_engagement": "c",
+        "disciplinary_method": "b",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "b",
+        "student_task": "a",
+        "tutor_role": "a",
+        "student_engagement": "b",
+        "disciplinary_method": "a",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "b",
+        "tutor_role": "c",
+        "student_engagement": "c",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "c",
+        "tutor_role": "b",
+        "student_engagement": "d",
+        "disciplinary_method": "b",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "d",
+        "tutor_role": "d",
+        "student_engagement": "d",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      }
+    ],
+    "activity_scores": [
+      {
+        "content_level": 1.0,
+        "student_task": 0.25,
+        "tutor_role": 0.25,
+        "student_engagement": 0.1667,
+        "disciplinary_method": 0.0,
+        "activity_PAI": 0.3333
+      },
+      {
+        "content_level": 0.5,
+        "student_task": 0.25,
+        "tutor_role": 0.0,
+        "student_engagement": -0.1667,
+        "disciplinary_method": 0.5,
+        "activity_PAI": 0.2167
+      },
+      {
+        "content_level": -0.5,
+        "student_task": 0.0,
+        "tutor_role": 0.25,
+        "student_engagement": 0.1667,
+        "disciplinary_method": 0.0,
+        "activity_PAI": -0.0167
+      },
+      {
+        "content_level": -0.5,
+        "student_task": 0.0,
+        "tutor_role": 0.25,
+        "student_engagement": 0.5,
+        "disciplinary_method": 0.0,
+        "activity_PAI": 0.05
+      },
+      {
+        "content_level": -0.5,
+        "student_task": 0.0,
+        "tutor_role": -0.25,
+        "student_engagement": 0.5,
+        "disciplinary_method": 0.0,
+        "activity_PAI": -0.05
+      }
+    ],
+    "dp_means": {
+      "content_level": 0.0,
+      "student_task": 0.1,
+      "tutor_role": 0.1,
+      "student_engagement": 0.2333,
+      "disciplinary_method": 0.1
+    },
+    "prompt_PAI": 0.1067
+  },
+  {
+    "prompt_id": "P1025",
+    "bloom_band": "RU",
+    "knowledge_state": "misinformed",
+    "learning_stage": "skill_building",
+    "learning_context": "autonomous",
+    "subject_family": "formal",
+    "bloom": "Understand",
+    "subject": "Physics",
+    "selections": [
+      {
+        "content_level": "a",
+        "student_task": "a",
+        "tutor_role": "c",
+        "student_engagement": "b",
+        "disciplinary_method": "b",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "b",
+        "student_task": "a",
+        "tutor_role": "a",
+        "student_engagement": "a",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "c",
+        "tutor_role": "c",
+        "student_engagement": "c",
+        "disciplinary_method": "d",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "b",
+        "student_task": "b",
+        "tutor_role": "a",
+        "student_engagement": "c",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "d",
+        "student_task": "d",
+        "tutor_role": "d",
+        "student_engagement": "d",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      }
+    ],
+    "activity_scores": [
+      {
+        "content_level": 0.25,
+        "student_task": 0.25,
+        "tutor_role": 0.25,
+        "student_engagement": 0.6667,
+        "disciplinary_method": 0.25,
+        "activity_PAI": 0.3333
+      },
+      {
+        "content_level": 0.25,
+        "student_task": 0.25,
+        "tutor_role": 0.75,
+        "student_engagement": 0.0,
+        "disciplinary_method": -0.5,
+        "activity_PAI": 0.15
+      },
+      {
+        "content_level": 0.0,
+        "student_task": -0.5,
+        "tutor_role": 0.25,
+        "student_engagement": 0.5,
+        "disciplinary_method": 0.0,
+        "activity_PAI": 0.05
+      },
+      {
+        "content_level": 0.25,
+        "student_task": 0.75,
+        "tutor_role": 0.75,
+        "student_engagement": 0.5,
+        "disciplinary_method": -0.5,
+        "activity_PAI": 0.35
+      },
+      {
+        "content_level": 0.0,
+        "student_task": -0.75,
+        "tutor_role": 0.0,
+        "student_engagement": -0.5,
+        "disciplinary_method": -0.5,
+        "activity_PAI": -0.35
+      }
+    ],
+    "dp_means": {
+      "content_level": 0.15,
+      "student_task": 0.0,
+      "tutor_role": 0.4,
+      "student_engagement": 0.2333,
+      "disciplinary_method": -0.25
+    },
+    "prompt_PAI": 0.1067
+  },
+  {
+    "prompt_id": "P1890",
+    "bloom_band": "AA",
+    "knowledge_state": "novice",
+    "learning_stage": "skill_building",
+    "learning_context": "autonomous",
+    "subject_family": "natural",
+    "bloom": "Analyze",
+    "subject": "Psychology",
+    "selections": [
+      {
+        "content_level": "a",
+        "student_task": "a",
+        "tutor_role": "a",
+        "student_engagement": "a",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "b",
+        "student_task": "a",
+        "tutor_role": "c",
+        "student_engagement": "b",
+        "disciplinary_method": "b",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "c",
+        "tutor_role": "c",
+        "student_engagement": "c",
+        "disciplinary_method": "b",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "d",
+        "tutor_role": "c",
+        "student_engagement": "c",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "d",
+        "student_task": "c",
+        "tutor_role": "d",
+        "student_engagement": "d",
+        "disciplinary_method": "c",
+        "activity_PAI": null
+      }
+    ],
+    "activity_scores": [
+      {
+        "content_level": 0.25,
+        "student_task": -0.25,
+        "tutor_role": 1.0,
+        "student_engagement": -0.5,
+        "disciplinary_method": -0.25,
+        "activity_PAI": 0.05
+      },
+      {
+        "content_level": 0.5,
+        "student_task": -0.25,
+        "tutor_role": -0.5,
+        "student_engagement": 0.6667,
+        "disciplinary_method": 0.75,
+        "activity_PAI": 0.2333
+      },
+      {
+        "content_level": 0.25,
+        "student_task": 0.25,
+        "tutor_role": -0.5,
+        "student_engagement": 0.8333,
+        "disciplinary_method": 0.75,
+        "activity_PAI": 0.3167
+      },
+      {
+        "content_level": 0.25,
+        "student_task": 0.0,
+        "tutor_role": -0.5,
+        "student_engagement": 0.8333,
+        "disciplinary_method": -0.25,
+        "activity_PAI": 0.0667
+      },
+      {
+        "content_level": -0.25,
+        "student_task": 0.25,
+        "tutor_role": -0.25,
+        "student_engagement": -0.1667,
+        "disciplinary_method": -0.25,
+        "activity_PAI": -0.1333
+      }
+    ],
+    "dp_means": {
+      "content_level": 0.2,
+      "student_task": 0.0,
+      "tutor_role": -0.15,
+      "student_engagement": 0.3333,
+      "disciplinary_method": 0.15
+    },
+    "prompt_PAI": 0.1067
+  },
+  {
+    "prompt_id": "P0296",
+    "bloom_band": "EC",
+    "knowledge_state": "novice",
+    "learning_stage": "comprehensive_mastery",
+    "learning_context": "autonomous",
+    "subject_family": "formal",
+    "bloom": "Evaluate",
+    "subject": "Computer Science",
+    "selections": [
+      {
+        "content_level": "a",
+        "student_task": "a",
+        "tutor_role": "a",
+        "student_engagement": "a",
+        "disciplinary_method": "a",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "b",
+        "student_task": "b",
+        "tutor_role": "a",
+        "student_engagement": "b",
+        "disciplinary_method": "a",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "a",
+        "student_task": "a",
+        "tutor_role": "c",
+        "student_engagement": "b",
+        "disciplinary_method": "a",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "c",
+        "student_task": "c",
+        "tutor_role": "c",
+        "student_engagement": "c",
+        "disciplinary_method": "b",
+        "activity_PAI": null
+      },
+      {
+        "content_level": "d",
+        "student_task": "d",
+        "tutor_role": "d",
+        "student_engagement": "c",
+        "disciplinary_method": "b",
+        "activity_PAI": null
+      }
+    ],
+    "activity_scores": [
+      {
+        "content_level": 0.0,
+        "student_task": -0.5,
+        "tutor_role": 1.0,
+        "student_engagement": -0.8333,
+        "disciplinary_method": 0.5,
+        "activity_PAI": 0.0333
+      },
+      {
+        "content_level": 0.0,
+        "student_task": -0.5,
+        "tutor_role": 1.0,
+        "student_engagement": 0.0,
+        "disciplinary_method": 0.5,
+        "activity_PAI": 0.2
+      },
+      {
+        "content_level": 0.0,
+        "student_task": -0.5,
+        "tutor_role": -0.5,
+        "student_engagement": 0.0,
+        "disciplinary_method": 0.5,
+        "activity_PAI": -0.1
+      },
+      {
+        "content_level": 0.0,
+        "student_task": 0.5,
+        "tutor_role": -0.5,
+        "student_engagement": 0.6667,
+        "disciplinary_method": 0.0,
+        "activity_PAI": 0.1333
+      },
+      {
+        "content_level": 0.0,
+        "student_task": 1.0,
+        "tutor_role": -0.25,
+        "student_engagement": 0.6667,
+        "disciplinary_method": 0.0,
+        "activity_PAI": 0.2833
+      }
+    ],
+    "dp_means": {
+      "content_level": 0.0,
+      "student_task": 0.0,
+      "tutor_role": 0.15,
+      "student_engagement": 0.1,
+      "disciplinary_method": 0.3
+    },
+    "prompt_PAI": 0.11
+  }
+]

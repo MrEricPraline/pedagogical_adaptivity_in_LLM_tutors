@@ -1,0 +1,31 @@
+{
+  "stage": "stage5_corrective_data_stratified",
+  "timestamp": "2026-05-12T15:14:36.462922+00:00",
+  "row_count": 589,
+  "params": {
+    "per_cell": 75,
+    "target_dp_only": false,
+    "input_scored": "data/stage5/scored_dataset.json",
+    "input_weak_cells": "data/stage5/weak_cells.json",
+    "output": "data/stage5/corrective_training_data_stratified.json"
+  },
+  "per_cell_target": 75,
+  "n_weak_cells": 10,
+  "n_unique_cases": 589,
+  "missing_narratives": [],
+  "cell_assignments_size": {
+    "tutor_role|learning_context=guided|knowledge_state=novice": 75,
+    "student_task|learning_stage=skill_building|bloom_band=EC": 75,
+    "content_level|bloom_band=EC|knowledge_state=novice": 75,
+    "student_task|learning_stage=skill_building|bloom_band=RU": 75,
+    "tutor_role|learning_context=autonomous|knowledge_state=novice": 75,
+    "student_task|learning_stage=comprehensive_mastery|bloom_band=RU": 75,
+    "tutor_role|learning_context=collaborative|knowledge_state=novice": 75,
+    "student_engagement|learning_context=collaborative|bloom_band=RU|learning_stage=conceptual_orientation": 52,
+    "content_level|bloom_band=RU|knowledge_state=misinformed": 75,
+    "student_task|learning_stage=skill_building|bloom_band=AA": 75
+  },
+  "started_at": "2026-05-12T15:14:35.990859+00:00",
+  "finished_at": "2026-05-12T15:14:36.462902+00:00",
+  "duration_seconds": 0.472
+}

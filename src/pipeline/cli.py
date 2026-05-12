@@ -107,6 +107,63 @@ def build_parser() -> argparse.ArgumentParser:
         help="Number of lowest-PAI cases to include (default: 30)",
     )
 
+    p5w = sub.add_parser(
+        "run-stage5-weak-cells",
+        help="Identify (DP × condition) cells with lowest PAI scores",
+    )
+    _add_common_args(p5w)
+    p5w.add_argument(
+        "--k", type=int, default=10,
+        help="Number of weakest cells to flag (default: 10)",
+    )
+
+    p5cs = sub.add_parser(
+        "run-stage5-corrective-stratified",
+        help="Build stratified corrective set (50-100 examples per weak cell)",
+    )
+    _add_common_args(p5cs)
+    p5cs.add_argument(
+        "--per-cell", type=int, default=75, dest="per_cell",
+        help="Examples per weak cell (proposal: 50-100, default: 75)",
+    )
+    p5cs.add_argument(
+        "--target-dp-only", action="store_true", dest="target_dp_only",
+        default=False,
+        help="Correct only the weak cell's DP (target for per-DP isolated LoRAs)",
+    )
+
+    p5pdp = sub.add_parser(
+        "run-stage5-per-dp-finetune",
+        help="Train 5 isolated LoRA adapters (one per DP) for causal interference",
+    )
+    _add_common_args(p5pdp)
+    p5pdp.add_argument("--rank", type=int, required=True,
+                       help="LoRA rank for the per-DP adapters")
+    p5pdp.add_argument("--epochs", type=int, default=3)
+    p5pdp.add_argument("--lr", type=float, default=1e-4)
+    p5pdp.add_argument("--base-model", type=str, default="Qwen/Qwen3-32B",
+                       dest="base_model")
+
+    p5ci = sub.add_parser(
+        "run-stage5-causal-interference",
+        help="Build the causal 5×5 interference matrix from per-DP adapters",
+    )
+    _add_common_args(p5ci)
+    p5ci.add_argument(
+        "--target", type=str, default="heldout",
+        choices=["train", "heldout"],
+        help="Case set to query (default: heldout)",
+    )
+    p5ci.add_argument("--base-model", type=str, default="Qwen/Qwen3-32B",
+                      dest="base_model")
+    p5ci.add_argument("--max-tokens-out", type=int, default=4096,
+                      dest="max_tokens_out")
+    p5ci.add_argument(
+        "--skip-query", action="store_true", dest="skip_query",
+        default=False,
+        help="Reuse existing per_dp_query_*.json instead of re-querying",
+    )
+
     p5f = sub.add_parser(
         "run-stage5-finetune",
         help="LoRA fine-tune Qwen3-32B on Tinker (Stage 5 Phase 1, Step 2)",
@@ -120,6 +177,14 @@ def build_parser() -> argparse.ArgumentParser:
     p5f.add_argument("--lr", type=float, default=1e-4)
     p5f.add_argument("--base-model", type=str, default="Qwen/Qwen3-32B",
                      dest="base_model")
+    p5f.add_argument(
+        "--corrective-file", type=str,
+        default="corrective_training_data.json",
+        dest="corrective_file",
+        help=("Which corrective set to train on. Use "
+              "corrective_training_data_stratified.json for the "
+              "proposal-aligned stratified set (50-100 per weak cell)."),
+    )
 
     p5q = sub.add_parser(
         "run-stage5-query",
@@ -133,12 +198,89 @@ def build_parser() -> argparse.ArgumentParser:
                      dest="base_model")
     p5q.add_argument("--max-tokens-out", type=int, default=4096,
                      dest="max_tokens_out")
+    p5q.add_argument(
+        "--target", type=str, default="train",
+        choices=["train", "heldout"],
+        help="Case set to re-query (default: train, legacy behavior)",
+    )
+    p5q.add_argument(
+        "--corrective-file", type=str,
+        default="corrective_training_data.json",
+        dest="corrective_file",
+        help=("Which corrective file defines the train case set "
+              "(must match the file used for fine-tuning)."),
+    )
+
+    # ── Stage 5 (Phase 1, Fix) — held-out split + Qwen baseline ──────────
+    p5h = sub.add_parser(
+        "run-stage5-heldout",
+        help="Build held-out eval set disjoint from the corrective train set",
+    )
+    _add_common_args(p5h)
+    p5h.add_argument(
+        "--k", type=int, default=30,
+        help="Number of next-lowest-PAI cases to include (default: 30)",
+    )
+
+    p5b = sub.add_parser(
+        "run-stage5-baseline",
+        help="Query bare Qwen3-32B (no LoRA) on train and/or heldout cases",
+    )
+    _add_common_args(p5b)
+    p5b.add_argument(
+        "--target", type=str, default="heldout",
+        choices=["train", "heldout", "both"],
+        help="Case set(s) to baseline (default: heldout)",
+    )
+    p5b.add_argument("--base-model", type=str, default="Qwen/Qwen3-32B",
+                     dest="base_model")
+    p5b.add_argument("--max-tokens-out", type=int, default=4096,
+                     dest="max_tokens_out")
+    p5b.add_argument(
+        "--corrective-file", type=str,
+        default="corrective_training_data.json",
+        dest="corrective_file",
+    )
 
     p5i = sub.add_parser(
         "run-stage5-interference",
         help="Cross-dimensional interference analysis from post-intervention runs",
     )
     _add_common_args(p5i)
+
+    # ── Stage 6 (Phase 2 — classroom) ───────────────────────────────────
+    p6s = sub.add_parser(
+        "run-stage6-select-cases",
+        help="Select ~30 cases for Phase 2 classroom evaluation (3 strata)",
+    )
+    _add_common_args(p6s)
+    p6s.add_argument("--rank", type=int, required=True,
+                     help="Rank of the post-intervention file to draw from")
+    p6s.add_argument(
+        "--target", type=str, default="heldout",
+        choices=["train", "heldout"],
+        help="Post-intervention target to use (default: heldout)",
+    )
+    p6s.add_argument("--n-per-stratum", type=int, default=10, dest="n_per_stratum",
+                     help="Cases per stratum (default: 10 → 30 total)")
+    p6s.add_argument("--control-threshold", type=float, default=0.4, dest="control_threshold")
+    p6s.add_argument("--modest-threshold", type=float, default=0.05, dest="modest_threshold")
+
+    p6f = sub.add_parser(
+        "run-stage6-build-forms",
+        help="Generate per-student evaluation forms (pre+post, blinded, randomized)",
+    )
+    _add_common_args(p6f)
+    p6f.add_argument("--n-students", type=int, default=30, dest="n_students")
+    p6f.add_argument("--cases-per-student", type=int, default=5, dest="cases_per_student")
+    p6f.add_argument("--raters-per-case", type=int, default=5, dest="raters_per_case")
+    p6f.add_argument("--seed", type=int, default=42)
+
+    p6a = sub.add_parser(
+        "run-stage6-analyze",
+        help="Statistical analysis of collected student ratings vs PAI deltas",
+    )
+    _add_common_args(p6a)
 
     return parser
 
@@ -152,7 +294,12 @@ def main(argv: list | None = None) -> None:
     # Stage-5-specific args that aren't part of PipelineConfig — strip them
     # before building the config so they don't leak into setattr() calls.
     stage5_only = {
-        "n", "rank", "all_ranks", "epochs", "lr", "base_model", "max_tokens_out",
+        "n", "k", "rank", "all_ranks", "epochs", "lr", "base_model",
+        "max_tokens_out", "target", "per_cell", "target_dp_only",
+        "skip_query", "corrective_file",
+        # stage 6
+        "n_per_stratum", "control_threshold", "modest_threshold",
+        "n_students", "cases_per_student", "raters_per_case", "seed",
     }
     cli_overrides = {
         k: v
@@ -241,6 +388,7 @@ def main(argv: list | None = None) -> None:
             epochs=args.epochs,
             lr=args.lr,
             base_model=args.base_model,
+            corrective_file=args.corrective_file,
         )
 
     if args.command == "run-stage5-query":
@@ -255,14 +403,100 @@ def main(argv: list | None = None) -> None:
         run_query_post_intervention(
             cfg,
             ranks=ranks,
+            target=args.target,
             base_model=args.base_model,
             max_tokens=args.max_tokens_out,
+            corrective_file=args.corrective_file,
         )
+
+    if args.command == "run-stage5-heldout":
+        from src.stage5_finetune.eval_split import run_build_heldout
+
+        run_build_heldout(cfg, k=args.k)
+
+    if args.command == "run-stage5-baseline":
+        from src.stage5_finetune.tinker_query import run_query_baseline
+
+        targets = ["train", "heldout"] if args.target == "both" else [args.target]
+        for t in targets:
+            run_query_baseline(
+                cfg,
+                target=t,
+                base_model=args.base_model,
+                max_tokens=args.max_tokens_out,
+                corrective_file=args.corrective_file,
+            )
 
     if args.command == "run-stage5-interference":
         from src.stage5_finetune.interference import run_interference_analysis
 
         run_interference_analysis(cfg)
+
+    if args.command == "run-stage5-weak-cells":
+        from src.stage5_finetune.weak_cells import run_identify_weak_cells
+
+        run_identify_weak_cells(cfg, k=args.k)
+
+    if args.command == "run-stage5-corrective-stratified":
+        from src.stage5_finetune.corrective_data import (
+            run_build_corrective_data_stratified,
+        )
+
+        run_build_corrective_data_stratified(
+            cfg,
+            per_cell=args.per_cell,
+            target_dp_only=args.target_dp_only,
+        )
+
+    if args.command == "run-stage5-per-dp-finetune":
+        from src.stage5_finetune.per_dp_train import run_per_dp_finetune
+
+        run_per_dp_finetune(
+            cfg,
+            rank=args.rank,
+            epochs=args.epochs,
+            lr=args.lr,
+            base_model=args.base_model,
+        )
+
+    if args.command == "run-stage5-causal-interference":
+        from src.stage5_finetune.causal_interference import run_causal_interference
+
+        run_causal_interference(
+            cfg,
+            target=args.target,
+            base_model=args.base_model,
+            max_tokens=args.max_tokens_out,
+            skip_query=args.skip_query,
+        )
+
+    if args.command == "run-stage6-select-cases":
+        from src.stage6_classroom.case_selection import run_select_phase2_cases
+
+        run_select_phase2_cases(
+            cfg,
+            rank=args.rank,
+            target=args.target,
+            n_per_stratum=args.n_per_stratum,
+            control_threshold=args.control_threshold,
+            modest_threshold=args.modest_threshold,
+        )
+
+    if args.command == "run-stage6-build-forms":
+        from src.stage6_classroom.forms import run_build_phase2_forms
+
+        run_build_phase2_forms(
+            cfg,
+            n_students=args.n_students,
+            cases_per_student=args.cases_per_student,
+            raters_per_case=args.raters_per_case,
+            seed=args.seed,
+        )
+
+    if args.command == "run-stage6-analyze":
+        from src.stage6_classroom.analysis import run_phase2_analysis
+
+        run_phase2_analysis(cfg)
 
 
 if __name__ == "__main__":

@@ -50,12 +50,20 @@ Research pipeline for generating and analysing case narratives that explore how 
 │   │   ├── matrices.py         # 11 PAI sub-matrices (DP1–DP5) + DECISION_POINTS registry
 │   │   ├── scorer.py           # score_response(), score_activity(), find_optimal_selections()
 │   │   └── pipeline.py         # Stage 5 scoring orchestrator
-│   └── stage5_finetune/
-│       ├── prompt_builder.py   # Diversified description variants for the corrective targets
-│       ├── corrective_data.py  # Build corrective_training_data.json from lowest-PAI cases
-│       ├── tinker_train.py     # LoRA fine-tune Qwen3-32B on Tinker (lazy SDK import)
-│       ├── tinker_query.py     # Query corrected adapter + re-score with PAI
-│       └── interference.py     # Cross-dimensional interference + effective-rank analysis
+│   ├── stage5_finetune/
+│   │   ├── prompt_builder.py     # Diversified description variants for the corrective targets
+│   │   ├── weak_cells.py         # Identify (DP × condition) cells with lowest PAI
+│   │   ├── corrective_data.py    # Build corrective sets: global, stratified, per-DP
+│   │   ├── eval_split.py         # Build held-out eval set disjoint from the corrective train set
+│   │   ├── tinker_train.py       # LoRA fine-tune Qwen3-32B on Tinker (lazy SDK import)
+│   │   ├── tinker_query.py       # Query corrected adapter or bare base model + re-score with PAI
+│   │   ├── per_dp_train.py       # Train 5 isolated LoRAs (one per DP)
+│   │   ├── interference.py       # Three-delta analysis (memorization, generalization, vs Gemini)
+│   │   └── causal_interference.py # 5×5 causal matrix from per-DP adapters
+│   └── stage6_classroom/
+│       ├── case_selection.py     # Select 30 cases for Phase 2 (3 strata)
+│       ├── forms.py              # Build per-student blinded evaluation forms
+│       └── analysis.py           # Statistical analysis of student ratings
 ├── data/
 │   ├── stage1/                 # Stage 1 outputs
 │   ├── stage2/                 # Stage 2 outputs (incl. cases_final.jsonl)
@@ -215,13 +223,32 @@ Stage 4 outputs:
 Stage 5 implements **Experiment 2, Phase 1** of the study. It is split into
 five CLI commands so each step can be re-run independently:
 
+**Experiment 2, Phase 1 — Corrective fine-tuning (technical)**
+
 | Step | Command | Output | Requires |
 |------|---------|--------|----------|
-| Score every Stage 4 response with the PAI matrices | `run-stage5-score` | `data/stage5/scored_dataset.json` (sorted ascending by `prompt_PAI`) | Stage 4 outputs |
-| Build the corrective training set from the *N* lowest-PAI cases | `run-stage5-corrective --n 30` | `data/stage5/corrective_training_data.json` (chat-format triples with the pedagogically optimal selections per DP) | scored dataset + Stage 4 narratives |
-| LoRA fine-tune Qwen3-32B on Tinker at one or more ranks | `run-stage5-finetune --all-ranks` (or `--rank 8`) | `data/stage5/adapters/adapter_r{rank}.json` + Tinker checkpoints | Tinker SDK + `TINKER_API_KEY` |
-| Query the corrected adapter on the same low-PAI cases and compute pre/post PAI deltas | `run-stage5-query --all-ranks` | `data/stage5/post_intervention_r{rank}.json` (one per rank) | Tinker SDK + trained adapters |
-| Aggregate the rank sweep into the effective-rank + interference report | `run-stage5-interference` | `data/stage5/interference_analysis.json` | post-intervention files |
+| Score every Stage 4 response with the PAI matrices | `run-stage5-score` | `data/stage5/scored_dataset.json` | Stage 4 outputs |
+| **Identify weak (DP × condition) cells** | `run-stage5-weak-cells --k 10` | `data/stage5/weak_cells.json` (bottom-K cells by mean PAI) | scored dataset |
+| Build a *global* corrective set (N lowest-PAI cases, un-stratified) | `run-stage5-corrective --n 30` | `data/stage5/corrective_training_data.json` | scored dataset |
+| **Build a stratified corrective set** (50–100 examples per weak cell, proposal-aligned) | `run-stage5-corrective-stratified --per-cell 75` | `data/stage5/corrective_training_data_stratified.json` | weak_cells.json |
+| **Build a per-DP corrective set** (target_dp_only — each case corrects only its weak cell's DP) | `run-stage5-corrective-stratified --per-cell 75 --target-dp-only` | `data/stage5/corrective_training_data_per_dp.json` | weak_cells.json |
+| Build the held-out eval set (disjoint from train) | `run-stage5-heldout --k 30` | `data/stage5/eval_heldout_cases.json` | scored dataset + a corrective set |
+| LoRA fine-tune Qwen3-32B (unified, all 5 DPs at once) at a rank sweep | `run-stage5-finetune --all-ranks` | `data/stage5/adapters/adapter_r{rank}.json` | Tinker SDK + `TINKER_API_KEY` |
+| **Train 5 per-DP isolated LoRAs** (one adapter per DP, at the effective rank) | `run-stage5-per-dp-finetune --rank 8` | `data/stage5/adapters/per_dp/{dp}.json` | per-DP corrective set + Tinker |
+| Query the unified adapter on train cases | `run-stage5-query --all-ranks --target train` | `data/stage5/post_intervention_r{rank}.json` | Tinker + adapters |
+| Query the unified adapter on held-out cases | `run-stage5-query --all-ranks --target heldout` | `data/stage5/post_intervention_heldout_r{rank}.json` | Tinker + adapters + held-out set |
+| Baseline Qwen3-32B (no LoRA) on train and held-out | `run-stage5-baseline --target both` | `data/stage5/baseline_qwen_{train,heldout}.json` | Tinker |
+| Aggregate the unified-adapter runs into the three-delta interference report | `run-stage5-interference` | `data/stage5/interference_analysis.json` | post-intervention + baseline files |
+| **Build the causal 5×5 interference matrix** from the per-DP adapters | `run-stage5-causal-interference --target heldout` | `data/stage5/causal_interference_matrix.json` | per-DP adapters + baseline |
+
+**Experiment 2, Phase 2 — Human perceptual validation (classroom)**
+
+| Step | Command | Output | Requires |
+|------|---------|--------|----------|
+| Select ~30 cases for Phase 2 (10 large-improvement / 10 modest / 10 control) | `run-stage6-select-cases --rank 8 --target heldout` | `data/stage6/phase2_cases.json` | a post_intervention file |
+| Build per-student blinded evaluation forms (pre+post randomized) | `run-stage6-build-forms --n-students 30 --cases-per-student 5 --raters-per-case 5` | `data/stage6/forms/student_NN.json` + `assignment_key.json` | phase2_cases + pre/post outputs |
+| **(off-pipeline)** Collect student ratings into `data/stage6/ratings_raw.json` | — | `data/stage6/ratings_raw.json` | run the sessions |
+| Statistical analysis: paired tests, PAI-delta vs rating-delta correlation, ICC | `run-stage6-analyze` | `data/stage6/phase2_analysis.json` | ratings_raw + assignment_key |
 
 **1. Score Stage 4 outputs with the PAI matrices:**
 
@@ -274,16 +301,40 @@ representational-dimensionality diagnostic discussed in the study:
 low rank (r=1) suggests the pedagogical decision lives in a thin
 subspace; high rank (r=16) suggests the encoding is distributed.
 
-**5. Query the corrected model on the low-PAI cases and compute deltas:**
+**5. Query the corrected model on the low-PAI train cases and compute deltas:**
 
 ```bash
-python -m src.pipeline.cli run-stage5-query --all-ranks
+python -m src.pipeline.cli run-stage5-query --all-ranks --target train
 ```
 
-For every rank with a saved adapter, the same 30 cases are re-queried
+For every rank with a saved adapter, the train cases are re-queried
 through the LoRA-augmented model, the response is re-scored with the
 PAI matrices, and a `post_intervention_r{rank}.json` file records the
-pre/post per-DP deltas.
+pre/post per-DP deltas where `pre_PAI` is the Gemini 3.1 reference from
+Experiment 1 and `post_PAI` is the LoRA-corrected Qwen3-32B output.
+
+**5b. Build a held-out eval set and re-query on it (recommended for clean deltas):**
+
+The train-target query above measures both memorization and generalization
+together. To separate them, build a held-out set (cases the LoRA was never
+trained on) and re-query the same adapters on it:
+
+```bash
+python -m src.pipeline.cli run-stage5-heldout --k 30
+python -m src.pipeline.cli run-stage5-query --all-ranks --target heldout
+```
+
+**5c. Run the Qwen3-32B baseline (no LoRA) so we can isolate the LoRA effect:**
+
+Without this, `delta_PAI` confounds two effects: the base-model change
+(Gemini → Qwen) and the LoRA fine-tune. Run the bare base model on both
+case sets:
+
+```bash
+python -m src.pipeline.cli run-stage5-baseline --target both
+```
+
+Outputs: `baseline_qwen_train.json` and `baseline_qwen_heldout.json`.
 
 **6. Run the cross-dimensional interference analysis:**
 
@@ -291,10 +342,19 @@ pre/post per-DP deltas.
 python -m src.pipeline.cli run-stage5-interference
 ```
 
-This produces `data/stage5/interference_analysis.json` with: a DP × rank
-heatmap of mean delta, the per-DP "first positive rank" (effective LoRA
-rank), and a top-tercile interference table that flags DPs whose
-already-high pre scores dropped after the unified corrective pass.
+This produces `data/stage5/interference_analysis.json` containing:
+
+- **Legacy** — the DP × rank heatmap, per-DP "first positive rank"
+  (effective LoRA rank), and the top-tercile interference table from the
+  train-target adapter runs (kept for backward compatibility).
+- **`deltas_clean`** — the three clean deltas, per rank and per case:
+  - `memorization` = Qwen+LoRA(train) − Qwen-base(train). Pure LoRA effect
+    on cases the adapter trained on (largely memorization).
+  - `generalization` = Qwen+LoRA(heldout) − Qwen-base(heldout). LoRA
+    effect on cases the adapter has never seen — this is the real
+    generalization measurement.
+  - `vs_gemini` = Qwen+LoRA(heldout) − Gemini(heldout). Out-of-train
+    comparison vs the Experiment 1 baseline.
 
 ### All CLI flags
 
@@ -402,12 +462,20 @@ python -m pytest tests/ -v
 - Stage 2: programmatic narrative generation via xAI/Grok
 - Stage 3: dedup + regeneration + final-case audit
 - Stage 4: target-model querying with Gemini 3.1 Pro Preview (structured JSON)
-- Stage 5 (Phase 1):
+- Stage 5 (Experiment 2, Phase 1):
   - PAI scoring of every Stage 4 response with 11 theory-grounded matrices
-  - Corrective LoRA training set construction from the lowest-PAI cases
+  - Weak (DP × condition) cell identification from the scored dataset
+  - Corrective LoRA training set construction (global, stratified per weak cell, or per-DP only)
+  - Held-out eval set construction disjoint from the train set
   - LoRA fine-tuning pipeline for Qwen3-32B on Tinker (lazy SDK import — works without `tinker` installed for the non-training steps)
-  - Post-intervention sampling, re-scoring, and pre/post delta computation
-  - Cross-dimensional interference + effective-rank analysis across the LoRA rank sweep
+  - Per-DP isolated LoRAs (five adapters, one per decision point)
+  - Post-intervention sampling (train and held-out targets) + Qwen3-32B baseline (no LoRA)
+  - Three-delta interference report (memorization, generalization, vs-Gemini)
+  - Causal 5×5 interference matrix from per-DP adapters
+- Stage 6 (Experiment 2, Phase 2):
+  - Phase 2 case selection (3 strata: large improvement, modest, control)
+  - Per-student blinded evaluation form generator (rubric + Likert scale + justification)
+  - Statistical analysis: paired pre/post tests, PAI-delta vs rating-delta correlation per rubric and per stratum, ICC inter-rater reliability
 - Resume support with checkpoint (Stage 2) and JSONL-derived resume (Stage 4)
 - Automatic validation with one retry (Stage 2) and per-case retries with local
   schema validation (Stage 4)
@@ -417,7 +485,6 @@ python -m pytest tests/ -v
 
 ## What is not implemented
 
-- Stage 5 Phase 2: human-perceptual validation in the classroom (out of scope for the code pipeline; lives in the Stage 2 student-form preparation)
-- Per-DP isolated LoRAs for the *causal* interference matrix (current interference analysis is observational; see the future-work notes at the bottom of `src/stage5_finetune/interference.py`)
+- The actual classroom sessions (Phase 2 forms + analysis are scaffolded; collecting ratings is off-pipeline)
 - Parallel/async API calls
 - Web UI or dashboard

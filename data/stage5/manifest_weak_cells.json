@@ -1,0 +1,21 @@
+{
+  "stage": "stage5_weak_cells",
+  "timestamp": "2026-05-12T15:08:18.473452+00:00",
+  "row_count": 82,
+  "params": {
+    "k": 10,
+    "input_scored": "data/stage5/scored_dataset.json",
+    "output": "data/stage5/weak_cells.json"
+  },
+  "weakest_cell_id": "tutor_role|learning_context=guided|knowledge_state=novice",
+  "weakest_mean_pai": -0.0457,
+  "weak_dp_breakdown": {
+    "tutor_role": 3,
+    "student_task": 4,
+    "content_level": 2,
+    "student_engagement": 1
+  },
+  "started_at": "2026-05-12T15:08:18.406242+00:00",
+  "finished_at": "2026-05-12T15:08:18.473399+00:00",
+  "duration_seconds": 0.067
+}

@@ -1,0 +1,22 @@
+{
+  "stage": "stage5_heldout",
+  "timestamp": "2026-05-12T10:01:09.448538+00:00",
+  "row_count": 30,
+  "params": {
+    "k": 30,
+    "input_scored": "data/stage5/scored_dataset.json",
+    "input_train": "data/stage5/corrective_training_data.json",
+    "output": "data/stage5/eval_heldout_cases.json"
+  },
+  "requested_k": 30,
+  "produced": 30,
+  "train_size": 30,
+  "heldout_pai_range": {
+    "min": 0.0733,
+    "max": 0.11
+  },
+  "first_train_pai": -0.02,
+  "started_at": "2026-05-12T10:01:09.394433+00:00",
+  "finished_at": "2026-05-12T10:01:09.448518+00:00",
+  "duration_seconds": 0.054
+}

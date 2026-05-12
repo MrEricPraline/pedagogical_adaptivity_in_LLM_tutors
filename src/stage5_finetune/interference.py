@@ -1,21 +1,30 @@
-"""Step 4 of Phase 1 — cross-dimensional interference analysis.
+"""Step 4 of Phase 1 — interference analysis with three clean deltas.
 
-The corrective training set targets *all five* DPs simultaneously, so the
-interference test we can run here is observational rather than causal:
+The original Stage 5 design only had a single ``delta_PAI = post − pre``
+where ``pre`` came from Gemini 3.1 (Experiment 1) and ``post`` from
+Qwen3-32B + LoRA. That delta confounds two effects:
 
-For each DP, we look at the cases whose pre-intervention sub-score on
-that DP was already high (top tercile). If the post-intervention sub-score
-on that DP drops in those cases, then training a unified corrective LoRA
-hurt a dimension that was already correct — i.e. cross-dimensional
-interference.
+1. The base-model switch (Gemini 3.1 → Qwen3-32B).
+2. The LoRA fine-tune itself.
 
-We also produce a |DP × rank| heatmap of mean per-DP delta so you can see
-which dimensions improve at which ranks (the "effective rank" diagnostic).
+Once a Qwen-base baseline run exists (``baseline_qwen_train.json`` and
+``baseline_qwen_heldout.json``) and a held-out adapter run exists
+(``post_intervention_heldout_r{rank}.json``), this module decomposes the
+single delta into three meaningful ones, per case and per DP, per rank:
 
-The truly causal interference test (correct only DP_i, measure spillover
-on DP_j ≠ i) requires per-DP isolated LoRAs and is left as future work —
-spec'd in the comments at the bottom of this file so it's easy to wire in
-later.
+* **Δ_memorization** = Qwen+LoRA(train) − Qwen-base(train)
+  — Pure LoRA effect on cases the adapter was trained on. Largely
+  reflects memorization of the corrective targets.
+* **Δ_generalization** = Qwen+LoRA(heldout) − Qwen-base(heldout)
+  — LoRA effect on cases the adapter has *never seen*. This is the
+  generalization measurement.
+* **Δ_vs_Gemini** = Qwen+LoRA(heldout) − Gemini(heldout from Exp1)
+  — Direct comparison against the Exp1 baseline, but on a clean
+  out-of-train set (so it is a fair "did Qwen+LoRA beat Gemini?").
+
+The legacy DP × rank heatmap and observational interference table are
+preserved so existing reports keep rendering, but the canonical output
+now lives under ``deltas_clean``.
 """
 
 from __future__ import annotations
@@ -23,7 +32,7 @@ from __future__ import annotations
 import logging
 from pathlib import Path
 from statistics import mean
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional
 
 from src.common.io_utils import read_json, write_json
 from src.pipeline.config import DATA_DIR, PipelineConfig
@@ -32,16 +41,51 @@ from src.stage5_scoring.matrices import DECISION_POINTS, DP_LABELS
 logger = logging.getLogger("pipeline")
 
 
-def _load_post_results(stage5_dir: Path) -> Dict[int, Dict[str, Any]]:
+# ---------------------------------------------------------------------------
+# File discovery
+# ---------------------------------------------------------------------------
+
+def _load_post_results(stage5_dir: Path, *, target: str) -> Dict[int, Dict[str, Any]]:
+    """Load the adapter-mode result files for a given target.
+
+    ``target="train"``   → post_intervention_r{rank}.json (legacy filenames)
+    ``target="heldout"`` → post_intervention_heldout_r{rank}.json
+    """
     out: Dict[int, Dict[str, Any]] = {}
-    for path in sorted(stage5_dir.glob("post_intervention_r*.json")):
+    pattern = (
+        "post_intervention_r*.json" if target == "train"
+        else "post_intervention_heldout_r*.json"
+    )
+    for path in sorted(stage5_dir.glob(pattern)):
+        # filename ends with _r{N}.json
         rank = int(path.stem.split("_r")[-1])
-        out[rank] = read_json(path)
+        payload = read_json(path)
+        # On train, accept any file whose payload doesn't claim target=heldout
+        # (legacy files predate the target field). On heldout, require explicit.
+        payload_target = payload.get("target")
+        if target == "train" and payload_target == "heldout":
+            continue
+        if target == "heldout" and payload_target != "heldout":
+            continue
+        # And skip baseline files if any sneak in (they have is_baseline=True).
+        if payload.get("is_baseline"):
+            continue
+        out[rank] = payload
     return out
 
 
+def _load_baseline(stage5_dir: Path, target: str) -> Optional[Dict[str, Any]]:
+    path = stage5_dir / f"baseline_qwen_{target}.json"
+    if not path.exists():
+        return None
+    return read_json(path)
+
+
+# ---------------------------------------------------------------------------
+# Legacy: DP × rank heatmap on train (kept for backward compatibility)
+# ---------------------------------------------------------------------------
+
 def _heatmap_dp_by_rank(post: Dict[int, Dict[str, Any]]) -> Dict[str, Dict[str, float]]:
-    """Mean per-DP delta, indexed by [rank][dp_label]."""
     table: Dict[str, Dict[str, float]] = {}
     for rank, payload in post.items():
         ok = [r for r in payload["results"] if r["status"] == "ok"]
@@ -58,11 +102,6 @@ def _heatmap_dp_by_rank(post: Dict[int, Dict[str, Any]]) -> Dict[str, Dict[str, 
 
 
 def _interference_table(post: Dict[int, Dict[str, Any]]) -> Dict[str, Dict[str, Dict[str, float]]]:
-    """For each rank, compute the post-intervention delta on DP_j conditioned
-    on cases that started in the top tercile on DP_i.
-
-    Output: ``{rank: {dp_i: {dp_j: mean_delta_on_dp_j}}}``.
-    """
     out: Dict[str, Dict[str, Dict[str, float]]] = {}
     for rank, payload in post.items():
         ok = [r for r in payload["results"] if r["status"] == "ok"]
@@ -97,8 +136,6 @@ def _interference_table(post: Dict[int, Dict[str, Any]]) -> Dict[str, Dict[str, 
 
 
 def _effective_rank(heatmap: Dict[str, Dict[str, float]]) -> Dict[str, Dict[str, Any]]:
-    """For each DP, find the lowest rank at which the per-DP delta first
-    becomes positive (a coarse proxy for effective LoRA rank)."""
     if not heatmap:
         return {}
 
@@ -120,46 +157,253 @@ def _effective_rank(heatmap: Dict[str, Dict[str, float]]) -> Dict[str, Dict[str,
     return out
 
 
+# ---------------------------------------------------------------------------
+# New: three clean deltas — memorization, generalization, vs Gemini
+# ---------------------------------------------------------------------------
+
+def _results_by_id(payload: Optional[Dict[str, Any]]) -> Dict[str, Dict[str, Any]]:
+    if not payload:
+        return {}
+    return {
+        r["prompt_id"]: r
+        for r in payload["results"]
+        if r["status"] == "ok"
+    }
+
+
+def _per_dp_diff(
+    minuend: Dict[str, Any],
+    subtrahend_dp: Dict[str, float],
+) -> Dict[str, float]:
+    """Compute ``minuend.post_dp_means[dp] − subtrahend_dp[dp]`` per DP."""
+    out = {}
+    for dp in DECISION_POINTS:
+        a = minuend["post_dp_means"].get(dp)
+        b = subtrahend_dp.get(dp, 0.0)
+        if a is None:
+            out[dp] = None
+        else:
+            out[dp] = round(a - b, 4)
+    return out
+
+
+def _build_clean_deltas(
+    *,
+    post_train: Dict[int, Dict[str, Any]],
+    post_heldout: Dict[int, Dict[str, Any]],
+    baseline_train: Optional[Dict[str, Any]],
+    baseline_heldout: Optional[Dict[str, Any]],
+) -> Dict[str, Any]:
+    """For each rank present, compute the three clean deltas.
+
+    Returns a structure shaped like::
+
+        {
+          "memorization":   {rank: {"per_case": [...], "summary": {...}}},
+          "generalization": {rank: {...}},
+          "vs_gemini":      {rank: {...}},
+          "notes": {missing pieces},
+        }
+    """
+    base_train = _results_by_id(baseline_train)
+    base_held = _results_by_id(baseline_heldout)
+
+    output: Dict[str, Any] = {
+        "memorization": {},
+        "generalization": {},
+        "vs_gemini": {},
+        "notes": {
+            "baseline_train_available": bool(base_train),
+            "baseline_heldout_available": bool(base_held),
+            "heldout_ranks_available": sorted(post_heldout.keys()),
+            "train_ranks_available": sorted(post_train.keys()),
+        },
+    }
+
+    # Δ_memorization: needs post_train + base_train.
+    if base_train:
+        for rank, payload in post_train.items():
+            per_case: List[Dict[str, Any]] = []
+            dp_deltas: Dict[str, List[float]] = {dp: [] for dp in DECISION_POINTS}
+            pai_deltas: List[float] = []
+            for r in payload["results"]:
+                if r["status"] != "ok":
+                    continue
+                pid = r["prompt_id"]
+                base = base_train.get(pid)
+                if not base:
+                    continue
+                base_pai = base["post_PAI"]
+                base_dp = base["post_dp_means"]
+                d_pai = round(r["post_PAI"] - base_pai, 4)
+                d_dp = _per_dp_diff(r, base_dp)
+                per_case.append({
+                    "prompt_id": pid,
+                    "qwen_lora_PAI": r["post_PAI"],
+                    "qwen_base_PAI": base_pai,
+                    "delta_memorization_PAI": d_pai,
+                    "delta_memorization_dp_means": d_dp,
+                })
+                pai_deltas.append(d_pai)
+                for dp in DECISION_POINTS:
+                    if d_dp[dp] is not None:
+                        dp_deltas[dp].append(d_dp[dp])
+            summary = {
+                "n": len(per_case),
+                "delta_PAI_mean": round(mean(pai_deltas), 4) if pai_deltas else None,
+                "delta_dp_means": {
+                    dp: (round(mean(vs), 4) if vs else None)
+                    for dp, vs in dp_deltas.items()
+                },
+            }
+            output["memorization"][str(rank)] = {
+                "per_case": per_case,
+                "summary": summary,
+            }
+
+    # Δ_generalization: needs post_heldout + base_held.
+    if base_held:
+        for rank, payload in post_heldout.items():
+            per_case = []
+            dp_deltas = {dp: [] for dp in DECISION_POINTS}
+            pai_deltas = []
+            for r in payload["results"]:
+                if r["status"] != "ok":
+                    continue
+                pid = r["prompt_id"]
+                base = base_held.get(pid)
+                if not base:
+                    continue
+                base_pai = base["post_PAI"]
+                base_dp = base["post_dp_means"]
+                d_pai = round(r["post_PAI"] - base_pai, 4)
+                d_dp = _per_dp_diff(r, base_dp)
+                per_case.append({
+                    "prompt_id": pid,
+                    "qwen_lora_PAI": r["post_PAI"],
+                    "qwen_base_PAI": base_pai,
+                    "delta_generalization_PAI": d_pai,
+                    "delta_generalization_dp_means": d_dp,
+                })
+                pai_deltas.append(d_pai)
+                for dp in DECISION_POINTS:
+                    if d_dp[dp] is not None:
+                        dp_deltas[dp].append(d_dp[dp])
+            summary = {
+                "n": len(per_case),
+                "delta_PAI_mean": round(mean(pai_deltas), 4) if pai_deltas else None,
+                "delta_dp_means": {
+                    dp: (round(mean(vs), 4) if vs else None)
+                    for dp, vs in dp_deltas.items()
+                },
+            }
+            output["generalization"][str(rank)] = {
+                "per_case": per_case,
+                "summary": summary,
+            }
+
+    # Δ_vs_Gemini on heldout — already computed inside post_heldout as
+    # `delta_PAI` (post_PAI − pre_PAI where pre is Gemini from Exp1) so we
+    # just summarise it here.
+    for rank, payload in post_heldout.items():
+        per_case = []
+        dp_deltas = {dp: [] for dp in DECISION_POINTS}
+        pai_deltas = []
+        for r in payload["results"]:
+            if r["status"] != "ok":
+                continue
+            per_case.append({
+                "prompt_id": r["prompt_id"],
+                "qwen_lora_PAI": r["post_PAI"],
+                "gemini_PAI": r["pre_PAI"],
+                "delta_vs_gemini_PAI": r["delta_PAI"],
+                "delta_vs_gemini_dp_means": r["delta_dp_means"],
+            })
+            pai_deltas.append(r["delta_PAI"])
+            for dp in DECISION_POINTS:
+                dp_deltas[dp].append(r["delta_dp_means"][dp])
+        summary = {
+            "n": len(per_case),
+            "delta_PAI_mean": round(mean(pai_deltas), 4) if pai_deltas else None,
+            "delta_dp_means": {
+                dp: (round(mean(vs), 4) if vs else None)
+                for dp, vs in dp_deltas.items()
+            },
+        }
+        output["vs_gemini"][str(rank)] = {
+            "per_case": per_case,
+            "summary": summary,
+        }
+
+    return output
+
+
+# ---------------------------------------------------------------------------
+# Public entry point
+# ---------------------------------------------------------------------------
+
 def run_interference_analysis(cfg: PipelineConfig) -> Dict[str, Any]:
+    """Aggregate every available post/baseline run into a single report.
+
+    The legacy heatmap + observational interference table are still
+    produced for the train-target adapter runs (so older readers of
+    ``interference_analysis.json`` see the same shape). The three clean
+    deltas live under ``deltas_clean``.
+    """
     stage5_dir = Path(cfg.output_dir) if cfg.output_dir else (DATA_DIR / "stage5")
-    post = _load_post_results(stage5_dir)
-    if not post:
+
+    post_train = _load_post_results(stage5_dir, target="train")
+    post_heldout = _load_post_results(stage5_dir, target="heldout")
+    baseline_train = _load_baseline(stage5_dir, "train")
+    baseline_heldout = _load_baseline(stage5_dir, "heldout")
+
+    if not post_train and not post_heldout:
         raise FileNotFoundError(
             "No post_intervention_r*.json files found in data/stage5/. "
-            "Run `python -m src.pipeline.cli run-stage5-query` first."
+            "Run `run-stage5-query` first."
         )
 
-    heatmap = _heatmap_dp_by_rank(post)
-    interference = _interference_table(post)
+    heatmap = _heatmap_dp_by_rank(post_train) if post_train else {}
+    interference = _interference_table(post_train) if post_train else {}
     effective = _effective_rank(heatmap)
 
-    payload = {
-        "ranks_present": sorted(int(k) for k in heatmap.keys()),
+    deltas_clean = _build_clean_deltas(
+        post_train=post_train,
+        post_heldout=post_heldout,
+        baseline_train=baseline_train,
+        baseline_heldout=baseline_heldout,
+    )
+
+    payload: Dict[str, Any] = {
+        "ranks_present": {
+            "train": sorted(post_train.keys()),
+            "heldout": sorted(post_heldout.keys()),
+        },
+        "baselines_present": {
+            "train": baseline_train is not None,
+            "heldout": baseline_heldout is not None,
+        },
+        # Legacy (train-target, vs-Gemini delta)
         "dp_by_rank_heatmap": heatmap,
         "effective_rank_by_dp": effective,
         "interference_top_tercile": interference,
+        # New (three clean deltas)
+        "deltas_clean": deltas_clean,
     }
     write_json(payload, stage5_dir / "interference_analysis.json")
 
-    logger.info("Stage 5 interference: ranks=%s", payload["ranks_present"])
-    for rank, row in heatmap.items():
-        logger.info("  rank=%s heatmap=%s", rank, row)
+    logger.info(
+        "Stage 5 interference: train ranks=%s, heldout ranks=%s, baselines train=%s heldout=%s",
+        payload["ranks_present"]["train"],
+        payload["ranks_present"]["heldout"],
+        payload["baselines_present"]["train"],
+        payload["baselines_present"]["heldout"],
+    )
+
+    if not deltas_clean["memorization"] and not deltas_clean["generalization"]:
+        logger.warning(
+            "Stage 5 interference: no clean deltas computed. "
+            "Run `run-stage5-baseline --target both` and "
+            "`run-stage5-query --target heldout` to populate them."
+        )
     return payload
-
-
-# ---------------------------------------------------------------------------
-# Future work — per-DP isolated LoRAs
-#
-# The current corrective dataset targets all 5 DPs at once because we have
-# 30 cases total. Once you have ≥50 cases per (DP × cell) you can:
-#
-#   1. Group corrective examples by the DP they intend to correct.
-#   2. Train one LoRA per DP (5 LoRAs) at the rank chosen above.
-#   3. For each (i, j) pair, run query_one_adapter on the LoRA trained
-#      to correct DP_i and aggregate the delta on DP_j.
-#   4. The (i, j) matrix is the causal interference heatmap.
-#
-# That experiment is conceptually identical to what's already wired here;
-# it just needs the per-DP corrective dataset and an outer loop over the
-# 5 LoRAs. Slot it under src/stage5_finetune/per_dp_train.py when ready.
-# ---------------------------------------------------------------------------

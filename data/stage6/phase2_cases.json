@@ -1,0 +1,198 @@
+{
+  "source_post_intervention": "/Users/rafa/Development/pedagogical_adaptivity_in_LLM_tutors/.claude/worktrees/condescending-hodgkin-cb85ff/data/stage5/post_intervention_r1.json",
+  "rank": 1,
+  "target": "train",
+  "n_per_stratum": 10,
+  "control_threshold": 0.4,
+  "modest_threshold": 0.05,
+  "stratum_sizes": {
+    "large_improvement": 10,
+    "modest_or_zero": 10,
+    "control": 0
+  },
+  "cases": [
+    {
+      "prompt_id": "P0972",
+      "stratum": "large_improvement",
+      "rank": 1,
+      "target": "train",
+      "pre_PAI": 0.0267,
+      "post_PAI": 0.7333,
+      "delta_PAI": 0.7066
+    },
+    {
+      "prompt_id": "P1207",
+      "stratum": "large_improvement",
+      "rank": 1,
+      "target": "train",
+      "pre_PAI": 0.05,
+      "post_PAI": 0.6667,
+      "delta_PAI": 0.6167
+    },
+    {
+      "prompt_id": "P0275",
+      "stratum": "large_improvement",
+      "rank": 1,
+      "target": "train",
+      "pre_PAI": 0.07,
+      "post_PAI": 0.6833,
+      "delta_PAI": 0.6133
+    },
+    {
+      "prompt_id": "P1931",
+      "stratum": "large_improvement",
+      "rank": 1,
+      "target": "train",
+      "pre_PAI": 0.0433,
+      "post_PAI": 0.6,
+      "delta_PAI": 0.5567
+    },
+    {
+      "prompt_id": "P0766",
+      "stratum": "large_improvement",
+      "rank": 1,
+      "target": "train",
+      "pre_PAI": -0.02,
+      "post_PAI": 0.45,
+      "delta_PAI": 0.47
+    },
+    {
+      "prompt_id": "P0397",
+      "stratum": "large_improvement",
+      "rank": 1,
+      "target": "train",
+      "pre_PAI": 0.0033,
+      "post_PAI": 0.45,
+      "delta_PAI": 0.4467
+    },
+    {
+      "prompt_id": "P0412",
+      "stratum": "large_improvement",
+      "rank": 1,
+      "target": "train",
+      "pre_PAI": 0.0533,
+      "post_PAI": 0.5,
+      "delta_PAI": 0.4467
+    },
+    {
+      "prompt_id": "P0459",
+      "stratum": "large_improvement",
+      "rank": 1,
+      "target": "train",
+      "pre_PAI": 0.0533,
+      "post_PAI": 0.5,
+      "delta_PAI": 0.4467
+    },
+    {
+      "prompt_id": "P1519",
+      "stratum": "large_improvement",
+      "rank": 1,
+      "target": "train",
+      "pre_PAI": 0.0667,
+      "post_PAI": 0.5,
+      "delta_PAI": 0.4333
+    },
+    {
+      "prompt_id": "P1340",
+      "stratum": "large_improvement",
+      "rank": 1,
+      "target": "train",
+      "pre_PAI": 0.0067,
+      "post_PAI": 0.4333,
+      "delta_PAI": 0.4266
+    },
+    {
+      "prompt_id": "P0173",
+      "stratum": "modest_or_zero",
+      "rank": 1,
+      "target": "train",
+      "pre_PAI": 0.0467,
+      "post_PAI": 0.0833,
+      "delta_PAI": 0.0366
+    },
+    {
+      "prompt_id": "P1300",
+      "stratum": "modest_or_zero",
+      "rank": 1,
+      "target": "train",
+      "pre_PAI": 0.07,
+      "post_PAI": 0.0333,
+      "delta_PAI": -0.0367
+    },
+    {
+      "prompt_id": "P1607",
+      "stratum": "modest_or_zero",
+      "rank": 1,
+      "target": "train",
+      "pre_PAI": 0.0567,
+      "post_PAI": 0.1167,
+      "delta_PAI": 0.06
+    },
+    {
+      "prompt_id": "P0841",
+      "stratum": "modest_or_zero",
+      "rank": 1,
+      "target": "train",
+      "pre_PAI": 0.07,
+      "post_PAI": 0.15,
+      "delta_PAI": 0.08
+    },
+    {
+      "prompt_id": "P1104",
+      "stratum": "modest_or_zero",
+      "rank": 1,
+      "target": "train",
+      "pre_PAI": 0.0367,
+      "post_PAI": -0.0667,
+      "delta_PAI": -0.1034
+    },
+    {
+      "prompt_id": "P0215",
+      "stratum": "modest_or_zero",
+      "rank": 1,
+      "target": "train",
+      "pre_PAI": 0.0467,
+      "post_PAI": 0.1833,
+      "delta_PAI": 0.1366
+    },
+    {
+      "prompt_id": "P0722",
+      "stratum": "modest_or_zero",
+      "rank": 1,
+      "target": "train",
+      "pre_PAI": 0.06,
+      "post_PAI": 0.2,
+      "delta_PAI": 0.14
+    },
+    {
+      "prompt_id": "P0417",
+      "stratum": "modest_or_zero",
+      "rank": 1,
+      "target": "train",
+      "pre_PAI": 0.0667,
+      "post_PAI": 0.25,
+      "delta_PAI": 0.1833
+    },
+    {
+      "prompt_id": "P1137",
+      "stratum": "modest_or_zero",
+      "rank": 1,
+      "target": "train",
+      "pre_PAI": 0.0633,
+      "post_PAI": 0.25,
+      "delta_PAI": 0.1867
+    },
+    {
+      "prompt_id": "P0648",
+      "stratum": "modest_or_zero",
+      "rank": 1,
+      "target": "train",
+      "pre_PAI": 0.0633,
+      "post_PAI": 0.2667,
+      "delta_PAI": 0.2034
+    }
+  ],
+  "started_at": "2026-05-12T15:09:45.948472+00:00",
+  "finished_at": "2026-05-12T15:09:45.954309+00:00",
+  "duration_seconds": 0.006
+}

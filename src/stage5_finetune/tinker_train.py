@@ -296,8 +296,16 @@ def run_finetune(
     epochs: int = 3,
     lr: float = 1e-4,
     base_model: str = DEFAULT_BASE_MODEL,
+    corrective_file: str = "corrective_training_data.json",
 ) -> Dict[str, Any]:
-    """Train one LoRA adapter per rank in `ranks`."""
+    """Train one LoRA adapter per rank in `ranks`.
+
+    ``corrective_file`` selects which corrective training set to use:
+
+    * ``corrective_training_data.json``            — global (bottom-N) mode
+    * ``corrective_training_data_stratified.json`` — proposal-aligned
+      stratified mode (50-100 examples per weak cell, full optimal target)
+    """
     started_at = datetime.now(timezone.utc)
     started_perf = time.time()
 
@@ -306,14 +314,17 @@ def run_finetune(
     adapters_dir = stage5_dir / "adapters"
     adapters_dir.mkdir(parents=True, exist_ok=True)
 
-    corrective_path = stage5_dir / "corrective_training_data.json"
+    corrective_path = stage5_dir / corrective_file
     if not corrective_path.exists():
         raise FileNotFoundError(
-            "corrective_training_data.json not found. Run "
-            "`python -m src.pipeline.cli run-stage5-corrective` first."
+            f"{corrective_path} not found. Build the corrective dataset first "
+            "(run-stage5-corrective or run-stage5-corrective-stratified)."
         )
     examples = read_json(corrective_path)
-    logger.info("Stage 5 fine-tune: loaded %d corrective examples", len(examples))
+    logger.info(
+        "Stage 5 fine-tune: loaded %d corrective examples from %s",
+        len(examples), corrective_path.name,
+    )
 
     ranks = list(ranks) if ranks else list(DEFAULT_RANKS)
     results: Dict[int, Dict[str, Any]] = {}
