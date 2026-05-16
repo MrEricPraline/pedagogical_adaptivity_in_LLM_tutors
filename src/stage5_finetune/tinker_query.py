@@ -394,6 +394,35 @@ def _load_cases_for_target(
     raise ValueError(f"Unknown target: {target!r}")
 
 
+def _is_complete_run(
+    payload_path: Path,
+    *,
+    target: Target,
+    expected_case_ids: List[str],
+) -> bool:
+    """Return True iff ``payload_path`` already contains a finished run that
+    matches the current ``target`` and the exact ``expected_case_ids``.
+
+    Used by ``run_query_post_intervention`` and ``run_query_baseline`` to
+    skip ranks whose output file is already present and consistent. Stale
+    files (different target, different case count, or different case ids)
+    are reported as incomplete so they get redone.
+    """
+    if not payload_path.exists():
+        return False
+    try:
+        payload = read_json(payload_path)
+    except Exception:  # noqa: BLE001
+        return False
+    if payload.get("target") != target:
+        return False
+    results = payload.get("results") or []
+    ok_ids = [r["prompt_id"] for r in results if r.get("status") == "ok"]
+    if set(ok_ids) != set(expected_case_ids):
+        return False
+    return True
+
+
 def run_query_post_intervention(
     cfg: PipelineConfig,
     *,
@@ -403,8 +432,16 @@ def run_query_post_intervention(
     max_tokens: int = 4096,
     temperature: float = 0.7,
     corrective_file: str = "corrective_training_data.json",
+    force: bool = False,
 ) -> Dict[str, Any]:
-    """For every trained rank, re-query the chosen case set and score it."""
+    """For every trained rank, re-query the chosen case set and score it.
+
+    Resume behavior (default): if ``post_intervention_{target}_r{rank}.json``
+    (or the legacy ``post_intervention_r{rank}.json`` when target=train)
+    already exists and contains a finished run with the same target and
+    the same set of prompt_ids, that rank is **skipped** and its existing
+    file is reused. Set ``force=True`` to ignore existing files.
+    """
     stage5_dir = Path(cfg.output_dir) if cfg.output_dir else (DATA_DIR / "stage5")
     adapters_dir = stage5_dir / "adapters"
     if not adapters_dir.exists():
@@ -413,6 +450,7 @@ def run_query_post_intervention(
         )
 
     cases = _load_cases_for_target(stage5_dir, target, corrective_file=corrective_file)
+    expected_ids = [c["prompt_id"] for c in cases]
 
     from src.stage5_finetune.corrective_data import _load_narratives
     narratives = _load_narratives(cfg.stage4_dir)
@@ -432,6 +470,17 @@ def run_query_post_intervention(
         if not meta_path.exists():
             logger.warning("Stage 5 query: no adapter metadata for rank=%d, skipping", r)
             continue
+
+        out_name = _output_filename(target=target, rank=r, is_baseline=False)
+        out_path = stage5_dir / out_name
+        if not force and _is_complete_run(out_path, target=target, expected_case_ids=expected_ids):
+            logger.info(
+                "Stage 5 query: rank=%d target=%s already complete in %s — skipping (use --force to redo)",
+                r, target, out_name,
+            )
+            payloads[r] = read_json(out_path)
+            continue
+
         adapter_meta = read_json(meta_path)
         payloads[r] = query_one(
             cfg,
@@ -480,12 +529,28 @@ def run_query_baseline(
     max_tokens: int = 4096,
     temperature: float = 0.7,
     corrective_file: str = "corrective_training_data.json",
+    force: bool = False,
 ) -> Dict[str, Any]:
-    """Query the bare base model (no LoRA) on a target case set."""
+    """Query the bare base model (no LoRA) on a target case set.
+
+    Resume: if ``baseline_qwen_{target}.json`` already exists with a
+    matching target and full case coverage, the run is skipped and the
+    existing file is loaded instead. Pass ``force=True`` to redo it.
+    """
     stage5_dir = Path(cfg.output_dir) if cfg.output_dir else (DATA_DIR / "stage5")
     stage5_dir.mkdir(parents=True, exist_ok=True)
 
     cases = _load_cases_for_target(stage5_dir, target, corrective_file=corrective_file)
+    expected_ids = [c["prompt_id"] for c in cases]
+
+    out_name = _output_filename(target=target, rank=None, is_baseline=True)
+    out_path = stage5_dir / out_name
+    if not force and _is_complete_run(out_path, target=target, expected_case_ids=expected_ids):
+        logger.info(
+            "Stage 5 baseline: target=%s already complete in %s — skipping",
+            target, out_name,
+        )
+        return {"payload": read_json(out_path), "manifest": None}
 
     from src.stage5_finetune.corrective_data import _load_narratives
     narratives = _load_narratives(cfg.stage4_dir)

@@ -1,0 +1,47 @@
+{
+  "stage": "stage5_causal_interference",
+  "timestamp": "2026-05-16T10:16:27.138056+00:00",
+  "row_count": 20,
+  "params": {
+    "target": "train",
+    "base_model": "Qwen/Qwen3-32B",
+    "max_tokens": 4096,
+    "temperature": 0.7,
+    "n_cases": 589,
+    "n_adapters": 4
+  },
+  "baseline_source": "gemini",
+  "matrix": {
+    "DP1": {
+      "DP1": 0.1202,
+      "DP2": -0.0126,
+      "DP3": -0.0032,
+      "DP4": -0.0433,
+      "DP5": -0.031
+    },
+    "DP2": {
+      "DP1": 0.0426,
+      "DP2": 0.1351,
+      "DP3": 0.018,
+      "DP4": 0.0282,
+      "DP5": -0.0037
+    },
+    "DP3": {
+      "DP1": 0.0379,
+      "DP2": 0.0275,
+      "DP3": 0.223,
+      "DP4": -0.0057,
+      "DP5": -0.0273
+    },
+    "DP4": {
+      "DP1": 0.0184,
+      "DP2": 0.0121,
+      "DP3": 0.0183,
+      "DP4": -0.5817,
+      "DP5": 0.0188
+    }
+  },
+  "started_at": "2026-05-15T19:01:30.480050+00:00",
+  "finished_at": "2026-05-16T10:16:27.137682+00:00",
+  "duration_seconds": 54896.657
+}

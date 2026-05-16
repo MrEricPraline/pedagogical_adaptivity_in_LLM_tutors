@@ -85,8 +85,15 @@ def run_per_dp_finetune(
     lr: float = 1e-4,
     base_model: str = DEFAULT_BASE_MODEL,
     dps: List[str] | None = None,
+    force: bool = False,
 ) -> Dict[str, Any]:
-    """Train one LoRA adapter per DP in ``dps`` (defaults to all 5)."""
+    """Train one LoRA adapter per DP in ``dps`` (defaults to all 5).
+
+    Resume: if ``data/stage5/adapters/per_dp/{dp}.json`` already exists
+    and records a finished run at the same rank/base_model, that DP is
+    **skipped** and the existing adapter metadata is reused. Pass
+    ``force=True`` to re-train ignoring existing files.
+    """
     started_at = datetime.now(timezone.utc)
     started_perf = time.time()
 
@@ -108,6 +115,26 @@ def run_per_dp_finetune(
                 dp,
             )
             continue
+
+        out_path = per_dp_dir / f"{dp}.json"
+        if not force and out_path.exists():
+            try:
+                existing = read_json(out_path)
+                if (
+                    existing.get("rank") == rank
+                    and existing.get("base_model") == base_model
+                    and existing.get("adapter_uri")
+                ):
+                    logger.info(
+                        "Per-DP fine-tune: dp=%s already trained at rank=%d in %s — "
+                        "skipping (use --force to redo)",
+                        dp, rank, out_path.name,
+                    )
+                    results[dp] = existing
+                    continue
+            except Exception:  # noqa: BLE001
+                pass  # fall through and retrain
+
         logger.info(
             "Per-DP fine-tune: dp=%s rank=%d n=%d",
             dp, rank, len(bucket),
@@ -121,7 +148,6 @@ def run_per_dp_finetune(
             output_dir=None,
         )
         metadata["target_dp"] = dp
-        out_path = per_dp_dir / f"{dp}.json"
         write_json(metadata, out_path)
         results[dp] = metadata
 

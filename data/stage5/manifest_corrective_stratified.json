@@ -1,6 +1,6 @@
 {
   "stage": "stage5_corrective_data_stratified",
-  "timestamp": "2026-05-12T15:14:36.462922+00:00",
+  "timestamp": "2026-05-12T18:11:26.166720+00:00",
   "row_count": 589,
   "params": {
     "per_cell": 75,
@@ -25,7 +25,7 @@
     "content_level|bloom_band=RU|knowledge_state=misinformed": 75,
     "student_task|learning_stage=skill_building|bloom_band=AA": 75
   },
-  "started_at": "2026-05-12T15:14:35.990859+00:00",
-  "finished_at": "2026-05-12T15:14:36.462902+00:00",
-  "duration_seconds": 0.472
+  "started_at": "2026-05-12T18:11:25.808266+00:00",
+  "finished_at": "2026-05-12T18:11:26.166697+00:00",
+  "duration_seconds": 0.358
 }

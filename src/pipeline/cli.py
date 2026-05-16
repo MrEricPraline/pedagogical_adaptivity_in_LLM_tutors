@@ -143,6 +143,10 @@ def build_parser() -> argparse.ArgumentParser:
     p5pdp.add_argument("--lr", type=float, default=1e-4)
     p5pdp.add_argument("--base-model", type=str, default="Qwen/Qwen3-32B",
                        dest="base_model")
+    p5pdp.add_argument(
+        "--force", action="store_true", dest="force", default=False,
+        help="Re-train every DP even if its adapter file already exists",
+    )
 
     p5ci = sub.add_parser(
         "run-stage5-causal-interference",
@@ -162,6 +166,16 @@ def build_parser() -> argparse.ArgumentParser:
         "--skip-query", action="store_true", dest="skip_query",
         default=False,
         help="Reuse existing per_dp_query_*.json instead of re-querying",
+    )
+    p5ci.add_argument(
+        "--corrective-file", type=str,
+        default="corrective_training_data.json",
+        dest="corrective_file",
+        help="Which corrective file defines the train case set (must match per-DP training).",
+    )
+    p5ci.add_argument(
+        "--force", action="store_true", dest="force", default=False,
+        help="Re-query every per-DP adapter even if its output file already exists",
     )
 
     p5f = sub.add_parser(
@@ -210,6 +224,10 @@ def build_parser() -> argparse.ArgumentParser:
         help=("Which corrective file defines the train case set "
               "(must match the file used for fine-tuning)."),
     )
+    p5q.add_argument(
+        "--force", action="store_true", dest="force", default=False,
+        help="Re-query every rank even if its output file already exists",
+    )
 
     # ── Stage 5 (Phase 1, Fix) — held-out split + Qwen baseline ──────────
     p5h = sub.add_parser(
@@ -240,6 +258,11 @@ def build_parser() -> argparse.ArgumentParser:
         "--corrective-file", type=str,
         default="corrective_training_data.json",
         dest="corrective_file",
+        help="Which corrective file defines the train case set when --target=train.",
+    )
+    p5b.add_argument(
+        "--force", action="store_true", dest="force", default=False,
+        help="Re-run baseline even if output file already exists",
     )
 
     p5i = sub.add_parser(
@@ -296,7 +319,7 @@ def main(argv: list | None = None) -> None:
     stage5_only = {
         "n", "k", "rank", "all_ranks", "epochs", "lr", "base_model",
         "max_tokens_out", "target", "per_cell", "target_dp_only",
-        "skip_query", "corrective_file",
+        "skip_query", "corrective_file", "force",
         # stage 6
         "n_per_stratum", "control_threshold", "modest_threshold",
         "n_students", "cases_per_student", "raters_per_case", "seed",
@@ -407,6 +430,7 @@ def main(argv: list | None = None) -> None:
             base_model=args.base_model,
             max_tokens=args.max_tokens_out,
             corrective_file=args.corrective_file,
+            force=args.force,
         )
 
     if args.command == "run-stage5-heldout":
@@ -425,6 +449,7 @@ def main(argv: list | None = None) -> None:
                 base_model=args.base_model,
                 max_tokens=args.max_tokens_out,
                 corrective_file=args.corrective_file,
+                force=args.force,
             )
 
     if args.command == "run-stage5-interference":
@@ -457,6 +482,7 @@ def main(argv: list | None = None) -> None:
             epochs=args.epochs,
             lr=args.lr,
             base_model=args.base_model,
+            force=args.force,
         )
 
     if args.command == "run-stage5-causal-interference":
@@ -468,6 +494,8 @@ def main(argv: list | None = None) -> None:
             base_model=args.base_model,
             max_tokens=args.max_tokens_out,
             skip_query=args.skip_query,
+            corrective_file=args.corrective_file,
+            force=args.force,
         )
 
     if args.command == "run-stage6-select-cases":

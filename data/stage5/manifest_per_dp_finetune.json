@@ -1,0 +1,42 @@
+{
+  "stage": "stage5_per_dp_finetune",
+  "timestamp": "2026-05-15T19:01:30.416249+00:00",
+  "row_count": 4,
+  "params": {
+    "rank": 8,
+    "epochs": 3,
+    "learning_rate": 0.0001,
+    "base_model": "Qwen/Qwen3-32B",
+    "input_corrective": "data/stage5/corrective_training_data_per_dp.json",
+    "output_dir": "data/stage5/adapters/per_dp"
+  },
+  "adapters": {
+    "content_level": {
+      "adapter_uri": "tinker://da8114d1-74ae-588d-bc31-654ebeca772a:train:0/sampler_weights/corrective_r8_e3",
+      "final_loss": 0.0124,
+      "duration_seconds": 2108.412,
+      "n_examples": 150
+    },
+    "student_task": {
+      "adapter_uri": "tinker://1e57fc83-0e9e-57bc-a091-03ffc0a689b5:train:0/sampler_weights/corrective_r8_e3",
+      "final_loss": 0.012,
+      "duration_seconds": 3769.321,
+      "n_examples": 300
+    },
+    "tutor_role": {
+      "adapter_uri": "tinker://4c0e7ea4-77b1-516f-a344-f6f6be20923c:train:0/sampler_weights/corrective_r8_e3",
+      "final_loss": 0.0115,
+      "duration_seconds": 3039.247,
+      "n_examples": 225
+    },
+    "student_engagement": {
+      "adapter_uri": "tinker://7c69c25b-0b52-5552-b085-7d422c6e6f63:train:0/sampler_weights/corrective_r8_e3",
+      "final_loss": 0.0168,
+      "duration_seconds": 744.238,
+      "n_examples": 52
+    }
+  },
+  "started_at": "2026-05-15T19:01:30.386454+00:00",
+  "finished_at": "2026-05-15T19:01:30.416238+00:00",
+  "duration_seconds": 0.03
+}

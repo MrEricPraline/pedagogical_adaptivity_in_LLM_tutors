@@ -1,0 +1,96 @@
+{
+  "target": "train",
+  "baseline_source": "gemini",
+  "n_cases": 589,
+  "matrix": {
+    "DP1": {
+      "DP1": 0.1202,
+      "DP2": -0.0126,
+      "DP3": -0.0032,
+      "DP4": -0.0433,
+      "DP5": -0.031
+    },
+    "DP2": {
+      "DP1": 0.0426,
+      "DP2": 0.1351,
+      "DP3": 0.018,
+      "DP4": 0.0282,
+      "DP5": -0.0037
+    },
+    "DP3": {
+      "DP1": 0.0379,
+      "DP2": 0.0275,
+      "DP3": 0.223,
+      "DP4": -0.0057,
+      "DP5": -0.0273
+    },
+    "DP4": {
+      "DP1": 0.0184,
+      "DP2": 0.0121,
+      "DP3": 0.0183,
+      "DP4": -0.5817,
+      "DP5": 0.0188
+    }
+  },
+  "diagonal_within_dp_effect": {
+    "DP1": 0.1202,
+    "DP2": 0.1351,
+    "DP3": 0.223,
+    "DP4": -0.5817
+  },
+  "off_diagonal_top": [
+    {
+      "trained_dp": "DP1",
+      "measured_dp": "DP4",
+      "delta": -0.0433
+    },
+    {
+      "trained_dp": "DP2",
+      "measured_dp": "DP1",
+      "delta": 0.0426
+    },
+    {
+      "trained_dp": "DP3",
+      "measured_dp": "DP1",
+      "delta": 0.0379
+    },
+    {
+      "trained_dp": "DP1",
+      "measured_dp": "DP5",
+      "delta": -0.031
+    },
+    {
+      "trained_dp": "DP2",
+      "measured_dp": "DP4",
+      "delta": 0.0282
+    },
+    {
+      "trained_dp": "DP3",
+      "measured_dp": "DP2",
+      "delta": 0.0275
+    },
+    {
+      "trained_dp": "DP3",
+      "measured_dp": "DP5",
+      "delta": -0.0273
+    },
+    {
+      "trained_dp": "DP4",
+      "measured_dp": "DP5",
+      "delta": 0.0188
+    },
+    {
+      "trained_dp": "DP4",
+      "measured_dp": "DP1",
+      "delta": 0.0184
+    },
+    {
+      "trained_dp": "DP4",
+      "measured_dp": "DP3",
+      "delta": 0.0183
+    }
+  ],
+  "started_at": "2026-05-15T19:01:30.480050+00:00",
+  "finished_at": "2026-05-16T10:16:27.137682+00:00",
+  "duration_seconds": 54896.657
+}

@@ -34,6 +34,7 @@ from src.pipeline.config import DATA_DIR, PipelineConfig
 from src.pipeline.manifests import build_manifest
 from src.stage5_finetune.tinker_query import (
     Target,
+    _is_complete_run,
     _load_cases_for_target,
     query_one,
 )
@@ -100,12 +101,18 @@ def run_causal_interference(
     max_tokens: int = 4096,
     temperature: float = 0.7,
     skip_query: bool = False,
+    corrective_file: str = "corrective_training_data.json",
+    force: bool = False,
 ) -> Dict[str, Any]:
     """For each per-DP adapter, re-query the chosen case set, score, and
     build the 5×5 interference matrix.
 
-    ``skip_query=True`` reuses any existing ``per_dp_query_{target}_*.json``
-    files and only re-runs the aggregation step.
+    Resume:
+    - Per-DP query files (``per_dp_query_{target}_{dp}.json``) that already
+      exist and cover the full case set with matching target are reused.
+    - ``skip_query=True`` forces reuse of any existing file regardless of
+      completeness/freshness (legacy escape hatch).
+    - ``force=True`` ignores existing files and re-queries everything.
     """
     started_at = datetime.now(timezone.utc)
     started_perf = time.time()
@@ -113,7 +120,8 @@ def run_causal_interference(
     stage5_dir = Path(cfg.output_dir) if cfg.output_dir else (DATA_DIR / "stage5")
 
     adapters = _load_per_dp_adapters(stage5_dir)
-    cases = _load_cases_for_target(stage5_dir, target)
+    cases = _load_cases_for_target(stage5_dir, target, corrective_file=corrective_file)
+    expected_ids = [c["prompt_id"] for c in cases]
 
     from src.stage5_finetune.corrective_data import _load_narratives
     narratives = _load_narratives(cfg.stage4_dir)
@@ -122,10 +130,19 @@ def run_causal_interference(
 
     for trained_dp, meta in adapters.items():
         out_path = stage5_dir / _per_dp_results_filename(trained_dp, target)
-        if skip_query and out_path.exists():
-            per_dp_payloads[trained_dp] = read_json(out_path)
-            logger.info("Causal interference: reusing %s", out_path)
-            continue
+
+        if not force:
+            if skip_query and out_path.exists():
+                per_dp_payloads[trained_dp] = read_json(out_path)
+                logger.info("Causal interference: reusing %s (skip_query)", out_path)
+                continue
+            if _is_complete_run(out_path, target=target, expected_case_ids=expected_ids):
+                per_dp_payloads[trained_dp] = read_json(out_path)
+                logger.info(
+                    "Causal interference: trained_dp=%s already complete in %s — skipping",
+                    trained_dp, out_path.name,
+                )
+                continue
 
         payload = query_one(
             cfg,

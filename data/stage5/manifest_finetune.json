@@ -1,26 +1,44 @@
 {
   "stage": "stage5_finetune",
-  "timestamp": "2026-05-11T16:43:37.290120+00:00",
-  "row_count": 1,
+  "timestamp": "2026-05-13T04:25:50.214062+00:00",
+  "row_count": 4,
   "params": {
     "base_model": "Qwen/Qwen3-32B",
     "ranks": [
+      1,
+      4,
+      8,
       16
     ],
     "epochs": 3,
     "learning_rate": 0.0001,
-    "n_examples": 30,
+    "n_examples": 589,
     "input_corrective": "data/stage5/corrective_training_data.json",
     "output_adapters_dir": "data/stage5/adapters"
   },
   "adapters": {
+    "1": {
+      "adapter_uri": "tinker://d0603db2-e4a5-5a47-b45f-fe2a77c7154b:train:0/sampler_weights/corrective_r1_e3",
+      "final_loss": 0.0028,
+      "duration_seconds": 9207.583
+    },
+    "4": {
+      "adapter_uri": "tinker://c52a7e1f-89a0-5e1e-98bd-25cf1b2dc772:train:0/sampler_weights/corrective_r4_e3",
+      "final_loss": 0.0031,
+      "duration_seconds": 11554.423
+    },
+    "8": {
+      "adapter_uri": "tinker://efcbae92-d794-5bb8-a765-217210cfb290:train:0/sampler_weights/corrective_r8_e3",
+      "final_loss": 0.0029,
+      "duration_seconds": 9891.581
+    },
     "16": {
-      "adapter_uri": "tinker://288056bb-607a-5a37-ac63-874aec94f073:train:0/sampler_weights/corrective_r16_e3",
-      "final_loss": 0.0059,
-      "duration_seconds": 415.362
+      "adapter_uri": "tinker://1d66c5b2-29c9-519a-bd52-10e9345a644d:train:0/sampler_weights/corrective_r16_e3",
+      "final_loss": 0.003,
+      "duration_seconds": 6207.394
     }
   },
-  "started_at": "2026-05-11T16:36:40.659473+00:00",
-  "finished_at": "2026-05-11T16:43:37.290095+00:00",
-  "duration_seconds": 416.63
+  "started_at": "2026-05-12T18:11:26.786461+00:00",
+  "finished_at": "2026-05-13T04:25:50.214037+00:00",
+  "duration_seconds": 36863.427
 }

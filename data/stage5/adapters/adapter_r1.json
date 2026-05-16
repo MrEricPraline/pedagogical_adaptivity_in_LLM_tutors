@@ -3,31 +3,31 @@
   "base_model": "Qwen/Qwen3-32B",
   "epochs": 3,
   "learning_rate": 0.0001,
-  "n_examples": 30,
-  "total_steps": 90,
+  "n_examples": 589,
+  "total_steps": 1767,
   "history": [
     {
       "epoch": 1,
-      "mean_loss": 0.2805,
-      "min_loss": 0.0055,
-      "max_loss": 0.8476
+      "mean_loss": 0.027,
+      "min_loss": 0.0002,
+      "max_loss": 0.8447
     },
     {
       "epoch": 2,
-      "mean_loss": 0.0179,
-      "min_loss": 0.0019,
-      "max_loss": 0.1383
+      "mean_loss": 0.0035,
+      "min_loss": 0.0,
+      "max_loss": 0.0349
     },
     {
       "epoch": 3,
-      "mean_loss": 0.0091,
-      "min_loss": 0.0015,
-      "max_loss": 0.0746
+      "mean_loss": 0.0028,
+      "min_loss": 0.0,
+      "max_loss": 0.0382
     }
   ],
   "adapter_name": "corrective_r1_e3",
-  "adapter_uri": "tinker://d81ce6e1-b7b1-54aa-beb8-3716c38353c8:train:0/sampler_weights/corrective_r1_e3",
-  "started_at": "2026-05-11T16:20:09.699538+00:00",
-  "finished_at": "2026-05-11T16:25:07.934480+00:00",
-  "duration_seconds": 298.235
+  "adapter_uri": "tinker://d0603db2-e4a5-5a47-b45f-fe2a77c7154b:train:0/sampler_weights/corrective_r1_e3",
+  "started_at": "2026-05-12T18:11:28.533663+00:00",
+  "finished_at": "2026-05-12T20:44:56.118089+00:00",
+  "duration_seconds": 9207.583
 }
