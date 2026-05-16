@@ -475,6 +475,39 @@ Each JSON line contains all Stage 1 columns plus:
 | `generation_status` | `ok`, `validation_failed`, or `error` |
 | `error_message` | Error details (empty if successful) |
 
+### Experiment 2 — output files reference
+
+Every file below lives in `data/stage5/` (Phase 1) or `data/stage6/`
+(Phase 2). Each data file has a sibling `manifest_*.json` with run
+parameters, timestamps and counts (provenance).
+
+#### Phase 1 — corrective fine-tuning
+
+| File | What it contains |
+|------|------------------|
+| `scored_dataset.json` | Experiment 1 input: 2 000 Gemini-3.1 cases, each with `selections`, `activity_scores`, `dp_means` and `prompt_PAI`, sorted ascending by `prompt_PAI`. |
+| `weak_cells.json` | `all_cells` (every DP × condition cell with `mean_pai`, `n_cases`, `case_ids`) and `weak_cells` (the bottom-`k` by mean PAI). 82 cells total. |
+| `corrective_training_data_stratified.json` | The proposal-aligned corrective set: ~50–100 cases per weak cell. Each item = chat triple (system + case narrative + pedagogically-optimal assistant response across all 5 DPs) plus `optimal_selections`, `optimal_dp_scores`, `pre_intervention_PAI`, `served_cells`, `target_dps`. |
+| `corrective_training_data_per_dp.json` | Same shape but the assistant target corrects **only** the weak cell's DP (other DPs keep the model's current selection). One example per (case, target DP). Input for the per-DP isolated LoRAs. |
+| `corrective_training_data.json` | Legacy global (bottom-N) corrective set, kept for reference. |
+| `eval_heldout_cases.json` | Held-out evaluation cases disjoint from the corrective train set (methodological add-on, not required by the proposal). |
+| `adapters/adapter_r{1,4,8,16}.json` | One per rank in the sweep: Tinker `adapter_uri`, `base_model`, `rank`, `epochs`, `n_examples`, per-epoch `history` (loss), durations, timestamps. The LoRA weights live on Tinker; this is the handle. |
+| `adapters/per_dp/{content_level,student_task,tutor_role,student_engagement}.json` | The five (here four) per-DP isolated LoRA adapters. Same schema plus `target_dp`. `disciplinary_method` is absent when no DP5 cell ranks in the weak set (data-driven, expected). |
+| `post_intervention_r{1,4,8,16}.json` | Per rank: `summary` (ok/total, mean/min/max `delta_PAI`, per-DP `delta_dp_means`) and `results` — one row per case with `pre_PAI` (Gemini Exp1 reference), `post_PAI` (Qwen+LoRA), `delta_PAI`, `pre_dp_means`, `post_dp_means`, `delta_dp_means`, plus the parsed model output. |
+| `interference_analysis.json` | `dp_by_rank_heatmap` (mean per-DP delta at each rank), `effective_rank_by_dp` (lowest rank where each DP's delta turns positive — the representational diagnostic), `interference_top_tercile` (observational), and `deltas_clean` (memorization/generalization/vs-Gemini — populated only if the optional baseline + held-out runs were executed). |
+| `per_dp_query_train_{dp}.json` | For each per-DP adapter: the same 589 cases re-queried, scored, with pre/post per-DP deltas. Used to build the causal matrix. |
+| `causal_interference_matrix.json` | `matrix` = N×5 (`DP_i` corrected → mean delta on every `DP_j`). `diagonal_within_dp_effect` = direct correction effect; `off_diagonal_top` = strongest cross-DP interference (positive = collateral benefit, negative = collateral damage). `baseline_source` records whether deltas are vs Qwen-base or vs Gemini. |
+
+#### Phase 2 — human perceptual validation (classroom)
+
+| File | What it contains |
+|------|------------------|
+| `phase2_cases.json` | ~30 cases selected in 3 strata (`large_improvement`, `modest_or_zero`, `control`), each with `pre_PAI`, `post_PAI`, `delta_PAI`, `stratum`. |
+| `forms/student_NN.json` | One blinded form per student: shuffled pre+post items, each with the case narrative, the model output, the 6-item rubric (5 DPs + holistic), the 4-point Likert scale, and the justification prompt. Students never see which item is pre/post. |
+| `assignment_key.json` | The de-blinding key (item_uid → student, prompt_id, variant pre/post, rank, target). **Not given to students** — used only at analysis time. |
+| `ratings_raw.json` | (off-pipeline) The collected student responses, schema: `[{item_uid, ratings:{rubric_id:1..4}, justification}]`. |
+| `phase2_analysis.json` | Paired pre/post tests per rubric (Wilcoxon, Cohen's d), Pearson/Spearman correlation of PAI-delta vs rating-delta per rubric and per stratum, ICC inter-rater reliability, and the collected justification texts for thematic analysis. |
+
 ## Validation
 
 Each generated narrative is automatically checked for:
