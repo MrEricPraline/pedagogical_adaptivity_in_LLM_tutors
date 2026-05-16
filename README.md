@@ -356,6 +356,36 @@ This produces `data/stage5/interference_analysis.json` containing:
   - `vs_gemini` = Qwen+LoRA(heldout) − Gemini(heldout). Out-of-train
     comparison vs the Experiment 1 baseline.
 
+### Resume / interruption safety
+
+The expensive Tinker steps (`run-stage5-query`, `run-stage5-baseline`,
+`run-stage5-per-dp-finetune`, `run-stage5-causal-interference`) are
+**resumable**. Output is written per unit of work, not at the very end:
+
+- `run-stage5-query` writes `post_intervention[_<target>]_r{rank}.json`
+  after each rank completes.
+- `run-stage5-per-dp-finetune` writes `adapters/per_dp/{dp}.json` after
+  each per-DP adapter finishes.
+- `run-stage5-causal-interference` writes
+  `per_dp_query_{target}_{dp}.json` after each per-DP adapter is queried.
+- `run-stage5-baseline` writes `baseline_qwen_{target}.json` on
+  completion.
+
+On a re-run, each command checks whether the corresponding output file
+already exists **and matches the current run** (same `target` and the
+exact same set of `prompt_id`s, or same rank/base-model for adapters).
+If it matches, that unit is **skipped** and the existing file is reused
+(no Tinker cost). Stale files (different target or case set — e.g. a
+30-case file from an earlier design) are detected as non-matching and
+redone. So if a long run is interrupted, simply re-issue the **same
+command**: finished ranks/adapters are skipped, only the unfinished
+work is recomputed (resume granularity is per rank / per adapter, not
+per case).
+
+Pass `--force` to ignore existing files and recompute everything from
+scratch. Available on `run-stage5-query`, `run-stage5-baseline`,
+`run-stage5-per-dp-finetune`, and `run-stage5-causal-interference`.
+
 ### All CLI flags
 
 | Flag | Description |
@@ -372,6 +402,12 @@ This produces `data/stage5/interference_analysis.json` containing:
 | `--checkpoint-every` | Checkpoint frequency |
 | `--input` / `--input-path` | Stage input file (default depends on the stage) |
 | `--output-dir` | Output directory for the stage being run |
+| `--force` | (Stage 5 Tinker steps) Ignore existing output files and recompute from scratch instead of resuming |
+| `--corrective-file` | (Stage 5 finetune/query/causal) Which corrective set defines the train case set (e.g. `corrective_training_data_stratified.json`) |
+| `--per-cell` | (`run-stage5-corrective-stratified`) Examples per weak cell (proposal: 50–100, default 75) |
+| `--target-dp-only` | (`run-stage5-corrective-stratified`) Correct only the weak cell's DP (input for per-DP isolated LoRAs) |
+| `--target` | (Stage 5 query/baseline/causal, Stage 6) `train` or `heldout` case set |
+| `--k` | (`run-stage5-weak-cells` / `run-stage5-heldout`) Number of weak cells / held-out cases |
 | `--max-output-tokens` | (Stage 4) Max output tokens for Gemini |
 | `--thinking-level` | (Stage 4) Gemini thinking level (`low` / `medium` / `high`) |
 
@@ -472,11 +508,14 @@ python -m pytest tests/ -v
   - Post-intervention sampling (train and held-out targets) + Qwen3-32B baseline (no LoRA)
   - Three-delta interference report (memorization, generalization, vs-Gemini)
   - Causal 5×5 interference matrix from per-DP adapters
+  - Resume / interruption safety for every Tinker step (per-rank / per-adapter
+    granularity, target + case-set matched; `--force` to override)
 - Stage 6 (Experiment 2, Phase 2):
   - Phase 2 case selection (3 strata: large improvement, modest, control)
   - Per-student blinded evaluation form generator (rubric + Likert scale + justification)
   - Statistical analysis: paired pre/post tests, PAI-delta vs rating-delta correlation per rubric and per stratum, ICC inter-rater reliability
-- Resume support with checkpoint (Stage 2) and JSONL-derived resume (Stage 4)
+- Resume support: checkpoint (Stage 2), JSONL-derived resume (Stage 4),
+  output-file-matched resume (Stage 5 Tinker steps)
 - Automatic validation with one retry (Stage 2) and per-case retries with local
   schema validation (Stage 4)
 - Incremental JSONL output and consolidated JSON per stage
