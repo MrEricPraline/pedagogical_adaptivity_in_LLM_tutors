@@ -1,0 +1,46 @@
+{
+  "experiment": "OOS generalisation test — base vs greedy_r8 on 200 out-of-sample cases",
+  "n_oos_cases": 200,
+  "note": "base fue reparseado de sus propias salidas (199/200); greedy_r8 corrido en vLLM+LoRA (200/200)",
+  "arms": {
+    "base": {
+      "n": 199,
+      "PAI_mean": 0.3006,
+      "repetition_mean": 0.4999,
+      "entropy_mean": 1.5266,
+      "pct_fully_monotone": 0.0,
+      "dp_means": {
+        "content_level": 0.2518,
+        "student_task": 0.2442,
+        "tutor_role": 0.2432,
+        "student_engagement": 0.3516,
+        "disciplinary_method": 0.4123
+      }
+    },
+    "greedy_r8": {
+      "n": 200,
+      "PAI_mean": 0.4326,
+      "repetition_mean": 1.0,
+      "entropy_mean": 0.0,
+      "pct_fully_monotone": 100.0,
+      "dp_means": {
+        "content_level": 0.5125,
+        "student_task": 0.035,
+        "tutor_role": 0.68,
+        "student_engagement": 0.4867,
+        "disciplinary_method": 0.4487
+      }
+    }
+  },
+  "train_reference": {
+    "base": {
+      "PAI_mean": 0.1853,
+      "pct_fully_monotone": 0.0
+    },
+    "greedy_r8": {
+      "PAI_mean": 0.4127,
+      "pct_fully_monotone": 100.0
+    }
+  },
+  "finding": "greedy_r8 raises PAI (+0.13 vs base) but collapses sequence diversity to zero (100% monotone, entropy 0) on out-of-sample cases; reproduces the training-set pattern -> the collapse generalises."
+}
