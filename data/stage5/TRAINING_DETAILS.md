@@ -48,7 +48,35 @@ estándar de Tinker (convención de "LoRA Without Regret"), no una anomalía.
 
 ---
 
-## 3. Qué reportar en el paper: decisiones de diseño vs. limitaciones
+## 3. Parámetros de decoding / generación (por arm)
+
+Los parámetros de muestreo dependen de la etapa. **Lo importante para el paper:**
+los **resultados reportados del modelo fine-tuned se generaron con decoding
+greedy** (temperature = 0.0), no con el default del fichero de query.
+
+| Arm / etapa | Modelo | Temperature | Max tokens | Otros | Fuente |
+|---|---|---|---|---|---|
+| **Stage 2** (generación de datos) | `grok-3-fast` (xAI) | 0.8 | 300 | — | `pipeline/config.py` |
+| **Stage 4** (target-model) | `gemini-3.1-pro-preview` | 0.7 | 8192 (out) | `thinking_level: high`; salida estructurada (`response_schema` + `response_mime_type`) | `pipeline/config.py`, `stage4_query/provider_gemini.py` |
+| **Stage 5 — evaluación (arms reportados)** | Qwen3-32B + LoRA, vía **vLLM** | **0.0 (greedy)** | 4096 | greedy determinista; arms: base, greedy r8, greedy_parallel, greedy_orthogonal | `experiments/gpu_session/run_oos_gpu.py`, `run_base_control.py` |
+| Stage 5 — path de sampling en Tinker (no usado para los resultados) | Qwen3-32B + LoRA, vía Tinker | 0.7 *(default del código)* | 4096 | `num_samples=1`; `stop`=secuencias Qwen3 | `stage5_finetune/tinker_query.py` |
+
+**Puntos clave:**
+
+- Los arms de evaluación (`run_oos_gpu.py`, `run_base_control.py`) fijan
+  `--temperature` con **default 0.0** y la anotación explícita en el código
+  *"MUST match the original pipeline (greedy decoding)"*. Es decir, los números
+  del paper son **greedy**, no muestreo estocástico.
+- Como es greedy, el muestreo es **determinista** — la ausencia de `seed` de
+  decoding no afecta a la reproducibilidad de la evaluación (a diferencia del
+  seed de *entrenamiento*, §1, que sí es una limitación).
+- El `temperature = 0.7` que aparece por defecto en `tinker_query.py` es el
+  default del path de sampling vía Tinker y **no** generó los resultados
+  reportados; no confundirlo con la temperatura de evaluación.
+- Defaults de Tinker `SamplingParams` no sobreescritos (por si se usa ese path):
+  `top_p = 1.0`, `top_k = -1` (desactivado), `seed = None`.
+
+## 4. Qué reportar en el paper: decisiones de diseño vs. limitaciones
 
 Ninguno de los valores anteriores revela un **error de ejecución**. Clasificación
 honesta de cara a revisores:
@@ -86,4 +114,8 @@ honesta de cara a revisores:
 *Documento generado a partir de: `data/stage5/manifest_finetune.json`,
 `data/stage5/manifest_per_dp_finetune.json`,
 `data/stage5/adapters/adapter_r*.json`, `adapters_dl/*/adapter_config.json`,
-`src/stage5_finetune/tinker_train.py`, y el SDK de Tinker (`tinker/types/`).*
+`src/stage5_finetune/tinker_train.py`, `src/stage5_finetune/tinker_query.py`,
+`src/pipeline/config.py`, `src/stage4_query/provider_gemini.py`,
+`experiments/gpu_session/run_oos_gpu.py`,
+`experiments/gpu_session/run_base_control.py`, y el SDK de Tinker
+(`tinker/types/`: `AdamParams`, `LoraConfig`, `SamplingParams`).*
