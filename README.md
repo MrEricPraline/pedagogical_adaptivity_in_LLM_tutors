@@ -560,3 +560,10 @@ python -m pytest tests/ -v
 - The actual classroom sessions (Phase 2 forms + analysis are scaffolded; collecting ratings is off-pipeline)
 - Parallel/async API calls
 - Web UI or dashboard
+
+## License
+
+- **Code** (`*.py` and related scripts): [MIT License](LICENSE).
+- **Data, experiment outputs and documentation** (`data/`, `experiments/` inputs and outputs, result `*.json` files, `*.md` files): [Creative Commons Attribution 4.0 International (CC BY 4.0)](LICENSE-DATA).
+
+If you use this repository, please cite the associated paper.
